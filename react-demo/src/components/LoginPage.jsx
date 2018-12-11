@@ -9,7 +9,8 @@ export default class LoginPage extends React.Component {
         this.password = React.createRef();
 
         this.state = {
-            isLogedIn: false
+            isLogedIn: false,
+            isLogedInUser: false
         }
 
     }
@@ -31,9 +32,16 @@ export default class LoginPage extends React.Component {
             .then(result => {
                 console.log(result)
                 if (result.auth) {
+                    console.log('aeeuf');
                     localStorage.setItem('authorized', result.username)
                     this.props.showLogin(false);
                     // this.setState({ isLogedIn: true })
+                }
+                else if(result.userAuth){
+                    console.log('hello');
+                    localStorage.setItem('authorized', result.username)
+                    this.props.showUserPage(true);
+                    // this.setState({ isLogedInUser: true})
                 } else {
                     localStorage.removeItem('authorized')
                 }
@@ -42,10 +50,15 @@ export default class LoginPage extends React.Component {
             
     }
     render() {
-        const { isLogedIn } = this.state;
+        const { isLogedIn, isLogedInUser } = this.state;
         if (isLogedIn) {
-            return <Redirect to={'/profile'} />
-
+          console.log('shamovida')
+            // return <Redirect to={'/profile'} />
+      
+        }
+        else if(isLogedInUser){
+            console.log('shemovida');
+            // return <Redirect to={'/'}/>
         }
         else {
             return (

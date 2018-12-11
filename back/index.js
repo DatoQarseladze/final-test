@@ -76,15 +76,23 @@ app.post('/login', (req, res) => {
   console.log(json);
   let { username, password } = req.body
   password = encrypt(password)
-  if (User.username === username && User.password === password || 
-    json.filter(user => user.password === password) && json.filter(user =>
-      user.username === username)) {
+  if (User.username === username && User.password === password ) {
     res.json({
       username,
       password,
       auth: true
     })
-  } else {
+  } 
+ else if( 
+    json.filter(user => user.password === password)
+    && json.filter(user =>user.username === username)){
+      res.json({
+        username,
+        password,
+        userAuth: true
+      })
+  }
+    else {
     res.json({
       auth: false,
       message: 'User not found'

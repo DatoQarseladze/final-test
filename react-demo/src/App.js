@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Link,
   Route,
-  Redirect
+  Switch,
+  Redirect,
 } from 'react-router-dom'
 import { ProtectedRoute } from './routes/ProtectedRoute'
 import LoginPage from './components/LoginPage'
@@ -17,11 +18,13 @@ import  UsersSearch  from './components/UsersSearch'
 
 class App extends Component {
   state = {
-    showLogin: true
+    showLogin: true,
+    showUserPage: false,
   }
 
   render () {
     return (
+  
       <Router>
         <div className='App'>
           <ul className='menu'>
@@ -62,7 +65,7 @@ class App extends Component {
               <IndexPage title={Data.index.title} desc={Data.index.desc} />
             )}
           />
-
+          
           <Route
             path='/contact'
             render={() => (
@@ -72,21 +75,27 @@ class App extends Component {
               />
             )}
           />
-
           <Route path='/signup' render={() => <SignUp />} />
           <Route
             path='/login'
             render={() => (
               <LoginPage
                 showLogin={change => {
-                  this.setState({ showLogin: change })
+                  this.setState({ showLogin: change})
+                }}
+                showUserPage={change =>{
+                  this.setState({ showUserPage: change})
                 }}
               />
             )}
           />
+
+          <Switch>
+            {this.state.showUserPage && <Redirect to ={'/contact'} />} 
+       
           <ProtectedRoute path='/profile' component={ProfilePage} />
           {!this.state.showLogin && <Redirect to={'/profile'} />}
-          
+          </Switch>
         </div>
       </Router>
     )
