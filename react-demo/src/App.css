@@ -69,6 +69,11 @@
 
 }
 
+.table th{
+  max-width: 200px;
+  text-align: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

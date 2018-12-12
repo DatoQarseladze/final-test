@@ -90,12 +90,12 @@ class App extends Component {
             )}
           />
 
-          <Switch>
+        
             {this.state.showUserPage && <Redirect to ={'/contact'} />} 
        
           <ProtectedRoute path='/profile' component={ProfilePage} />
           {!this.state.showLogin && <Redirect to={'/profile'} />}
-          </Switch>
+   
         </div>
       </Router>
     )
