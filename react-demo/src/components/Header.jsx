@@ -29,14 +29,13 @@ class Header extends React.Component {
 
             <div className='nav'>
             <li>
-              <i className='fa fa-search' />
+            <Link to='/'><i className='fa fa-search'/></Link>
               </li>
               <li>
-              <i className='fa fa-user'/>
-              <a href=""></a>
+              <Link to='/login'><i className='fa fa-user'/></Link>
               </li>
               <li>
-              <i className='fa fa-shopping-cart' />
+              <Link to='/search'><i className='fa fa-shopping-cart' /></Link>
               </li>
             </div>
           </nav>

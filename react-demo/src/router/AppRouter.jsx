@@ -23,6 +23,12 @@ const index = () => (
     </div>
 );
 
+const admin = () => (
+    <div className="App">
+    <Table />
+    </div>
+)
+
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -30,6 +36,7 @@ const AppRouter = () => (
             <Switch>
                 <Route path="/" render={index} exact={true}/>
                 <Route path='/login' component={login}  />
+                <Route path='/search' component={admin} />
             </Switch>
         </div>
     </BrowserRouter>
