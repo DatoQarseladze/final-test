@@ -4,7 +4,7 @@ import {
   Link,
   Route,
   Switch,
-  Redirect,
+  Redirect
 } from 'react-router-dom'
 import { ProtectedRoute } from './routes/ProtectedRoute'
 import LoginPage from './components/LoginPage'
@@ -15,16 +15,15 @@ import Data from './db/data.json'
 import './App.css'
 import SignUp from './components/SignUp'
 import Table from './components/Table'
+import LogOut from './components/LogOut'
 
 class App extends Component {
   state = {
-    showLogin: true,
-    showUserPage: false,
+    showLogin: true
   }
 
   render () {
     return (
-  
       <Router>
         <div className='App'>
           <ul className='menu'>
@@ -55,8 +54,13 @@ class App extends Component {
                 <Link to='/profile'>Profile</Link>
               </li>
             )}
+            {this.state.showLogin && (
+              <li className='menu--item'>
+                <Link to='/logout'>Log Out</Link>
+              </li>
+            )}
           </ul>
- 
+
           <Route path='/search' exact render={() => <Table />} />
           <Route
             path='/'
@@ -65,7 +69,7 @@ class App extends Component {
               <IndexPage title={Data.index.title} desc={Data.index.desc} />
             )}
           />
-          
+
           <Route
             path='/contact'
             render={() => (
@@ -81,21 +85,18 @@ class App extends Component {
             render={() => (
               <LoginPage
                 showLogin={change => {
-                  this.setState({ showLogin: change})
-                }}
-                showUserPage={change =>{
-                  this.setState({ showUserPage: change})
+                  this.setState({ showLogin: change })
                 }}
               />
             )}
           />
+          <Route path='/logout' render={() => <LogOut /> } />
 
-        
-            {this.state.showUserPage && <Redirect to ={'/contact'} />} 
-       
+          <ProtectedRoute path='/search' component={ProfilePage} />
+          {!this.state.showLogin && <Redirect to={'/login'} />}
+
           <ProtectedRoute path='/profile' component={ProfilePage} />
-          {!this.state.showLogin && <Redirect to={'/profile'} />}
-   
+          {!this.state.showLogin && <Redirect to={'/login'} />}
         </div>
       </Router>
     )

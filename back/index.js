@@ -68,21 +68,6 @@ const User = {
   password: encrypt('admin123')
 }
 
-app.post('/delete', (req,res) =>{
-  console.log(req.body);
-  const { username } = req.body;
-  fs.readFile(usersfile, function (err,data){
-    let json = JSON.parse(data);
-    console.log(json);
-    json.splice(json.findIndex(user => user.username === username), 1);
-    fs.writeFile(usersfile, JSON.stringify(json), function(err){
-      if(err) res.json(err);
-      res.json(json);
-    })
-  })
-})
-
-
 
 app.post('/login', (req, res) => {
   let { username, password } = req.body
@@ -111,7 +96,19 @@ app.post('/login', (req, res) => {
 
 })
 
-
+app.post('/delete', (req,res) =>{
+  console.log(req.body);
+  const { username } = req.body;
+  fs.readFile(usersfile, function (err,data){
+    let json = JSON.parse(data);
+    console.log(json);
+    json.splice(json.findIndex(user => user.username === username), 1);
+    fs.writeFile(usersfile, JSON.stringify(json), function(err){
+      if(err) res.json(err);
+      res.json(json);
+    })
+  })
+})
 
 app.listen(5000, () => {
   console.log(`Port -5000`)
