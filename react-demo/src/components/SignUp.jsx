@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export default function SignUp () {
+
+export default class SignUp extends Component {
+
+ render () {
   return (
     <div>
       <form
@@ -47,6 +50,7 @@ export default function SignUp () {
         <label>
           <input
             className='form--input'
+
             type='text'
             placeholder='email'
             name='email'
@@ -56,6 +60,7 @@ export default function SignUp () {
         <label>
           <input
             className='form--input'
+  
             type='date'
             placeholder='birthdate'
             name='birthdate'
@@ -67,12 +72,18 @@ export default function SignUp () {
             className='form--input'
             type='number'
             placeholder='balance'
+          
             name='balance'
             required
           />
         </label>
-        <button className='btn form--btn'>Register</button>
+        <button 
+        className='btn form--btn'
+     
+        >Register</button>
       </form>
     </div>
   )
+ }
+ 
 }

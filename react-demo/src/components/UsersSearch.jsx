@@ -68,8 +68,8 @@ export default class UsersSearch extends Component {
 
         {people.filter(searchingFor(this.state.term)).map(user => {
           return (
-            <div>
-                <table className="table">
+            <tbody>
+               
    
                 <tr>
                   <th scope='row'>{user.id}</th>
@@ -88,8 +88,8 @@ export default class UsersSearch extends Component {
                     </button>
                   </th>
                 </tr>
-              </table>
-            </div>
+        
+            </tbody>
           )
         })}
       </div>

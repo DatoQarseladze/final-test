@@ -14,7 +14,7 @@ import { IndexPage } from './components/IndexPage'
 import Data from './db/data.json'
 import './App.css'
 import SignUp from './components/SignUp'
-import  UsersSearch  from './components/UsersSearch'
+import Table from './components/Table'
 
 class App extends Component {
   state = {
@@ -57,7 +57,7 @@ class App extends Component {
             )}
           </ul>
  
-          <Route path='/search' exact render={() => <UsersSearch />} />
+          <Route path='/search' exact render={() => <Table />} />
           <Route
             path='/'
             exact

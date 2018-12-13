@@ -5,6 +5,7 @@ const fs = require('fs')
 const app = express()
 const secret = 'demo__system'
 
+
 app.use(cors('*'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
@@ -12,7 +13,8 @@ app.get('/', (req, res) => {
   res.send('hello')
 })
 
-let ID = 1
+let ID = 0;
+
 const usersfile = '../react-demo/src/db/users.json'
 
 app.post('/register', (req, res) => {
@@ -46,12 +48,10 @@ app.post('/register', (req, res) => {
     fs.writeFile(usersfile, JSON.stringify(json), function(err) {
       if (err) res.redirect('http://localhost:3000')
       res.redirect('http://localhost:3000/contact')
+
       
     })
   })
-
-
-
     ID++
 })
 
@@ -68,53 +68,50 @@ const User = {
   password: encrypt('admin123')
 }
 
+app.post('/delete', (req,res) =>{
+  console.log(req.body);
+  const { username } = req.body;
+  fs.readFile(usersfile, function (err,data){
+    let json = JSON.parse(data);
+    console.log(json);
+    json.splice(json.findIndex(user => user.username === username), 1);
+    fs.writeFile(usersfile, JSON.stringify(json), function(err){
+      if(err) res.json(err);
+      res.json(json);
+    })
+  })
+})
+
 
 
 app.post('/login', (req, res) => {
-  const users = fs.readFileSync(usersfile);
-  const json = JSON.parse(users);
-  console.log(json);
   let { username, password } = req.body
-  password = encrypt(password)
-  if (User.username === username && User.password === password ) {
-    res.json({
-      username,
-      password,
-      auth: true
-    })
-  } 
- else if( 
-    json.filter(user => user.password === password)
-    && json.filter(user =>user.username === username)){
-      res.json({
-        username,
-        password,
-        userAuth: true
-      })
+
+  let foundUser = {
+    id: -1,
+    level: -1,
+    auth: false
   }
-    else {
-    res.json({
-      auth: false,
-      message: 'User not found'
-    })
-  }
+
+  fs.readFile(usersfile, (err,data) =>{
+    let users = JSON.parse(data)
+    for (let i = 0; i < users.length; i++){
+      if( users[i].username == username && users[i].password === encrypt(password)){
+        foundUser = {
+          id: users[i].id,
+          level: users[i].level,
+          auth: true,
+          username: users[i].username
+        }
+        break;
+      } 
+    }
+    res.json(foundUser)
+  })
+
 })
 
-// app.post('/signup', (req, res) => {
-//   let {
-//     username,
-//     password,
-//     name,
-//     lastname,
-//     email,
-//     birthdate,
-//     balance
-//   } = req.body
-//   // console.log(username, password, name, lastname, email, birthdate, balance)
-//   const user = {
-//     id: '' + userId
-//   }
-// })
+
 
 app.listen(5000, () => {
   console.log(`Port -5000`)

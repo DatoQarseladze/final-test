@@ -8,7 +8,7 @@ export const ProfilePage = props => {
         <div className='profile' >
     
             <h1 className='profile--title'>Hello {localStorage.getItem('authorized')}</h1>
-    
+
         </div>
         
 
