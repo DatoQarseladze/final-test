@@ -1,7 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-
-
+// import { confirmAlert } from 'react-confirm-alert';
+import Swal from 'sweetalert2'
 
 
 export default class LoginPage extends React.Component {
@@ -36,11 +36,38 @@ export default class LoginPage extends React.Component {
         if (result.auth) {
           localStorage.setItem('authorized', JSON.stringify(result))
           this.setState({ isLoggedIn: true, message: '' })
+          Swal({
+            position: 'top-end',
+            type: 'success',
+            title: 'You have been signed in',
+            showConfirmButton: false,
+            timer: 1500
+          })
         } else {
-          this.setState({ message: 'Login or password is not Correct' })
+          this.setState( Swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Wrong user !',
+            showConfirmButton: false,
+            footer: '<a href="http://localhost:3000/login">Try again</a>'
+          }) )
         }
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err))
+      // .catch(() => confirmAlert({
+      //   title:'Delete User',
+      //   message: 'Are u sure u want to delete User?',
+      //   buttons:[
+      //     {
+      //       label: 'Yes',
+      //       onClick: () => {}
+      //     },
+      //     {
+      //       label: 'No',
+      //       onClick: () => {}
+      //     }
+      //   ]
+      // }))
   }
 
   render () {
@@ -52,8 +79,7 @@ export default class LoginPage extends React.Component {
       return (
         <form className='form form--login' onSubmit={this.OnSubmitHandler}>
           
-          <div className='input--group'>
- 
+          <div className='input--group'> 
             <label>
               Username:
               <br />

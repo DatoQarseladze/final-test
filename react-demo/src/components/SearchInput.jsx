@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import UserData from '../db/users.json'
+// import UserData from '../db/users.json'
 
 
 
 class SearchInput extends Component {
-    constructor (props) {
-        super(props)
-      }
+    // constructor (props) {
+    //     super(props)
+    //   }
 
     componentDidMount(){
         console.log(this.props);

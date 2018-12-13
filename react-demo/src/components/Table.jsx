@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ShowUsers from './ShowUsers'
 import TableHeader from './TableHeader'
 import SearchInput from './SearchInput'
+import {Link } from 'react-router-dom'
 import UserData from '../db/users.json'
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css' 
@@ -72,6 +73,9 @@ export default  class Table extends Component {
     return (
       <div className='search'>
         <SearchInput searchHandler={this.searchHandler} />
+        <Link to='/login'>EXPLORE</Link>
+
+        {/* <button className='btn btn-primary'></button> */}
         <table className='table'>
           <TableHeader />
           <ShowUsers 

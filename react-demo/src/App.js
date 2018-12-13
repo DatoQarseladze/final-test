@@ -1,32 +1,36 @@
 import React, { Component } from 'react'
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-  Redirect
-} from 'react-router-dom'
-import { ProtectedRoute } from './routes/ProtectedRoute'
-import LoginPage from './components/LoginPage'
-import { ProfilePage } from './components/ProfilePage'
-import { ContactPage } from './components/ContactPage'
-import { IndexPage } from './components/IndexPage'
-import Data from './db/data.json'
-import './App.css'
-import SignUp from './components/SignUp'
-import Table from './components/Table'
-import LogOut from './components/LogOut'
+import AppRouter from './router/AppRouter'
+// import {
+//   BrowserRouter as Router,
+//   Link,
+//   Route,
+//   Redirect
+// } from 'react-router-dom'
+// import { ProtectedRoute } from './routes/ProtectedRoute'
+// import Login from './components/Login'
+// import { ProfilePage } from './components/ProfilePage'
+// import { ContactPage } from './components/ContactPage'
+// import { IndexPage } from './components/IndexPage'
+// import Data from './db/data.json'
+// import './App.css'
+// import SignUp from './components/SignUp'
+// import Table from './components/Table'
+// import LogOut from './components/LogOut'
+// import Header from './components/Header'
 
 class App extends Component {
-  state = {
-    showLogin: true
-  }
+  // state = {
+  //   showLogin: true
+  // }
 
   render () {
     return (
-      <Router>
+      // <Router>
+      
         <div className='App'>
-          <ul className='menu'>
+
+        <AppRouter />
+          {/* <ul className='menu'>
             <li className='menu--item'>
               <Link to='/'>Home</Link>
             </li>
@@ -59,7 +63,8 @@ class App extends Component {
                 <Link to='/logout'>Log Out</Link>
               </li>
             )}
-          </ul>
+          </ul> */}
+          {/* <Header />
 
           <Route path='/search' exact render={() => <Table />} />
           <Route
@@ -83,7 +88,7 @@ class App extends Component {
           <Route
             path='/login'
             render={() => (
-              <LoginPage
+              <Login
                 showLogin={change => {
                   this.setState({ showLogin: change })
                 }}
@@ -96,9 +101,9 @@ class App extends Component {
           {!this.state.showLogin && <Redirect to={'/login'} />}
 
           <ProtectedRoute path='/profile' component={ProfilePage} />
-          {!this.state.showLogin && <Redirect to={'/login'} />}
-        </div>
-      </Router>
+          {!this.state.showLogin && <Redirect to={'/login'} />} */}
+        </div> 
+      // </Router>
     )
   }
 }

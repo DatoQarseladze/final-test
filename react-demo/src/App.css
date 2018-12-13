@@ -22,20 +22,7 @@
   color: #61dafb;
 }
 
-.menu{
-  display:flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
-}
 
-.menu--item{
-  width: 25%;
-  text-align: center;
-  border: 1px solid seagreen;
-  padding: 15px;
-}
 
 .form{
   width: 50%;
@@ -45,7 +32,22 @@
   padding: 40px;
   
 }
-
+a {
+  color: #000;
+  transition: color 0.15s ease;
+  font-size: 16.4px;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 34px;
+  font-weight: bolder;
+  letter-spacing: 1.5px;
+}
 .input--group{
   padding: 5px;
   text-align: center;
@@ -73,6 +75,58 @@
   max-width: 200px;
   text-align: center;
 }
+
+.header_wrapper {
+  display: flex;
+  height: 100px;
+  line-height: 100px;
+  /* text-align: center; */
+}
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  /* text-align: center; */
+  justify-content: space-around;
+}
+.header img {
+  height: 100%;
+  width: 250px;
+  /* padding-top: 18px; */
+}
+.menu {
+  display: flex;
+  font-weight: bold;
+  font-size: 20px;
+  justify-content: space-between;
+  width: 30%;
+}
+
+
+
+.menuItem > a:hover{
+  color: orangered;
+
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  width: 12%;
+}
+
+.menuItem > a {
+  color: black;
+  font-weight: bold;
+}
+
+.nav i:hover {
+  /* padding-top: 30px; */
+  color: orangered
+
+}
+
 
 @keyframes App-logo-spin {
   from {
