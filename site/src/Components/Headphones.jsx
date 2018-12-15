@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 // import AppRouter from "../router/AppRouter";
 import Products from "../DB/products.json";
 import Headphone from "../Components/Headphone";
+import AppRouter from "../router/AppRouter";
 
 let id;
+let currentItem;
 class Headphones extends Component {
   constructor(props) {
     super(props);
@@ -39,8 +41,6 @@ class Headphones extends Component {
               </li>
             );
           })}
-         
-          {/* <AppRouter id={id} /> */}
         </ul>
       </div>
       // {/* </Router> */}

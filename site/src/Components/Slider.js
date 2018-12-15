@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import chat from "./image/chat.jpg";
-// import Chat from './Chat';
+// import Chat from "./Chat";
 
 export default class Slider extends Component {
   constructor(props) {
