@@ -10,22 +10,22 @@ class Footer extends React.Component {
           STORE LOCATOR
         </div>
         <div className="instagram">
-          <i className="fa fa-instagram" />
+          <i className="fab fa-instagram" />
           <br />
           INSTAGRAM
         </div>
         <div className="youtube">
-          <i className="fa fa-youtube" />
+          <i className="fab fa-youtube" />
           <br />
           YOUTUBE
         </div>
         <div className="twitter">
-          <i className="fa fa-twitter" />
+          <i className="fab fa-twitter" />
           <br />
           TWITTER
         </div>
         <div className="facebook">
-          <i className="fa fa-facebook-f" />
+          <i className="fab fa-facebook-f" />
           <br />
           FACEBOOK
         </div>
