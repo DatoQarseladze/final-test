@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Swal from 'sweetalert2'
 import { Redirect } from 'react-router-dom'
 
+
+
 class Login extends Component {
   constructor (props) {
     super(props)
@@ -21,7 +23,7 @@ class Login extends Component {
   }
 
   login = (username, password) => {
-    fetch('http://localhost:5000/login', {
+    fetch(`http://localhost:5000/login`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -31,13 +33,27 @@ class Login extends Component {
     })
       .then(res => res.json())
       .then(result => {
-        if (result.auth) {
+      if (result.auth && result.level === 0){
+        // localStorage.setItem('')
+        // localStorage.setItem('admin')
+        console.log(result);
+        Swal({
+          title: 'Hello Admin!',
+          imageUrl: 'https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg',
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: 'Custom image',
+          animation: false
+        })
+      }
+      else if (result.auth && result.level === 1) {
+        console.log('useris shemosvla');
           localStorage.setItem('authorized', JSON.stringify(result))
           this.setState({ isLoggedIn: true, message: '' })
           Swal({
             position: 'top-end',
             type: 'success',
-            title: 'You have been signed in',
+            title: `hello ${result.username} ` ,
             showConfirmButton: false,
             timer: 1500
           })

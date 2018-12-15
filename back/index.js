@@ -4,6 +4,7 @@ const crypto = require('crypto')
 const fs = require('fs')
 const app = express()
 const secret = 'demo__system'
+const PORT = process.env.PORT || 3000;
 
 
 app.use(cors('*'))
@@ -37,7 +38,8 @@ app.post('/register', (req, res) => {
     email,
     birthdate,
     balance,
-    level: '1'
+    level: 1,
+    boughtProducts: [],
   }
  
   fs.readFile(usersfile, function (err, data) {
@@ -46,10 +48,8 @@ app.post('/register', (req, res) => {
     json.push(user);
     console.log(json);
     fs.writeFile(usersfile, JSON.stringify(json), function(err) {
-      if (err) res.redirect('http://localhost:3000')
-      res.redirect('http://localhost:3000/contact')
-
-      
+      if (err) res.redirect(`http://localhost:${PORT}`)
+      res.redirect(`http://localhost:${PORT}/`)
     })
   })
     ID++
@@ -61,11 +61,6 @@ const encrypt = data => {
     .update(data)
     .digest('hex')
   return hash
-}
-
-const User = {
-  username: 'admin',
-  password: encrypt('admin123')
 }
 
 
@@ -110,6 +105,6 @@ app.post('/delete', (req,res) =>{
   })
 })
 
-app.listen(5000, () => {
-  console.log(`Port -5000`)
+app.listen((5000), () => {
+  console.log(`Listening Port - 5000`)
 })
