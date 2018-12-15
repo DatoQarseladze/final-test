@@ -73,7 +73,12 @@ const Slide = ({ image }) => {
         backgroundPosition: '70% 50%',
     }
 
-    return <div className="slide" style={styles}></div>
+    return (
+        <div className="slide" style={styles}>
+            <button type="button" className="btnShop">SHOP</button>
+            <button type="button" className="btnFilter">FILTER</button>
+        </div>
+    )
 }
 
 const LeftArrow = (props) => {
