@@ -63,8 +63,6 @@ class Login extends Component {
     } else {
       return (
         <div>
-          <hr />
-          <h1>Sign In</h1>
           <form className='form form--login' onSubmit={this.OnSubmitHandler}>
             <div className='input--group'>
               <label>
@@ -90,11 +88,17 @@ class Login extends Component {
                 />
               </label>
             </div>
-            <div className='input--group'>
-              <button className='btn  btn--login'>Login</button>
+            <div className='input--group form--actions'>
+              <button className='btn  btn--login'>Sign In</button>
+              <a href="/login">Forgot your password?</a>
             </div>
           </form>
+          <div>
+          
+          </div>
         </div>
+
+      
       )
     }
   }

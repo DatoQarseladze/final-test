@@ -1,12 +1,12 @@
 import React from 'react'
 import logo from './img/logo.jpg'
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 // import Products from '../DB/products.json'
 // import { Headphones } from './Headphones'
 // import { Phones } from './Phones'
 // import { Categories } from './Categories'
 // import HomePage from './HomePage'
-import Login from './Login'
+// import Login from './Login'
 
 class Header extends React.Component {
   render () {

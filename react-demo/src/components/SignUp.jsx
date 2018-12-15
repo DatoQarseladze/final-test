@@ -7,11 +7,14 @@ export default class SignUp extends Component {
   return (
     <div>
       <form
-        className='form--registration'
+        className='form'
         action='http://localhost:5000/register'
         method='POST'
       >
+      <div className="form--registration">
+        <div className='input--group input--registration'>
         <label>
+        Name
           <input
             className='form--input'
             type='text'
@@ -20,6 +23,9 @@ export default class SignUp extends Component {
             required
           />
         </label>
+        </div>
+        <div className='input--group input--registration'>
+        Password
         <label>
           <input
             className='form--input'
@@ -29,6 +35,9 @@ export default class SignUp extends Component {
             required
           />
         </label>
+        </div>
+        <div className='input--group input--registration '>
+        Username
         <label>
           <input
             className='form--input'
@@ -38,6 +47,9 @@ export default class SignUp extends Component {
             required
           />
         </label>
+        </div>
+        <div className='input--group input--registration '>
+        Password
         <label>
           <input
             className='form--input'
@@ -47,6 +59,9 @@ export default class SignUp extends Component {
             required
           />
         </label>
+        </div>
+        <div className='input--group input--registration '>
+        Email
         <label>
           <input
             className='form--input'
@@ -57,6 +72,9 @@ export default class SignUp extends Component {
             required
           />
         </label>
+        </div>
+        <div className='input--group input--registration '>
+        Birthdate
         <label>
           <input
             className='form--input'
@@ -67,6 +85,9 @@ export default class SignUp extends Component {
             required
           />
         </label>
+        </div>
+        <div className='input--group input--registration'>
+        Balance
         <label>
           <input
             className='form--input'
@@ -77,11 +98,15 @@ export default class SignUp extends Component {
             required
           />
         </label>
+        </div>
+        </div>
+        <div className="registration--btn">
         <button 
-        className='btn form--btn'
-     
+        className='btn form--btn btn--login'
         >Register</button>
+        </div>
       </form>
+   
     </div>
   )
  }

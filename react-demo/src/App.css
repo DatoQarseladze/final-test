@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -17,6 +17,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.login--title{
+  text-align: center;
+}
 
 .App-link {
   color: #61dafb;
@@ -24,13 +27,16 @@
 
 
 
-.form{
-  width: 50%;
+/* .form{
+  width: 70%;
   margin: 100px auto 0;
   border: 2px dotted #282c54;
   border-radius: 10px;
   padding: 40px;
   
+} */
+.form--login input {
+  width: 200px;
 }
 a {
   color: #000;
@@ -38,6 +44,9 @@ a {
   font-size: 16.4px;
   text-decoration: none;
 }
+
+
+
 h1,
 h2,
 h3,
