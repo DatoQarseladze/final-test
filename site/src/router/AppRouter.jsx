@@ -43,8 +43,8 @@ const headphones = () => (
 const headphone = () => (
   <div>
     <Header />
-    <Categories />
-    {/* <Headphone item={Products.HEADPHONES} /> */}
+    {/* <Categories /> */}
+    <Headphone items = {Products.HEADPHONES} />
   </div>
 );
 
@@ -68,6 +68,7 @@ const AppRouter = () => (
         <Route path="/" render={index} exact />
         <Route path="/categories" render={explore} />
         <Route path="/headphones" render={headphones} />
+        <Route path="/headphone/:id" render= {headphone}/>
         {/* <Route path="/headphone/:headphoneID" render={headphone} /> */}
         {/* <Route path="/login" component={login} /> */}
         {/* <Route path="/search" component={admin} /> */}
