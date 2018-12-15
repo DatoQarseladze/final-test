@@ -25,7 +25,7 @@ class Headphones extends Component {
           {this.props.items.map(item => {
             return (
               <li key={item.id} onClick={e => this.handleClick(item.id)}>
-                <Link to={`/headphone/${item.brand}-${item.model}`}>
+                <Link to={`/headphone/${item.id}`}>
                   <div className="headphones--item">
                     <img src={item.url} alt={`item.name`} />
                     <div className="item-desc">
@@ -39,10 +39,7 @@ class Headphones extends Component {
               </li>
             );
           })}
-          <Route
-            path="/headphone/:headphoneId"
-            render={() => <Headphone item={Products.HEADPHONES} id={id} />}
-          />
+         
           {/* <AppRouter id={id} /> */}
         </ul>
       </div>
