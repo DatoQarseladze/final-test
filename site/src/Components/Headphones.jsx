@@ -41,14 +41,6 @@ class Headphones extends Component {
               </li>
             );
           })}
-          {/* <Route
-            path="/headphones/:headphoneId"
-            render={() => <Headphone item={Products.HEADPHONES} />}
-          /> */}
-          {/* <Route
-            path="/headphone/:headphoneId"
-            render={() => <AppRouter headphoneId={id} />}
-          /> */}
         </ul>
       </div>
       // {/* </Router> */}

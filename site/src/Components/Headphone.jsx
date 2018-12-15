@@ -3,16 +3,16 @@ import React from "react";
 const Headphone = props => {
   let pth;
   let id;
-  pth = window.location.pathname; //gaxsnili fanjris urls igebs
-  id = pth.substr(pth.lastIndexOf("/") + 1); //ids amogebas vcdilob anu bolo ricxvis
+  pth = window.location.pathname;  //gaxsnili fanjris urls igebs
+  id = pth.substr(pth.lastIndexOf('/')+1); //ids amogebas vcdilob anu bolo ricxvis
   return (
     <div>
       {console.log(props.items)}
-      <h1>{props.items[id].model}</h1> //props.items ari ukve sheni masivi sadac
-      yursasmenebia da ubere exla :D
+      <h1>{props.items[id].model}</h1> //props.items ari ukve sheni masivi sadac yursasmenebia da ubere exla :D 
     </div>
   );
 };
+
 
 export default Headphone;
 

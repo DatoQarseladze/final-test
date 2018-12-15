@@ -44,7 +44,7 @@ const headphone = () => (
   <div>
     <Header />
     {/* <Categories /> */}
-    <Headphone items={Products.HEADPHONES} />
+    <Headphone items = {Products.HEADPHONES} />
   </div>
 );
 
@@ -68,7 +68,7 @@ const AppRouter = () => (
         <Route path="/" render={index} exact />
         <Route path="/categories" render={explore} />
         <Route path="/headphones" render={headphones} />
-        <Route path="/headphone/:id" render={headphone} />
+        <Route path="/headphone/:id" render={headphone}/>
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
       </Switch>
