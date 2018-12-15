@@ -36,9 +36,9 @@ h6 {
   display: flex;
   justify-content: space-around;
 }
-.header img {
-  height: 100%;
-  padding-top: 18px;
+.header__logo {
+  /* height: 100%; */
+  padding-top: 15px;
 }
 .menu {
   display: flex;
@@ -48,9 +48,9 @@ h6 {
   width: 30%;
 }
 
-.menuItem:hover {
-  text-decoration: underline;
-  color: grey;
+.menu__item a:hover {
+  /* text-decoration: underline; */
+  color: #f55e00;
 }
 
 .nav {

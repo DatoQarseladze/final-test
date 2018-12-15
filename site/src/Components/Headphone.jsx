@@ -1,13 +1,15 @@
 import React from "react";
 
 const Headphone = props => {
-  alert("wohoo");
-  let item = props.item.find(item => item.id === props.id);
+  let pth;
+  let id;
+  pth = window.location.pathname; //gaxsnili fanjris urls igebs
+  id = pth.substr(pth.lastIndexOf("/") + 1); //ids amogebas vcdilob anu bolo ricxvis
   return (
     <div>
-      {console.log(props, "headphone props")}
-      {console.log(item, "headphone item")}
-      <p>brand: {item.brand}</p>
+      {console.log(props.items)}
+      <h1>{props.items[id].model}</h1> //props.items ari ukve sheni masivi sadac
+      yursasmenebia da ubere exla :D
     </div>
   );
 };
