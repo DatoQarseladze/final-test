@@ -7,8 +7,8 @@ class Header extends React.Component {
     return (
       <div className="header_wrapper">
         <nav className="header" role="banner">
-          <Link to="/">
-            <img src={logo} alt="header logo" className="header__logo" />
+          <Link to="/" className="header__logo">
+            <img src={logo} alt="header logo" />
           </Link>
 
           <div className="menu">

@@ -34,7 +34,6 @@ h6 {
   justify-content: space-around;
 }
 .header__logo {
-  /* height: 100%; */
   padding-top: 15px;
 }
 .menu {
@@ -231,10 +230,86 @@ h6 {
   padding: 2px;
 }
 
-.footer {
+.categories {
   display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.categories {
+  list-style-type: none;
+  text-align: center;
+}
+.categories--item {
+  width: 23.5%;
+  margin-bottom: 70px;
+  margin-right: 20px;
+}
+.categories--item img {
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  border: 1px solid #000;
+}
+.categories--item > * {
+  text-decoration: none;
+}
+.categories--title {
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.8px;
+}
+.headphones--item img {
+  width: 200px;
+  height: 210px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #000;
+}
+.item-desc {
+  min-height: 100px;
+}
+.btn__addto--cart {
+  padding: 10px;
+  color: white;
+  background-color: black;
+  width: 70%;
+  /* padding-top: 1rem;
+  padding-bottom: 1rem; */
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.btn__addto--cart:hover {
+  background-color: #ef5501;
+}
+.category_heading {
+  background-image: url(https://cdn11.bigcommerce.com/s-r69yc54oxa/images/stencil/1280x1280/p/category-back2__61264.original.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  line-height: 200px;
+  float: left;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
+.clicked__item {
+  display: grid;
+}
+.clicked__item--img {
+  /* width: 250px;
+  height: 350px; */
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-column-end: 3;
+  border: 1px solid black;
+  padding: 50px;
+}
+.footer__social {
+  display: flex;
+}
 .map {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/img/footer1.jpg");
@@ -339,80 +414,46 @@ h6 {
   background: linear-gradient(rgba(49, 5, 172, 0.5), rgba(49, 5, 172, 0.5)),
     url("/img/footer5.jpg");
 }
-.categories {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-.categories {
-  list-style-type: none;
-  text-align: center;
-}
-.categories--item {
-  width: 23.5%;
-  margin-bottom: 70px;
-  margin-right: 20px;
-}
-.categories--item img {
-  width: 250px;
-  height: 250px;
-  padding: 20px;
-  border: 1px solid #000;
-}
-.categories--item > * {
-  text-decoration: none;
-}
-.categories--title {
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 0.8px;
-}
-.headphones--item img {
-  width: 200px;
-  height: 210px;
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #000;
-}
-.item-desc {
-  min-height: 100px;
-}
-.btn__addto--cart {
-  padding: 10px;
+.footer__bottom {
+  background: #231f20;
   color: white;
-  background-color: black;
-  width: 70%;
-  /* padding-top: 1rem;
-  padding-bottom: 1rem; */
-  text-transform: uppercase;
-  font-size: 13px;
 }
-.btn__addto--cart:hover {
-  background-color: #ef5501;
+.footer__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
-.category_heading {
-  background-image: url(https://cdn11.bigcommerce.com/s-r69yc54oxa/images/stencil/1280x1280/p/category-back2__61264.original.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 200px;
-  line-height: 200px;
-  float: left;
-  color: #fff;
-  margin-bottom: 20px;
-  text-align: center;
+.columns {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.clicked__item {
-  display: grid;
+.column1,
+.column2,
+.column3 {
+  width: 300px;
+  height: 400px;
+  text-align: left;
+  position: relative;
+  top: 15%;
+  left: 5%;
 }
-.clicked__item--img {
-  /* width: 250px;
-  height: 350px; */
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-column-end: 3;
-  border: 1px solid black;
-  padding: 50px;
+
+.column4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  width: 200px;
+  max-height: 30px;
+  margin-left: calc(50%);
+  margin-bottom: calc(50%);
+}
+
+.column4 i {
+  background: #999999;
+  border-radius: 50%;
+  color: black;
+  font-size: 18px;
+  padding: 5px;
 }
