@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Categories = props => {
+export const Categories = () => {
   return (
-    // <Router>
     <div className="categories_wrapper">
       <ul className="categories">
         <li className="categories--item">
@@ -43,11 +42,6 @@ export const Categories = props => {
           </Link>
         </li>
       </ul>
-      {/* <Route
-        path="/headphones"
-        render={() => <Headphones items={Products.HEADPHONES} />}
-      />
-      <Route path="/phones" render={() => <Phones items={Products.PHONES} />} /> */}
     </div>
   );
 };

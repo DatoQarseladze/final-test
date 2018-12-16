@@ -11,7 +11,7 @@ import Slider from "../Components/Slider";
 import Video from "../Components/Video";
 import Reviews from "../Components/Reviews";
 import Footer from "../Components/Footer";
-import Products from "../DB/products.json";
+import Products from "../db/products.json";
 import Headphones from "../Components/Headphones";
 import Headphone from "../Components/Headphone";
 import { LinkToRegistration } from "../Components/LinkToRegistration";

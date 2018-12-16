@@ -3,8 +3,8 @@ import React from "react";
 const Headphone = props => {
   let pth;
   let id;
-  pth = window.location.pathname; //gaxsnili fanjris urls igebs
-  id = pth.substr(pth.lastIndexOf("/") + 1); //ids amogebas vcdilob anu bolo ricxvis
+  pth = window.location.pathname;
+  id = pth.substr(pth.lastIndexOf("/") + 1);
   let item = props.items[id];
   return (
     <form>

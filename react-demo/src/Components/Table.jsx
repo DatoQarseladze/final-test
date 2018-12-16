@@ -3,7 +3,7 @@ import ShowUsers from "./ShowUsers";
 import TableHeader from "./TableHeader";
 import SearchInput from "./SearchInput";
 import { Link } from "react-router-dom";
-import UserData from "../DB/users.json";
+import UserData from "../db/users.json";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
