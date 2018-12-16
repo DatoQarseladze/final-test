@@ -5,13 +5,13 @@ let id;
 class Headphones extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: props.items };
+    // this.state = { data: props.items };
 
-    this.handleClick.bind(this);
+    // this.handleClick.bind(this);
   }
-  handleClick(e) {
-    id = e;
-  }
+  // handleClick(e) {
+  //   id = e;
+  // }
   render() {
     return (
       <div>
@@ -19,7 +19,10 @@ class Headphones extends Component {
         <ul className="categories headphones">
           {this.props.items.map(item => {
             return (
-              <li key={item.id} onClick={e => this.handleClick(item.id)}>
+              <li
+                key={item.id}
+                // onClick={e => this.handleClick(item.id)}
+              >
                 <Link to={`/headphone/${item.id}`}>
                   <div className="headphones--item">
                     <img src={item.url} alt={`item.name`} />
