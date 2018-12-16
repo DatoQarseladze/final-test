@@ -14,11 +14,12 @@ import Footer from "../Components/Footer";
 import Products from "../DB/products.json";
 import Headphones from "../Components/Headphones";
 import Headphone from "../Components/Headphone";
+import { LinkToRegistration } from "../Components/LinkToRegistration";
 
 const index = () => (
   <div className="App">
     <Header />
-    <Login />
+    {/* <Login /> */}
     <Chat />
     <Slider />
     <Video />
@@ -44,14 +45,19 @@ const headphone = () => (
   <div>
     <Header />
     {/* <Categories /> */}
-    <Headphone items = {Products.HEADPHONES} />
+    <Headphone items={Products.HEADPHONES} />
   </div>
 );
 
 const login = () => (
   <div>
     <Header />
-    <Login />
+    <hr />
+    <h1 className="login--title">Sign in</h1>
+    <div className="login--page">
+      <Login />
+      <LinkToRegistration />
+    </div>
   </div>
 );
 
@@ -68,7 +74,7 @@ const AppRouter = () => (
         <Route path="/" render={index} exact />
         <Route path="/categories" render={explore} />
         <Route path="/headphones" render={headphones} />
-        <Route path="/headphone/:id" render={headphone}/>
+        <Route path="/headphone/:id" render={headphone} />
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
       </Switch>
