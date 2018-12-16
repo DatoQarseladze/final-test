@@ -12,7 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-ul > li{
+ul > li {
   list-style-type: none;
 }
 
@@ -36,30 +36,26 @@ ul > li{
   color: #61dafb;
 }
 
-
-
-.form{
+.form {
   width: 50%;
   border-radius: 10px;
   padding: 40px;
-  
 }
-.form--login input{
-   width: 500px;
+.form--login input {
+  width: 500px;
 }
 
-.form--registration{
+.form--registration {
   display: grid;
-  grid-template-columns: repeat(2 , 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
-.form--registration input{
+.form--registration input {
   width: 400px;
-
 }
-.input--registration{
+.input--registration {
   margin-left: 150px;
 }
-.registration--btn{
+.registration--btn {
   margin-left: 100%;
 }
 a {
@@ -83,32 +79,30 @@ h6 {
   margin: 1.5rem 30px;
 }
 
-
-.input--group{
+.input--group {
   padding: 5px;
   width: 400px;
   text-align: center;
 }
-.login--title{
+.login--title {
   text-align: center;
 }
-.registration--container{
+.registration--container {
   margin: 40px 0 0 40px;
 }
 
-.registration--title{
+.registration--title {
   font-size: 20px;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
-
-.registration--link{
+.registration--link {
   width: 500px;
   height: 350px;
   background-color: #f2f2f2;
 }
-.input--group a{
+.input--group a {
   margin-left: 5px;
   width: auto;
 
@@ -119,10 +113,10 @@ h6 {
 
 .form--signup,
 .form--input,
-.btn--login{
+.btn--login {
   padding: 7px;
 }
-.btn--login{
+.btn--login {
   border: none;
   outline: none;
   padding-left: 15px;
@@ -131,11 +125,10 @@ h6 {
   background-color: #282c34;
   box-shadow: 0 0 3px 1px #282c34;
   color: #fff;
-  font-weight: 900
-
+  font-weight: 900;
 }
 
-.table th{
+.table th {
   max-width: 200px;
   text-align: center;
 }
@@ -166,11 +159,8 @@ h6 {
   width: 30%;
 }
 
-
-
-.menuItem > a:hover{
+.menuItem > a:hover {
   color: orangered;
-
 }
 
 .nav {
@@ -187,16 +177,13 @@ h6 {
 
 .nav i:hover {
   /* padding-top: 30px; */
-  color: orangered
-
+  color: orangered;
 }
-.login--page{
+.login--page {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 3rem;
-  
 }
-
 
 @keyframes App-logo-spin {
   from {
@@ -206,5 +193,3 @@ h6 {
     transform: rotate(360deg);
   }
 }
-
-

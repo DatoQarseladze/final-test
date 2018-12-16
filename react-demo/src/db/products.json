@@ -1,0 +1,58 @@
+{
+  "HEADPHONES": [
+    {
+      "id": 0,
+      "brand": "Apple",
+      "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5577/5577872_rd.jpg;maxHeight=640;maxWidth=550",
+      "model": "AirPods",
+      "price": "$159.99",
+      "desc": "Introducing wireless AirPods. Just take them out and they're ready to use with all your Apple devices¹. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Simplicity and technology, together like never before. The result is completely magical."
+    },
+    {
+      "id": 1,
+      "brand": "Apple",
+      "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5577/5577816_sd.jpg;maxHeight=640;maxWidth=550",
+      "model": "EarPods",
+      "price": "$29.99",
+      "desc": "Unlike traditional, circular earbuds, the design of the EarPods is defined by the geometry of the ear. Which makes them more comfortable for more people than any other earbud-style headphones. The speakers inside the EarPods have been engineered to maximize sound output and minimize sound loss, which means you get high-quality audio. The EarPods with Lightning Connector also include a built-in remote that lets you adjust the volume, control the playback of music and video, and answer or end calls with a pinch of the cord."
+    },
+    {
+      "id": 2,
+      "brand": "Sony",
+      "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6196/6196203cv12d.jpg;maxHeight=640;maxWidth=550",
+      "model": "WH-CH700N",
+      "price": "$99.99",
+      "desc": "Add music to your day with these Sony wireless headphones. Their noise canceling technology uses artificial intelligence to adapt to your environment and reduce background sounds for enjoyable listening. The Quick Charging battery on these over-ear Sony wireless headphones provides up to 35 hours of playback for convenience. "
+    }
+  ],
+  "PHONES": [
+    {
+      "id": 3,
+      "brand": "Apple",
+      "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6009/6009643_sd.jpg;maxHeight=640;maxWidth=550",
+      "model": "iPhone XS",
+      "price": "$999.99",
+      "desc": "iPhone XS features a 5.8-inch Super Retina display with custom-built OLED panels for an HDR display that provides the industry’s best color accuracy, true blacks, and remarkable brightness.¹ Advanced Face ID lets you securely unlock your iPhone, log in to apps, and pay with just a glance. The A12 Bionic chip with next-generation Neural Engine uses real-time machine learning to transform the way you experience photos, gaming, augmented reality, and more. A breakthrough 12MP dual-camera system takes your portraits to the next level with Portrait mode, Portrait Lighting, enhanced bokeh, and all-new Depth Control. Water resistance.² And iOS 12—the most advanced mobile operating system—with powerful new tools that make iPhone more personal than ever."
+    }
+  ],
+  "LAPTOPS": [
+    {
+      "id": 4,
+      "brand": "Apple",
+      "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5721/5721740_sd.jpg;maxHeight=640;maxWidth=550",
+      "model": "Macbook Pro 13ich Display",
+      "price": "$1500",
+      "desc": "The new MacBook Pro is razor-thin, featherlight, and now even faster and more powerful than before. It has the brightest, most colorful Mac notebook display. And it features up to 10 hours of battery life.* It’s a notebook built for the work you do every day. Ready to go anywhere a great idea takes you."
+    }
+  ],
+  "CAMERAS": [
+    {
+      "id": 5,
+      "brand": "Nikon",
+      "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5581/5581129_sd.jpg;maxHeight=200;maxWidth=300",
+      "model": "D5300",
+      "price": "$500",
+      "desc": "Take and share photos instantly with this Wi-Fi-enabled Nikon DSLR camera. It has a 24.2-megapixel CMOS image sensor in DX format, expandable ISO capability up to 25,600 and full 1080p HD video capability. This Nikon DSLR camera is capable of up to 1/4000 shutter speed and works best with Nikon AF-P and AF-I-CPU lenses."
+    }
+  ]
+}
