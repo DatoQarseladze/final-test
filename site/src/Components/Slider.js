@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import chat from "./image/chat.jpg";
-// import Chat from './Chat';
+// import chat from "./image/chat.jpg";
+// import Chat from "./Chat";
 
 export default class Slider extends Component {
   constructor(props) {
@@ -43,7 +43,6 @@ export default class Slider extends Component {
   render() {
     return (
       <div className="slider-parent">
-
         <div className="slider">
           <div
             className="slider-wrapper"

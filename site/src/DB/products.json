@@ -1,6 +1,7 @@
 {
   "HEADPHONES": [
     {
+      "id": 0,
       "brand": "Apple",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5577/5577872_rd.jpg;maxHeight=640;maxWidth=550",
       "model": "AirPods",
@@ -8,6 +9,7 @@
       "desc": "Introducing wireless AirPods. Just take them out and they're ready to use with all your Apple devices¹. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Simplicity and technology, together like never before. The result is completely magical."
     },
     {
+      "id": 1,
       "brand": "Apple",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5577/5577816_sd.jpg;maxHeight=640;maxWidth=550",
       "model": "EarPods",
@@ -15,6 +17,7 @@
       "desc": "Unlike traditional, circular earbuds, the design of the EarPods is defined by the geometry of the ear. Which makes them more comfortable for more people than any other earbud-style headphones. The speakers inside the EarPods have been engineered to maximize sound output and minimize sound loss, which means you get high-quality audio. The EarPods with Lightning Connector also include a built-in remote that lets you adjust the volume, control the playback of music and video, and answer or end calls with a pinch of the cord."
     },
     {
+      "id": 2,
       "brand": "Sony",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6196/6196203cv12d.jpg;maxHeight=640;maxWidth=550",
       "model": "WH-CH700N",
@@ -24,6 +27,7 @@
   ],
   "PHONES": [
     {
+      "id": 3,
       "brand": "Apple",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6009/6009643_sd.jpg;maxHeight=640;maxWidth=550",
       "model": "iPhone XS",
@@ -33,6 +37,7 @@
   ],
   "LAPTOPS": [
     {
+      "id": 4,
       "brand": "Apple",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5721/5721740_sd.jpg;maxHeight=640;maxWidth=550",
       "model": "Macbook Pro 13ich Display",
@@ -42,6 +47,7 @@
   ],
   "CAMERAS": [
     {
+      "id": 5,
       "brand": "Nikon",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5581/5581129_sd.jpg;maxHeight=200;maxWidth=300",
       "model": "D5300",
