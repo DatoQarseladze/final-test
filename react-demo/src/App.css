@@ -23,9 +23,6 @@ h6 {
   font-weight: bolder;
   letter-spacing: 1.5px;
 }
-.App {
-  text-align: center;
-}
 .header_wrapper {
   /* display: flex; */
   height: 100px;
@@ -67,7 +64,32 @@ h6 {
 .nav i:hover {
   color: grey;
 }
+.input--group {
+  padding: 5px;
+  text-align: center;
+}
 
+.form--signup,
+.form--input,
+.btn--login {
+  padding: 7px;
+}
+.btn--login {
+  border: none;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  background-color: #282c34;
+  box-shadow: 0 0 3px 1px #282c34;
+  color: #fff;
+  font-weight: 900;
+}
+
+.table th {
+  max-width: 200px;
+  text-align: center;
+}
 .slider {
   position: relative;
   width: 100%;
@@ -379,4 +401,18 @@ h6 {
   color: #fff;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.clicked__item {
+  display: grid;
+}
+.clicked__item--img {
+  /* width: 250px;
+  height: 350px; */
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-column-end: 3;
+  border: 1px solid black;
+  padding: 50px;
 }

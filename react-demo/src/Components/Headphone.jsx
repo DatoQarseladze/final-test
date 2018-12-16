@@ -3,16 +3,21 @@ import React from "react";
 const Headphone = props => {
   let pth;
   let id;
-  pth = window.location.pathname;  //gaxsnili fanjris urls igebs
-  id = pth.substr(pth.lastIndexOf('/')+1); //ids amogebas vcdilob anu bolo ricxvis
+  pth = window.location.pathname; //gaxsnili fanjris urls igebs
+  id = pth.substr(pth.lastIndexOf("/") + 1); //ids amogebas vcdilob anu bolo ricxvis
+  let item = props.items[id];
   return (
-    <div>
-      {console.log(props.items)}
-      <h1>{props.items[id].model}</h1> //props.items ari ukve sheni masivi sadac yursasmenebia da ubere exla :D 
-    </div>
+    <form>
+      <div className="clicked__item">
+        <img src={item.url} className="clicked__item--img" />
+        <h1 className="clicked__item--brand">{item.brand}</h1>
+        <h2 className="clicked__item--model">{item.model}</h2>
+        <span className="clicked__item--price">{item.price}</span>
+        <button className="clicked__item--addto--cart">add to cart</button>
+      </div>
+    </form>
   );
 };
-
 
 export default Headphone;
 
