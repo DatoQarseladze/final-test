@@ -57,6 +57,7 @@ export default class Table extends Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ e })
+     
     })
       .then(res => res.json())
       .then(people => {
