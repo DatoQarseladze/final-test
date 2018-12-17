@@ -1,8 +1,6 @@
 import ItemTemplate from "../router/ItemTemplate";
 import React, { Component } from "react";
 
-export const Headphone = props => {
+export const Phone = props => {
   return <ItemTemplate items={props} />;
 };
-
-// export default Headphone;

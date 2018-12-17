@@ -1,49 +1,49 @@
 import React from "react";
-import logo from "./image/logo.jpg";
 import { Link } from "react-router-dom";
+import { Categories } from "./Categories";
 
-class Header extends React.Component {
-  render() {
-    return (
-      <div className="header_wrapper">
-        <nav className="header" role="banner">
-          <Link to="/" className="header__logo">
-            <img src={logo} alt="header logo" />
-          </Link>
+export const Header = () => {
+  return (
+    <div className="header__wrapper">
+      <nav className="header" role="banner">
+        <Link to="/" className="header__logo">
+          <img
+            src={process.env.PUBLIC_URL + "/img/logo.jpg"}
+            alt="header logo"
+          />
+        </Link>
 
-          <div className="menu">
-            <div className="menu__item">
-              <Link to="/categories">EXPLORE</Link>
-            </div>
-            <div className="menu__item">
-              <Link to="support">SUPPORT</Link>
-            </div>
-            <div className="menu__item">
-              <Link to="company">COMPANY</Link>
-            </div>
-          </div>
+        <ul className="menu">
+          <li className="menu__item dropdown">
+            <Link to="/categories">EXPLORE</Link>
+            {/* <Categories className="dropdown-content" /> */}
+          </li>
+          <li className="menu__item">
+            <Link to="support">SUPPORT</Link>
+          </li>
+          <li className="menu__item">
+            <Link to="company">COMPANY</Link>
+          </li>
+        </ul>
 
-          <div className="nav">
-            <li>
-              <Link to="/">
-                <i className="fa fa-search" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/login">
-                <i className="fa fa-user" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/search">
-                <i className="fa fa-shopping-cart" />
-              </Link>
-            </li>
-          </div>
-        </nav>
-      </div>
-    );
-  }
-}
-
-export default Header;
+        <ul className="nav">
+          <li>
+            <Link to="/">
+              <i className="fa fa-search" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/login">
+              <i className="fa fa-user" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/search">
+              <i className="fa fa-shopping-cart" />
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
