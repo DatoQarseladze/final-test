@@ -4,7 +4,7 @@ import { ProtectedRoute } from "../routes/ProtectedRoute";
 import SignUp from "../Components/SignUp";
 import Login from "./../Components/Login";
 import Table from "./../Components/Table";
-import { Header } from "../Components/Header";
+import Header from "../Components/Header";
 import { Categories } from "../Components/Categories";
 import { LinkToRegistration } from "../Components/LinkToRegistration";
 import Chat from "../Components/Chat";
@@ -109,13 +109,13 @@ const login = () => (
   </div>
 );
 
-const signup = () =>(
+const signup = () => (
   <div>
     <Header />
-    <hr/>
+    <hr />
     <SignUp />
   </div>
-)
+);
 
 const admin = () => (
   <div className="App">
@@ -141,7 +141,6 @@ const AppRouter = () => (
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
-
       </Switch>
     </div>
   </BrowserRouter>

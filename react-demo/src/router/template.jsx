@@ -25,25 +25,32 @@ class Template extends Component {
   }
   render() {
     return (
-      <ul className="items-wraper">
-        {this.state.data.map(item => {
-          return (
-            <li key={item.id}>
-              <Link to={`/${this.props.items.linkTo}/${item.id}`}>
-                <div className="item">
-                  <img src={item.url} alt={`item.name`} className="item--img" />
-                  <div className="item--spec">
-                    <h1 className="item--brand">{item.brand}</h1>
-                    <h3 className="item--name">{item.model}</h3>
-                    <p className="item--price">{item.price}</p>
+      <div className="items__container">
+        <h1>{this.props.items.header}</h1>
+        <ul className="items__wrapper">
+          {this.state.data.map(item => {
+            return (
+              <li key={item.id} className="item">
+                <Link to={`/${this.props.items.linkTo}/${item.id}`}>
+                  <div className="item--div">
+                    <img
+                      src={item.url}
+                      alt={`item.name`}
+                      className="item--img"
+                    />
+                    <div className="item--spec">
+                      <h2 className="item--brand">{item.brand}</h2>
+                      <h3 className="item--name">{item.model}</h3>
+                      <p className="item--price">{item.price}</p>
+                    </div>
+                    <button className="item--btn">Add To Cart</button>
                   </div>
-                  <button className="btn__addto--cart">Add To Cart</button>
-                </div>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     );
   }
 }

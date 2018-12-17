@@ -1,27 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export class Categories extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = { isOpen: false };
-  }
-  // handleOpen = () => {
-  //   this.setState({ isOpen: true });
-  // };
-  // handleClose = () => {
-  //   this.setState({ isOpen: false });
-  // };
+export class Categories extends Component {
   render() {
     return (
-      <div
-        className="categories_wrapper"
-        className={this.props.className}
-        // onMouseEnter={this.handleOpen}
-        // onMouseLeave={this.handleClose}
-        // open={this.state.isOpen}
-      >
-        <ul className="categories">
+      <div className={`categories__wrapper ${this.props.className}`}>
+        <ul className={`categories`}>
           <li className="categories--item">
             <Link to="/headphones">
               <img

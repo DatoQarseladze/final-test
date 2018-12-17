@@ -30,11 +30,14 @@ h6 {
 .header__wrapper {
   height: 100px;
   line-height: 100px;
+  margin-bottom: 10px;
 }
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 40px;
 }
 .header__logo {
   height: 80px;
@@ -54,25 +57,32 @@ h6 {
   /* text-decoration: underline; */
   color: #f55e00;
 }
-.dropdown {
+
+/* ჰედერის ჰოვერზე რაც ჩანს */
+
+/* .dropdown {
   position: relative;
   display: inline-block;
-}
-/* .dropdown-content {
-  display: none;
+} */
+.dropdown__content {
   position: absolute;
-  right: -850%;
+  top: 110px;
+  left: 0px;
   background-color: white;
   z-index: 1;
 }
-.dropdown-content a {
+.dropdown__content ul {
+  position: relative;
+  height: 100%;
+  margin-top: 50px;
+}
+.dropdown__content a {
+  height: 100px;
   color: black;
   text-decoration: none;
-  display: block;
 }
-.dropdown:hover .dropdown-content {
-  display: block;
-} */
+
+/* ///////////// */
 
 .nav {
   display: flex;
@@ -254,25 +264,28 @@ h6 {
   color: gold;
   padding: 2px;
 }
-
-.categories {
-  display: flex;
-  justify-content: space-around;
+.categories__wrapper {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .categories {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
   list-style-type: none;
   text-align: center;
+  margin: 50px 0px;
 }
 .categories--item {
   width: 23.5%;
-  margin-bottom: 70px;
-  margin-right: 20px;
+  /* margin-bottom: 70px; */
+  /* margin-right: 20px; */
 }
 .categories--item img {
   width: 250px;
   height: 250px;
-  padding: 20px;
+  /* padding: 20px; */
   border: 1px solid #000;
 }
 .categories--item > * {
@@ -283,30 +296,13 @@ h6 {
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.8px;
 }
-.item--img img {
-  width: 200px;
-  height: 210px;
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #000;
+
+/* items */
+.items__container {
+  display: flex;
+  flex-direction: column;
 }
-.item--spec {
-  min-height: 100px;
-}
-.btn__addto--cart {
-  padding: 10px;
-  color: white;
-  background-color: black;
-  width: 70%;
-  /* padding-top: 1rem;
-  padding-bottom: 1rem; */
-  text-transform: uppercase;
-  font-size: 13px;
-}
-.btn__addto--cart:hover {
-  background-color: #ef5501;
-}
-.category_heading {
+.items__container h1 {
   background-image: url(https://cdn11.bigcommerce.com/s-r69yc54oxa/images/stencil/1280x1280/p/category-back2__61264.original.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -317,7 +313,49 @@ h6 {
   color: #fff;
   margin-bottom: 20px;
   text-align: center;
+  text-transform: uppercase;
 }
+.items__wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.item {
+  display: flex;
+}
+.item--div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+.item--img {
+  width: 220px;
+  height: 250px;
+  padding: 20px;
+  border: 1px solid #000;
+}
+.item--spec {
+  min-height: 100px;
+}
+.item--brand {
+  font-size: 2rem;
+}
+.item--name {
+  font-size: 1.5rem;
+}
+.item--btn {
+  padding: 10px;
+  color: white;
+  background-color: black;
+  /* width: 70%; */
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.item--btn:hover {
+  background-color: #ef5501;
+}
+/* items */
 
 .clicked__item {
   display: grid;
