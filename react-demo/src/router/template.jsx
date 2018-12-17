@@ -1,32 +1,51 @@
-import React from "react";
+import axios from "axios";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-let id;
-const handleClick = e => {
-  id = e;
-};
-const template = props => (
-  <div>
-    <h1 className="category_heading">{props.header}</h1>
-    <ul className={`categories ${props.header}`}>
-      {props.items.map(item => {
-        return (
-          <li key={item.id} onClick={e => handleClick(item.id)}>
-            <Link to={`/${props.link}/${item.id}`}>
-              <div className="headphones--item">
-                <img src={item.url} alt={`item.name`} />
-                <div className="item-desc">
-                  <h1 className="item--brand">{item.brand}</h1>
-                  <h3 className="item--name">{item.model}</h3>
-                  <p className="item--price">{item.price}</p>
+const url = "http://localhost:5000/";
+
+class Template extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
+  componentDidMount() {
+    axios
+      .get(`${url}${this.props.items.header}`)
+      .then(res => {
+        this.setState(() => {
+          return {
+            data: res.data
+          };
+        });
+      })
+      .catch(err => console.log(err));
+  }
+  render() {
+    return (
+      <ul className="items-wraper">
+        {this.state.data.map(item => {
+          return (
+            <li key={item.id}>
+              <Link to={`/${this.props.items.linkTo}/${item.id}`}>
+                <div className="item">
+                  <img src={item.url} alt={`item.name`} className="item--img" />
+                  <div className="item--spec">
+                    <h1 className="item--brand">{item.brand}</h1>
+                    <h3 className="item--name">{item.model}</h3>
+                    <p className="item--price">{item.price}</p>
+                  </div>
+                  <button className="btn__addto--cart">Add To Cart</button>
                 </div>
-                <button className="btn__addto--cart">Add To Cart</button>
-              </div>
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
-  </div>
-);
-export default template;
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+}
+
+export default Template;

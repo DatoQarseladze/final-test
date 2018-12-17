@@ -12,6 +12,10 @@ a {
   transition: color 0.15s ease;
   font-size: 16.4px;
   text-decoration: none;
+  line-height: inherit;
+}
+img {
+  vertical-align: center;
 }
 h1,
 h2,
@@ -23,18 +27,20 @@ h6 {
   font-weight: bolder;
   letter-spacing: 1.5px;
 }
-.header_wrapper {
-  /* display: flex; */
+.header__wrapper {
   height: 100px;
   line-height: 100px;
-  text-align: center;
 }
 .header {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .header__logo {
-  padding-top: 15px;
+  height: 80px;
+}
+.header__logo img {
+  text-align: center;
 }
 .menu {
   display: flex;
@@ -48,6 +54,25 @@ h6 {
   /* text-decoration: underline; */
   color: #f55e00;
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* .dropdown-content {
+  display: none;
+  position: absolute;
+  right: -850%;
+  background-color: white;
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+} */
 
 .nav {
   display: flex;
@@ -258,14 +283,14 @@ h6 {
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.8px;
 }
-.headphones--item img {
+.item--img img {
   width: 200px;
   height: 210px;
   padding: 20px;
   margin: 20px;
   border: 1px solid #000;
 }
-.item-desc {
+.item--spec {
   min-height: 100px;
 }
 .btn__addto--cart {

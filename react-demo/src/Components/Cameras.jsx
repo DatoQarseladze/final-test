@@ -1,6 +1,6 @@
 import Template from "../router/Template";
 import React, { Component } from "react";
 
-export const Phones = props => {
+export const Cameras = props => {
   return <Template items={props} />;
 };
