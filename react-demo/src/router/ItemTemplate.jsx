@@ -29,7 +29,11 @@ class ItemTemplate extends Component {
     return (
       <form>
         <div className="clicked__item">
-          <img src={this.state.data.url} className="clicked__item--img" />
+          <img
+            src={this.state.data.url}
+            className="clicked__item--img"
+            alt={`${this.state.data.model}`}
+          />
           <h1 className="clicked__item--brand">{this.state.data.brand}</h1>
           <h2 className="clicked__item--model">{this.state.data.model}</h2>
           <span className="clicked__item--desc">{this.state.data.desc}</span>
