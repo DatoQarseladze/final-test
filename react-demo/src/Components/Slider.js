@@ -72,18 +72,18 @@ const Slide = ({ image }) => {
   return <div className="slide" style={styles} />;
 };
 
-const LeftArrow = props => {
-  return (
-    <div className="backArrow arrow" onClick={props.goToPrevSlide}>
-      <i className="fa fa-arrow-left fa-2x" aria-hidden="true" />
-    </div>
-  );
-};
+// const LeftArrow = props => {
+//   return (
+//     <div className="backArrow arrow" onClick={props.goToPrevSlide}>
+//       <i className="fa fa-arrow-left fa-2x" aria-hidden="true" />
+//     </div>
+//   );
+// };
 
-const RightArrow = props => {
-  return (
-    <div className="nextArrow arrow" onClick={props.goToNextSlide}>
-      <i className="fa fa-arrow-right fa-2x" aria-hidden="true" />
-    </div>
-  );
-};
+// const RightArrow = props => {
+//   return (
+//     <div className="nextArrow arrow" onClick={props.goToNextSlide}>
+//       <i className="fa fa-arrow-right fa-2x" aria-hidden="true" />
+//     </div>
+//   );
+// };
