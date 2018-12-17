@@ -44,7 +44,7 @@ app.post("/register", (req, res) => {
   fs.readFile(usersfile, function(err, data) {
     let json = JSON.parse(data);
     json.push(user);
-    console.log(json);
+    // console.log(json);
     fs.writeFile(usersfile, JSON.stringify(json), function(err) {
       if (err) res.redirect(`http://localhost:${PORT}`);
       res.redirect(`http://localhost:${PORT}/`);
@@ -91,12 +91,15 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/delete", (req, res) => {
-  console.log(req.body);
-  const { username } = req.body;
+  let  todeleteusername  = req.body;
   fs.readFile(usersfile, function(err, data) {
     let json = JSON.parse(data);
-    console.log(json);
-    json.splice(json.findIndex(user => user.username === username), 1);
+    function findUser(item) { 
+      return item.username == todeleteusername.e;
+  }
+    let idx = json.findIndex(findUser)
+    console.log(idx)
+    json.splice(idx, 1);
     fs.writeFile(usersfile, JSON.stringify(json), function(err) {
       if (err) res.json(err);
       res.json(json);

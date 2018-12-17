@@ -61,6 +61,14 @@ const login = () => (
   </div>
 );
 
+const signup = () =>(
+  <div>
+    <Header />
+    <hr/>
+    <SignUp />
+  </div>
+)
+
 const admin = () => (
   <div className="App">
     <Table />
@@ -77,6 +85,8 @@ const AppRouter = () => (
         <Route path="/headphone/:id" render={headphone} />
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
+        <Route path="/signup" component={signup} />
+
       </Switch>
     </div>
   </BrowserRouter>
