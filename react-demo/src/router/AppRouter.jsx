@@ -14,7 +14,6 @@ import Reviews from "../Components/Reviews";
 import Footer from "../Components/Footer";
 import Products from "../db/products.json";
 import Users from '../db/users.json'
-import { LinkToRegistration } from "../Components/LinkToRegistration";
 import ShowUsers from '../Components/ShowUsers'
 import UserDetails from './../Components/UserDetails';
 import { Headphones } from "../Components/Headphones";

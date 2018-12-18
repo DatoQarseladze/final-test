@@ -210,7 +210,11 @@ h6 {
 display: flex;
 justify-content: space-between;
 }
-
+.error--message{
+  width: 100%;
+  color: red;
+  font-size: 20px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -5,6 +5,8 @@ const fs = require("fs");
 const app = express();
 const secret = "demo__system";
 const PORT = process.env.PORT || 3000;
+const Joi = require('joi')
+// const {validateBody,schemas}  = require('./helpers/routeHelpers')
 
 app.use(cors("*"));
 app.use(express.urlencoded({ extended: true }));
@@ -42,7 +44,9 @@ function processFile() {
   return ID
 }
 
-app.post("/register", (req, res) => {
+app.post("/register", (req, res,err) => {
+ 
+
   let {
     name,
     lastname,
@@ -52,29 +56,48 @@ app.post("/register", (req, res) => {
     birthdate,
     balance
   } = req.body;
+fs.readFile(usersfile, function(err,data){
+  let json = JSON.parse(data);
+  // console.log(json)
+  function findUsername(user){
+    return user.username === username
+  }
+  if(json.find(findUsername)){
+    console.log('daemtxva');
+    // swal('WARNING', 'JJJ')
+    // break;
+    // res.redirect(`http://localhost:${PORT}`)
+    return;
+    // process.exit(1);
 
-  const user = {
-    id: "" + processFile(),
-    name,
-    lastname,
-    username,
-    password: encrypt(password),
-    email,
-    birthdate,
-    balance,
-    level: 1,
-    boughtProducts: []
-  };
-
-  fs.readFile(usersfile, function(err, data) {
-    let json = JSON.parse(data);
-    json.push(user);
-    // console.log(json);
-    fs.writeFile(usersfile, JSON.stringify(json), function(err) {
-      if (err) res.redirect(`http://localhost:${PORT}`);
-      res.redirect(`http://localhost:${PORT}/`);
+  }
+  else{
+    console.log('ar daemtxva')
+    const user = {
+      id: "" + processFile(),
+      name,
+      lastname,
+      username,
+      password: encrypt(password),
+      email,
+      birthdate,
+      balance,
+      level: 1,
+      boughtProducts: []
+    };
+  
+    fs.readFile(usersfile, function(err, data) {
+      let json = JSON.parse(data);
+      json.push(user);
+      // console.log(json);
+      fs.writeFile(usersfile, JSON.stringify(json), function(err) {
+        if (err) res.redirect(`http://localhost:${PORT}`);
+        res.redirect(`http://localhost:${PORT}/`);
+      });
     });
-  });
+  }
+})
+ 
   // ID++;
 });
 
@@ -87,8 +110,26 @@ const encrypt = data => {
 };
 
 app.post("/login", (req, res) => {
+  // let json = JSON.parse(req.body);
+  // console.log(json);
   let { username, password } = req.body;
+  const schema = {
+    username: Joi.string().min(4).required(),
+    password: Joi.string().min(4).required()
+  }
 
+  
+  const result  = Joi.validate(req.body, schema)
+
+  console.log(result);
+  // console.log(result.error.details)
+  // console.log(result.error.details[0].message);
+
+  if(result.error){
+   return res.status(400).json({message: result.error.details[0].message})
+  }
+  // console.log(username, password);
+console.log(username);
   let foundUser = {
     id: -1,
     level: -1,
@@ -111,8 +152,9 @@ app.post("/login", (req, res) => {
         break;
       }
     }
-    res.json(foundUser);
+    res.send(foundUser);
   });
+  
 });
 
 app.post('/edit', (req,res) =>{
