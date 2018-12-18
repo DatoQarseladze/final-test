@@ -146,6 +146,7 @@ h6 {
   transform: translate(-55%, 20%);
 
 }
+
 .header {
   display: flex;
   width: 100%;
@@ -153,6 +154,11 @@ h6 {
   /* text-align: center; */
   justify-content: space-around;
 }
+
+.user--details  input{
+ width: 3000px
+}
+
 .header img {
   height: 100%;
   width: 250px;

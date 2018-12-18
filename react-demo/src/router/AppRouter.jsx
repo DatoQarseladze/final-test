@@ -12,9 +12,14 @@ import Video from "../Components/Video";
 import Reviews from "../Components/Reviews";
 import Footer from "../Components/Footer";
 import Products from "../db/products.json";
+import Users from '../db/users.json'
 import Headphones from "../Components/Headphones";
 import Headphone from "../Components/Headphone";
 import { LinkToRegistration } from "../Components/LinkToRegistration";
+import ShowUsers from '../Components/ShowUsers'
+import UserDetails from './../Components/UserDetails';
+
+
 
 const index = () => (
   <div className="App">
@@ -69,8 +74,18 @@ const signup = () =>(
   </div>
 )
 
+const editUsers = () =>(
+  <div className="App">
+  <Header />
+  <hr/>
+  <UserDetails users={Users} />
+  </div>
+)
+
 const admin = () => (
   <div className="App">
+    <Header />
+    <hr/>
     <Table />
   </div>
 );
@@ -86,6 +101,7 @@ const AppRouter = () => (
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
+        <Route path='/user/:id' component={editUsers} />
 
       </Switch>
     </div>
