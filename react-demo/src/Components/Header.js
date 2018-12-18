@@ -1,29 +1,58 @@
-import React from "react";
-import logo from "./image/logo.jpg";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Categories } from "./Categories";
 
-class Header extends React.Component {
+export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      isHovered: ""
+    };
+    this.handleOpen = this.handleOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+  handleOpen(event) {
+    event.preventDefault();
+    this.setState({ isOpen: true, isHovered: "dropdown__content" });
+  }
+  handleClose() {
+    this.setState({ isOpen: false, isHovered: "" });
+  }
   render() {
     return (
-      <div className="header_wrapper">
+      <div className="header__wrapper">
         <nav className="header" role="banner">
           <Link to="/" className="header__logo">
-            <img src={logo} alt="header logo" />
+            <img
+              src={process.env.PUBLIC_URL + "/img/logo.jpg"}
+              alt="header logo"
+            />
           </Link>
 
-          <div className="menu">
-            <div className="menu__item">
+          <ul className="menu">
+            <li
+              className="menu__item dropdown"
+              onMouseEnter={this.handleOpen}
+              onMouseLeave={this.handleClose}
+              open={this.state.isOpen}
+            >
               <Link to="/categories">EXPLORE</Link>
-            </div>
-            <div className="menu__item">
-              <Link to="support">SUPPORT</Link>
-            </div>
-            <div className="menu__item">
-              <Link to="company">COMPANY</Link>
-            </div>
-          </div>
+              {this.state.isOpen ? (
+                <Categories className={this.state.isHovered} />
+              ) : null}
+            </li>
 
-          <div className="nav">
+            <li className="menu__item">
+              <Link to="support">SUPPORT</Link>
+            </li>
+
+            <li className="menu__item">
+              <Link to="company">COMPANY</Link>
+            </li>
+          </ul>
+
+          <ul className="nav">
             <li>
               <Link to="/">
                 <i className="fa fa-search" />
@@ -39,11 +68,9 @@ class Header extends React.Component {
                 <i className="fa fa-shopping-cart" />
               </Link>
             </li>
-          </div>
+          </ul>
         </nav>
       </div>
     );
   }
 }
-
-export default Header;
