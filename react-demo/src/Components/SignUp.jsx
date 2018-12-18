@@ -7,10 +7,11 @@ export default class SignUp extends Component {
   return (
     <div>
       <form
-        className='form--registration'
         action='http://localhost:5000/register'
         method='POST'
       >
+        <div className='form--registration'>
+
         <label>
           <input
             className='form--input'
@@ -77,10 +78,13 @@ export default class SignUp extends Component {
             required
           />
         </label>
+        </div>
+        <div className='registration--btn'>
         <button 
-        className='btn form--btn'
-     
+        className='btn form--btn' 
         >Register</button>
+        </div>
+
       </form>
     </div>
   )

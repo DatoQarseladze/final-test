@@ -11,11 +11,36 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("hello");
+  console.log(processFile());
 });
 
-let ID = 0;
 
 const usersfile = "../react-demo/src/db/users.json";
+let ID ;
+
+  fs.readFile(usersfile, function(err,data){
+    if (err){
+      console.log(err);
+    }
+    let json = JSON.parse(data);
+    // console.log(json);
+    let last = json.pop();
+    // console.log(last, 'gamoaq');
+    // console.log(last.id, 'ramdenia idi');
+
+    ID =  "" + (Number(last.id) + 1)  
+    // console.log(ID, 'gamoaq?');
+    // console.log(ID, 'ssa');
+    let id = "" + ID;
+    return ID;
+    processFile();
+  })
+
+
+function processFile() {
+  // console.log(ID, "aqedan");
+  return ID
+}
 
 app.post("/register", (req, res) => {
   let {
@@ -29,7 +54,7 @@ app.post("/register", (req, res) => {
   } = req.body;
 
   const user = {
-    id: "" + ID,
+    id: "" + processFile(),
     name,
     lastname,
     username,
@@ -50,7 +75,7 @@ app.post("/register", (req, res) => {
       res.redirect(`http://localhost:${PORT}/`);
     });
   });
-  ID++;
+  // ID++;
 });
 
 const encrypt = data => {
@@ -98,7 +123,7 @@ app.post("/delete", (req, res) => {
       return item.username == todeleteusername.e;
   }
     let idx = json.findIndex(findUser)
-    console.log(idx)
+    // console.log(idx)
     json.splice(idx, 1);
     fs.writeFile(usersfile, JSON.stringify(json), function(err) {
       if (err) res.json(err);

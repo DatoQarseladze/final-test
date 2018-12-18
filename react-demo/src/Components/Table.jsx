@@ -66,6 +66,13 @@ export default class Table extends Component {
       .catch(err => console.log(err));
   };
 
+
+  onEdit = e => {
+    console.log(e);
+    
+    
+  }
+
   render() {
     const { people, term } = this.state;
     return (
@@ -76,7 +83,7 @@ export default class Table extends Component {
         {/* <button className='btn btn-primary'></button> */}
         <table className="table">
           <TableHeader />
-          <ShowUsers people={people} term={term} onDelete={this.onDelete} />
+          <ShowUsers people={people} term={term} onEdit={this.onEdit} onDelete={this.onDelete} />
         </table>
       </div>
     );
