@@ -46,7 +46,7 @@ const explore = () => (
 const headphones = () => (
   <div className="headphones">
     <Header />
-    <Headphones header={"headphones"} linkTo={"headphone"} />
+    <Headphones />
     <Footer />
   </div>
 );
@@ -60,7 +60,7 @@ const headphone = () => (
 const phones = () => (
   <div>
     <Header />
-    <Phones header={"phones"} linkTo={"phone"} />
+    <Phones />
     <Footer />
   </div>
 );
@@ -75,7 +75,7 @@ const phone = () => (
 const laptops = () => (
   <div>
     <Header />
-    <Laptops header={"laptops"} linkTo={"laptop"} />
+    <Laptops />
     <Footer />
   </div>
 );
@@ -89,7 +89,7 @@ const laptop = () => (
 const cameras = () => (
   <div>
     <Header />
-    <Cameras header={"cameras"} linkTo={"camera"} />
+    <Cameras />
     <Footer />
   </div>
 );
