@@ -128,7 +128,6 @@ app.post("/login", (req, res) => {
   if(result.error){
    return res.status(400).json({message: result.error.details[0].message})
   }
-  // console.log(username, password);
 console.log(username);
   let foundUser = {
     id: -1,
