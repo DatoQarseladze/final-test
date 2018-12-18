@@ -44,6 +44,9 @@ class Login extends Component {
             imageAlt: "Custom image",
             animation: false
           });
+          
+          this.context.router.history.push("/search")  
+
         } else if (result.auth && result.level === 1) {
           console.log("useris shemosvla");
           localStorage.setItem("authorized", JSON.stringify(result));

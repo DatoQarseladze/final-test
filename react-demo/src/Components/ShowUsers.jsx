@@ -24,11 +24,11 @@ export default class ShowUsers extends Component {
             <th>{moment(user.birthdate).format("MMM Do YY")}</th>
             <th>{user.balance}$</th>
             <th>
-              <Link to={`/user/${user.id}`}>
+              {/* <Link to={`/user/${user.id}`}> */}
               <button 
               className="btn btn-primary btn-sm m-2"
               onClick={() => onEdit(user)}>Edit</button>
-              </Link>
+              {/* </Link> */}
             </th>
             <th>
               <button

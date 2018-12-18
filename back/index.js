@@ -115,6 +115,26 @@ app.post("/login", (req, res) => {
   });
 });
 
+app.post('/edit', (req,res) =>{
+  console.log(req.body);
+  let newusername = req.body.newUsername;
+  console.log(newusername);
+  fs.readFile(usersfile, function(err,data){
+    let json = JSON.parse(data);
+    // console.log(json);
+    function findUser(item){
+      return item.id == req.body.id
+    }
+    let idx = json.findIndex(findUser);
+    // console.log(idx, 'index');
+    json[idx].username = newusername 
+    fs.writeFile(usersfile, JSON.stringify(json), function(err){
+      if (err) res.json(err);
+      res.json(json);
+    })
+  })
+})
+
 app.post("/delete", (req, res) => {
   let  todeleteusername  = req.body;
   fs.readFile(usersfile, function(err, data) {
@@ -123,7 +143,6 @@ app.post("/delete", (req, res) => {
       return item.username == todeleteusername.e;
   }
     let idx = json.findIndex(findUser)
-    // console.log(idx)
     json.splice(idx, 1);
     fs.writeFile(usersfile, JSON.stringify(json), function(err) {
       if (err) res.json(err);
