@@ -16,7 +16,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: orange;
+  color: #f55e00;
 }
 img {
   vertical-align: center;
@@ -44,10 +44,11 @@ h6 {
   margin-bottom: 40px;
 }
 .header__logo {
-  height: 80px;
+  height: 100%;
+  width: 20%;
 }
 .header__logo img {
-  text-align: center;
+  width: 100%;
 }
 .menu {
   display: flex;
@@ -58,7 +59,6 @@ h6 {
 }
 
 .menu__item a:hover {
-  /* text-decoration: underline; */
   color: #f55e00;
 }
 
