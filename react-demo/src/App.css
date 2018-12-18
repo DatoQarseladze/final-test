@@ -14,6 +14,10 @@ a {
   text-decoration: none;
   line-height: inherit;
 }
+a:hover {
+  text-decoration: none;
+  color: orange;
+}
 img {
   vertical-align: center;
 }
@@ -60,14 +64,10 @@ h6 {
 
 /* ჰედერის ჰოვერზე რაც ჩანს */
 
-/* .dropdown {
-  position: relative;
-  display: inline-block;
-} */
 .dropdown__content {
   position: absolute;
-  top: 110px;
-  left: 0px;
+  top: 105px;
+  left: 0;
   background-color: white;
   z-index: 1;
 }

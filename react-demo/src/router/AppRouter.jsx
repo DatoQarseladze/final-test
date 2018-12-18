@@ -12,11 +12,9 @@ import Slider from "../Components/Slider";
 import Video from "../Components/Video";
 import Reviews from "../Components/Reviews";
 import Footer from "../Components/Footer";
-import Products from "../db/products.json";
-import Users from '../db/users.json'
-import { LinkToRegistration } from "../Components/LinkToRegistration";
-import ShowUsers from '../Components/ShowUsers'
-import UserDetails from './../Components/UserDetails';
+import Users from "../db/users.json";
+import ShowUsers from "../Components/ShowUsers";
+import UserDetails from "./../Components/UserDetails";
 import { Headphones } from "../Components/Headphones";
 import { Phones } from "../Components/Phones";
 import { Laptops } from "../Components/Laptops";
@@ -122,18 +120,18 @@ const signup = () => (
   </div>
 );
 
-const editUsers = () =>(
+const editUsers = () => (
   <div className="App">
-  <Header />
-  <hr/>
-  <UserDetails users={Users} />
+    <Header />
+    <hr />
+    <UserDetails users={Users} />
   </div>
-)
+);
 
 const admin = () => (
   <div className="App">
     <Header />
-    <hr/>
+    <hr />
     <Table />
     <Footer />
   </div>
@@ -156,7 +154,7 @@ const AppRouter = () => (
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
-        <Route path='/user/:id' component={editUsers} />
+        <Route path="/user/:id" component={editUsers} />
       </Switch>
     </div>
   </BrowserRouter>
