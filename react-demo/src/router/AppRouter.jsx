@@ -6,6 +6,7 @@ import Login from "./../Components/Login";
 import Table from "./../Components/Table";
 import Header from "../Components/Header";
 import { Categories } from "../Components/Categories";
+import { LinkToRegistration } from "../Components/LinkToRegistration";
 import Chat from "../Components/Chat";
 import Slider from "../Components/Slider";
 import Video from "../Components/Video";
@@ -13,18 +14,21 @@ import Reviews from "../Components/Reviews";
 import Footer from "../Components/Footer";
 import Products from "../db/products.json";
 import Users from '../db/users.json'
-import Headphones from "../Components/Headphones";
-import Headphone from "../Components/Headphone";
 import { LinkToRegistration } from "../Components/LinkToRegistration";
 import ShowUsers from '../Components/ShowUsers'
 import UserDetails from './../Components/UserDetails';
-
-
+import { Headphones } from "../Components/Headphones";
+import { Phones } from "../Components/Phones";
+import { Laptops } from "../Components/Laptops";
+import { Cameras } from "../Components/Cameras";
+import { Headphone } from "../Components/Headphone";
+import { Phone } from "../Components/Phone.jsx";
+import { Laptop } from "../Components/Laptop";
+import { Camera } from "../Components/Camera";
 
 const index = () => (
   <div className="App">
     <Header />
-    {/* <Login /> */}
     <Chat />
     <Slider />
     <Video />
@@ -42,15 +46,58 @@ const explore = () => (
 const headphones = () => (
   <div className="headphones">
     <Header />
-    <Categories />
-    <Headphones items={Products.HEADPHONES} />
+    <Headphones header={"headphones"} linkTo={"headphone"} />
+    <Footer />
   </div>
 );
 const headphone = () => (
   <div>
     <Header />
-    {/* <Categories /> */}
-    <Headphone items={Products.HEADPHONES} />
+    <Headphone header={"headphone"} />
+    <Footer />
+  </div>
+);
+const phones = () => (
+  <div>
+    <Header />
+    <Phones header={"phones"} linkTo={"phone"} />
+    <Footer />
+  </div>
+);
+const phone = () => (
+  <div>
+    <Header />
+    <Phone header={"phone"} />
+    <Footer />
+  </div>
+);
+
+const laptops = () => (
+  <div>
+    <Header />
+    <Laptops header={"laptops"} linkTo={"laptop"} />
+    <Footer />
+  </div>
+);
+const laptop = () => (
+  <div>
+    <Header />
+    <Laptop header={"laptop"} />
+    <Footer />
+  </div>
+);
+const cameras = () => (
+  <div>
+    <Header />
+    <Cameras header={"cameras"} linkTo={"camera"} />
+    <Footer />
+  </div>
+);
+const camera = () => (
+  <div>
+    <Header />
+    <Camera header={"camera"} />
+    <Footer />
   </div>
 );
 
@@ -63,16 +110,17 @@ const login = () => (
       <Login />
       <LinkToRegistration />
     </div>
+    <Footer />
   </div>
 );
 
-const signup = () =>(
+const signup = () => (
   <div>
     <Header />
-    <hr/>
+    <hr />
     <SignUp />
   </div>
-)
+);
 
 const editUsers = () =>(
   <div className="App">
@@ -87,6 +135,7 @@ const admin = () => (
     <Header />
     <hr/>
     <Table />
+    <Footer />
   </div>
 );
 
@@ -97,12 +146,17 @@ const AppRouter = () => (
         <Route path="/" render={index} exact />
         <Route path="/categories" render={explore} />
         <Route path="/headphones" render={headphones} />
+        <Route path="/phones" render={phones} />
+        <Route path="/laptops" render={laptops} />
+        <Route path="/cameras" render={cameras} />
         <Route path="/headphone/:id" render={headphone} />
+        <Route path="/phone/:id" render={phone} />
+        <Route path="/laptop/:id" render={laptop} />
+        <Route path="/camera/:id" render={camera} />
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
         <Route path='/user/:id' component={editUsers} />
-
       </Switch>
     </div>
   </BrowserRouter>
