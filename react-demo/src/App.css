@@ -27,25 +27,26 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 34px;
   font-weight: bolder;
   letter-spacing: 1.5px;
+}
+h1 {
+  font-size: 34px;
 }
 .header__wrapper {
   height: 100px;
   line-height: 100px;
-  margin-bottom: 10px;
 }
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 100%;
   border-bottom: 1px solid black;
-  margin-bottom: 40px;
 }
 .header__logo {
   height: 100%;
-  width: 20%;
+  width: 18%;
 }
 .header__logo img {
   width: 100%;
@@ -54,41 +55,23 @@ h6 {
   display: flex;
   font-weight: bold;
   font-size: 20px;
-  justify-content: space-between;
-  width: 30%;
+  justify-content: space-around;
+  width: 40%;
+  height: 100%;
+  margin: 0;
 }
-
+.menu__item {
+  height: 100%;
+}
 .menu__item a:hover {
   color: #f55e00;
 }
-
-/* ჰედერის ჰოვერზე რაც ჩანს */
-
-.dropdown__content {
-  position: absolute;
-  top: 105px;
-  left: 0;
-  background-color: white;
-  z-index: 1;
-}
-.dropdown__content ul {
-  position: relative;
-  height: 100%;
-  margin-top: 50px;
-}
-.dropdown__content a {
-  height: 100px;
-  color: black;
-  text-decoration: none;
-}
-
-/* ///////////// */
 
 .nav {
   display: flex;
   justify-content: space-between;
   font-size: 30px;
-  width: 15%;
+  width: 10%;
 }
 
 .nav i {
@@ -265,28 +248,38 @@ h6 {
   padding: 2px;
 }
 .categories__wrapper {
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 .categories {
   display: flex;
   justify-content: space-between;
   width: 85%;
+  height: 340px;
   list-style-type: none;
   text-align: center;
-  margin: 50px 0px;
 }
+/* hover menu on explore */
+.dropdown__content {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+  height: 300px;
+}
+
 .categories--item img {
   width: 250px;
   height: 250px;
   padding: 20px;
-  border: 1px solid #000;
 }
 .categories--title {
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   letter-spacing: 1.8px;
+  margin-top: 10px;
 }
 
 /* items */
@@ -323,7 +316,7 @@ h6 {
   flex-wrap: wrap;
   height: auto;
   justify-content: space-around;
-  margin: 0 60px;
+  margin: 50px 60px;
 }
 .item {
   display: flex;
