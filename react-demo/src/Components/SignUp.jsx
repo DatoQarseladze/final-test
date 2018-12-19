@@ -2,8 +2,14 @@ import React, {Component} from 'react'
 
 
 export default class SignUp extends Component {
-
+  constructor (props) {
+    super(props)
+    this.state = {
+   errorMessage: ''
+    }
+  }
  render () {
+   const {errorMessage} = this.state
   return (
     <div>
       <form
@@ -84,7 +90,7 @@ export default class SignUp extends Component {
         className='btn form--btn' 
         >Register</button>
         </div>
-
+        {errorMessage && <p> {errorMessage} </p>}
       </form>
     </div>
   )

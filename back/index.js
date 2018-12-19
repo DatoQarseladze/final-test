@@ -33,7 +33,7 @@ function processFile() {
 }
 
 app.post("/register", (req, res,err) => {
- 
+  console.log(req.body);
 
   let {
     name,
