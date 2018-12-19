@@ -13,7 +13,10 @@ export default class ShowUsers extends Component {
 
     return (
       <tbody>
-        {people.filter(searchingFor(term)).map(user => (
+        {people.filter(searchingFor(term)).map(user  => (
+          user.level === 1 && (
+
+       
           <tr key={user.id}>
             <th scope="row">{user.id}</th>
             <th>{user.name}</th>
@@ -38,6 +41,7 @@ export default class ShowUsers extends Component {
               </button>
             </th>
           </tr>
+        )
         ))}
       </tbody>
     );
