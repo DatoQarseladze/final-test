@@ -6,7 +6,6 @@ const app = express();
 const secret = "demo__system";
 const PORT = process.env.PORT || 3000;
 const Joi = require('joi')
-// const {validateBody,schemas}  = require('./helpers/routeHelpers')
 
 app.use(cors("*"));
 app.use(express.urlencoded({ extended: true }));
@@ -16,31 +15,20 @@ app.get("/", (req, res) => {
   console.log(processFile());
 });
 
-
 const usersfile = "../react-demo/src/db/users.json";
 let ID ;
 
   fs.readFile(usersfile, function(err,data){
-    if (err){
-      console.log(err);
-    }
+    if (err){console.log(err);}
     let json = JSON.parse(data);
-    // console.log(json);
     let last = json.pop();
-    // console.log(last, 'gamoaq');
-    // console.log(last.id, 'ramdenia idi');
-
     ID =  "" + (Number(last.id) + 1)  
-    // console.log(ID, 'gamoaq?');
-    // console.log(ID, 'ssa');
     let id = "" + ID;
     return ID;
     processFile();
   })
 
-
 function processFile() {
-  // console.log(ID, "aqedan");
   return ID
 }
 
@@ -58,18 +46,13 @@ app.post("/register", (req, res,err) => {
   } = req.body;
 fs.readFile(usersfile, function(err,data){
   let json = JSON.parse(data);
-  // console.log(json)
   function findUsername(user){
     return user.username === username
   }
   if(json.find(findUsername)){
     console.log('daemtxva');
-    // swal('WARNING', 'JJJ')
-    // break;
     // res.redirect(`http://localhost:${PORT}`)
     return;
-    // process.exit(1);
-
   }
   else{
     console.log('ar daemtxva')
@@ -89,7 +72,6 @@ fs.readFile(usersfile, function(err,data){
     fs.readFile(usersfile, function(err, data) {
       let json = JSON.parse(data);
       json.push(user);
-      // console.log(json);
       fs.writeFile(usersfile, JSON.stringify(json), function(err) {
         if (err) res.redirect(`http://localhost:${PORT}`);
         res.redirect(`http://localhost:${PORT}/`);
@@ -98,7 +80,6 @@ fs.readFile(usersfile, function(err,data){
   }
 })
  
-  // ID++;
 });
 
 const encrypt = data => {
@@ -110,15 +91,11 @@ const encrypt = data => {
 };
 
 app.post("/login", (req, res) => {
-  // let json = JSON.parse(req.body);
-  // console.log(json);
   let { username, password } = req.body;
   const schema = {
     username: Joi.string().min(4).required(),
     password: Joi.string().min(4).required()
   }
-
-  
   const result  = Joi.validate(req.body, schema)
 
   console.log(result);
@@ -161,12 +138,10 @@ app.post('/edit', (req,res) =>{
   console.log(newusername);
   fs.readFile(usersfile, function(err,data){
     let json = JSON.parse(data);
-    // console.log(json);
     function findUser(item){
       return item.id == req.body.id
     }
     let idx = json.findIndex(findUser);
-    // console.log(idx, 'index');
     json[idx].username = newusername 
     fs.writeFile(usersfile, JSON.stringify(json), function(err){
       if (err) res.json(err);
@@ -191,6 +166,4 @@ app.post("/delete", (req, res) => {
   });
 });
 
-app.listen(5000, () => {
-  console.log(`Listening Port - 5000`);
-});
+app.listen(5000, () => { console.log(`Listening Port - 5000`);});
