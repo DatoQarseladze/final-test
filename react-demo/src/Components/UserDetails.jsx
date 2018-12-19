@@ -12,10 +12,6 @@ const UserDetails = props => {
   id = pth.substr(pth.lastIndexOf('/') + 1)
   let user = props.users[id]
   const editUser = user => {
-    // e.preventDefault();
-    // console.log(user.splice)
-    // console.log(user);
-    // this.props.editUser(this.textInput.value);
   }
   return (
     <div>

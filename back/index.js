@@ -37,7 +37,6 @@ app.post('/register', (req, res, err) => {
     }
     if (json.find(findUsername)) {
       console.log('daemtxva')
-      // res.redirect(`http://localhost:${PORT}`)
     } else {
       fs.readFile(usersfile, function (err, data) {
         if (err) {
@@ -47,10 +46,7 @@ app.post('/register', (req, res, err) => {
         let json = JSON.parse(data)
         let last = json.pop()
         ID = '' + (Number(last.id) + 1)
-        // console.log(ID, '69xazi')
-        // res.send(ID)
-        // processFile()
-        
+   
         const user = {
       
           id: '' +  ID,
@@ -64,7 +60,6 @@ app.post('/register', (req, res, err) => {
           level: 1,
           boughtProducts: []
         }
-        // console.log(user.id, 'idi 92 xazi')
   
         fs.readFile(usersfile, function (err, data) {
           let json = JSON.parse(data)
@@ -75,18 +70,6 @@ app.post('/register', (req, res, err) => {
           })
         })
       })
-      // function processFile () {
-      //   console.log(ID, 'ras abrunebs')
-      
-      // }
-
-
-      // console.log(processFile(x), 'gvishvele gmerto');
-   
-      // console.log(processFile(), 'es aris idi');
-
-      // console.log('ar daemtxva')
-     
     }
   })
 })

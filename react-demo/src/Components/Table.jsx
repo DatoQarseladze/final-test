@@ -29,11 +29,9 @@ export default class Table extends Component {
   }
 
   componentDidMount () {
-    // console.log('shemovida')
   }
   componentDidUpdate () {
     console.log(this.state.input)
-    // console.log('sheicvala');
   }
   searchHandler = e => {
     let variable = e.target.value

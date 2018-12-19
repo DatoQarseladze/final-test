@@ -135,7 +135,7 @@ export default class SignUp extends Component {
                 name='name'
               />
               {errors.name && (
-                <div className='danger danger-alert'>{errors.name}</div>
+                <div className='alert alert-danger'>{errors.name}</div>
               )}
             </label>
             <label>
@@ -149,7 +149,7 @@ export default class SignUp extends Component {
                 name='lastname'
               />
               {errors.lastname && (
-                <div className='danger danger-alert'>{errors.lastname}</div>
+                <div className='alert alert-danger'>{errors.lastname}</div>
               )}
             </label>
             <label>
@@ -163,7 +163,7 @@ export default class SignUp extends Component {
                 name='username'
               />
               {errors.username && (
-                <div className='danger danger-alert'>{errors.username}</div>
+                <div className='alert alert-danger'>{errors.username}</div>
               )}
             </label>
             <label>
@@ -177,7 +177,7 @@ export default class SignUp extends Component {
                 name='password'
               />
               {errors.password && (
-                <div className='danger danger-alert'>{errors.password}</div>
+                <div className='alert alert-danger'>{errors.password}</div>
               )}
             </label>
             <label>
@@ -191,7 +191,7 @@ export default class SignUp extends Component {
                 name='email'
               />
               {errors.email && (
-                <div className='danger danger-alert'>{errors.email}</div>
+                <div className='alert alert-danger'>{errors.email}</div>
               )}
             </label>
             <label>
@@ -204,9 +204,9 @@ export default class SignUp extends Component {
                 placeholder='birthdate'
                 name='birthdate'
               />
-              {/* {errors.birthdate && (
-                <div className='danger danger-alert'>{errors.birthdate}</div>
-              )} */}
+              {errors.birthdate && (
+                <div className='alert alert-danger'>{errors.birthdate}</div>
+              )}
             </label>
             <label>
               <input
