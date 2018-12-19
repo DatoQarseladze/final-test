@@ -4,7 +4,7 @@ import { ProtectedRoute } from "../routes/ProtectedRoute";
 import SignUp from "../Components/SignUp";
 import Login from "./../Components/Login";
 import Table from "./../Components/Table";
-import { Header } from "../Components/Header";
+import Header from "../Components/Header";
 import { Categories } from "../Components/Categories";
 import { LinkToRegistration } from "../Components/LinkToRegistration";
 // import Chat from "../Components/Chat";
@@ -12,6 +12,9 @@ import Slider from "../Components/Slider";
 import Video from "../Components/Video";
 import Reviews from "../Components/Reviews";
 import Footer from "../Components/Footer";
+import Users from "../db/users.json";
+import ShowUsers from "../Components/ShowUsers";
+import UserDetails from "./../Components/UserDetails";
 import { Headphones } from "../Components/Headphones";
 import { Phones } from "../Components/Phones";
 import { Laptops } from "../Components/Laptops";
@@ -41,7 +44,7 @@ const explore = () => (
 const headphones = () => (
   <div className="headphones">
     <Header />
-    <Headphones header={"headphones"} linkTo={"headphone"} />
+    <Headphones />
     <Footer />
   </div>
 );
@@ -55,7 +58,7 @@ const headphone = () => (
 const phones = () => (
   <div>
     <Header />
-    <Phones header={"phones"} linkTo={"phone"} />
+    <Phones />
     <Footer />
   </div>
 );
@@ -70,7 +73,7 @@ const phone = () => (
 const laptops = () => (
   <div>
     <Header />
-    <Laptops header={"laptops"} linkTo={"laptop"} />
+    <Laptops />
     <Footer />
   </div>
 );
@@ -84,7 +87,7 @@ const laptop = () => (
 const cameras = () => (
   <div>
     <Header />
-    <Cameras header={"cameras"} linkTo={"camera"} />
+    <Cameras />
     <Footer />
   </div>
 );
@@ -109,16 +112,26 @@ const login = () => (
   </div>
 );
 
-const signup = () =>(
+const signup = () => (
   <div>
     <Header />
-    <hr/>
+    <hr />
     <SignUp />
   </div>
-)
+);
+
+const editUsers = () => (
+  <div className="App">
+    <Header />
+    <hr />
+    <UserDetails users={Users} />
+  </div>
+);
 
 const admin = () => (
   <div className="App">
+    <Header />
+    <hr />
     <Table />
     <Footer />
   </div>
@@ -141,7 +154,7 @@ const AppRouter = () => (
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
-
+        <Route path="/user/:id" component={editUsers} />
       </Switch>
     </div>
   </BrowserRouter>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css"
+import { BrowserRouter as Router } from "react-router-dom";
 import AppRouter from "./router/AppRouter";
 
 class App extends Component {

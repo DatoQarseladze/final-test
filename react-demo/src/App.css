@@ -14,6 +14,10 @@ a {
   text-decoration: none;
   line-height: inherit;
 }
+a:hover {
+  text-decoration: none;
+  color: #f55e00;
+}
 img {
   vertical-align: center;
 }
@@ -23,9 +27,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 34px;
   font-weight: bolder;
   letter-spacing: 1.5px;
+}
+h1 {
+  font-size: 34px;
 }
 .header__wrapper {
   height: 100px;
@@ -35,50 +41,37 @@ h6 {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 100%;
+  border-bottom: 1px solid black;
 }
 .header__logo {
-  height: 80px;
+  height: 100%;
+  width: 18%;
 }
 .header__logo img {
-  text-align: center;
+  width: 100%;
 }
 .menu {
   display: flex;
   font-weight: bold;
   font-size: 20px;
-  justify-content: space-between;
-  width: 30%;
+  justify-content: space-around;
+  width: 40%;
+  height: 100%;
+  margin: 0;
 }
-
+.menu__item {
+  height: 100%;
+}
 .menu__item a:hover {
-  /* text-decoration: underline; */
   color: #f55e00;
 }
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-/* .dropdown-content {
-  display: none;
-  position: absolute;
-  right: -850%;
-  background-color: white;
-  z-index: 1;
-}
-.dropdown-content a {
-  color: black;
-  text-decoration: none;
-  display: block;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-} */
 
 .nav {
   display: flex;
   justify-content: space-between;
   font-size: 30px;
-  width: 15%;
+  width: 10%;
 }
 
 .nav i {
@@ -254,60 +247,47 @@ h6 {
   color: gold;
   padding: 2px;
 }
-
-.categories {
+.categories__wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
 }
 .categories {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  height: 340px;
   list-style-type: none;
   text-align: center;
 }
-.categories--item {
-  width: 23.5%;
-  margin-bottom: 70px;
-  margin-right: 20px;
+/* hover menu on explore */
+.dropdown__content {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+  height: 300px;
 }
+
 .categories--item img {
   width: 250px;
   height: 250px;
   padding: 20px;
-  border: 1px solid #000;
-}
-.categories--item > * {
-  text-decoration: none;
 }
 .categories--title {
   font-weight: bold;
   font-family: "Roboto", sans-serif;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.8px;
+  margin-top: 10px;
 }
-.item--img img {
-  width: 200px;
-  height: 210px;
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #000;
+
+/* items */
+.items__container {
+  display: flex;
+  flex-direction: column;
 }
-.item--spec {
-  min-height: 100px;
-}
-.btn__addto--cart {
-  padding: 10px;
-  color: white;
-  background-color: black;
-  width: 70%;
-  /* padding-top: 1rem;
-  padding-bottom: 1rem; */
-  text-transform: uppercase;
-  font-size: 13px;
-}
-.btn__addto--cart:hover {
-  background-color: #ef5501;
-}
-.category_heading {
-  background-image: url(https://cdn11.bigcommerce.com/s-r69yc54oxa/images/stencil/1280x1280/p/category-back2__61264.original.jpg);
+.category__header {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -317,7 +297,82 @@ h6 {
   color: #fff;
   margin-bottom: 20px;
   text-align: center;
+  text-transform: uppercase;
 }
+.headphones_header {
+  background-image: url(https://cdn11.bigcommerce.com/s-r69yc54oxa/images/stencil/1280x1280/p/category-back2__61264.original.jpg);
+}
+.phones__header {
+  background-image: url(https://www.apple.com/v/home/dz/images/heroes/iphone-xr/iphone_xr_5e40f_large.jpg);
+}
+.laptops__header {
+  background-image: url(https://ispace.ge/api/files/pages/MacBook-Cover.jpg);
+}
+.cameras__header {
+  background-image: url(https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/vpt-lv-sol42321-181209-v2-57394.jpg);
+}
+.items__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: space-around;
+  margin: 50px 60px;
+}
+.item {
+  display: flex;
+  width: 250px;
+  height: 500px;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.item--div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.item--img {
+  width: 100%;
+  height: 290px;
+  padding: 40px;
+  border: 1px solid #000;
+}
+.item--spec {
+  min-height: 100px;
+}
+.item--brand {
+  font-size: 1.5rem;
+}
+.item--name {
+  font-size: 1rem;
+}
+.item--btn {
+  padding: 10px;
+  color: white;
+  background-color: black;
+  /* width: 70%; */
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.item--btn:hover {
+  background-color: #ef5501;
+}
+.cameras img {
+  height: 230px;
+}
+.phones img {
+  padding: 10px 30px;
+  height: 350px;
+}
+.laptops {
+  height: 80%;
+}
+.laptops img {
+  padding: 30px 20px;
+  height: 200px;
+}
+/* items */
 
 .clicked__item {
   display: grid;

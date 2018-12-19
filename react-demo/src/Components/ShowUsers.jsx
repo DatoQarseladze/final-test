@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { searchingFor } from "./Table";
 import moment from 'moment'
+import {Link} from 'react-router-dom'
 
 export default class ShowUsers extends Component {
   // constructor (props) {
@@ -9,7 +10,7 @@ export default class ShowUsers extends Component {
   componentDidMount() {}
 
   render() {
-    const { people, term, onDelete } = this.props;
+    const { people, term, onDelete, onEdit } = this.props;
 
     return (
       <tbody>
@@ -23,7 +24,11 @@ export default class ShowUsers extends Component {
             <th>{moment(user.birthdate).format("MMM Do YY")}</th>
             <th>{user.balance}$</th>
             <th>
-              <button className="btn btn-primary btn-sm m-2">Edit</button>
+              <Link to={`/user/${user.id}`}>
+              <button 
+              className="btn btn-primary btn-sm m-2"
+              onClick={() => onEdit(user)}>Edit</button>
+              </Link>
             </th>
             <th>
               <button

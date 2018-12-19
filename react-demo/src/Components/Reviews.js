@@ -1,5 +1,6 @@
 import React from "react";
-import user from "./image/user.jpg";
+
+let user = process.env.PUBLIC_URL + "/img/user.jpg";
 
 class Reviews extends React.Component {
   render() {
