@@ -32,7 +32,7 @@ export default class Header extends Component {
 
           <ul className="menu">
             <li
-              className="menu__item dropdown"
+              className="menu__item"
               onMouseEnter={this.handleOpen}
               onMouseLeave={this.handleClose}
               open={this.state.isOpen}
