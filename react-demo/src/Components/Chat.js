@@ -1,5 +1,5 @@
 import React from 'react';
-import chat from './image/chat.jpg';
+// import chat from './image/chat.jpg';
 
 class Chat extends React.Component {
     render() {

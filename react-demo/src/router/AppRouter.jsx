@@ -7,7 +7,7 @@ import Table from "./../Components/Table";
 import { Header } from "../Components/Header";
 import { Categories } from "../Components/Categories";
 import { LinkToRegistration } from "../Components/LinkToRegistration";
-import Chat from "../Components/Chat";
+// import Chat from "../Components/Chat";
 import Slider from "../Components/Slider";
 import Video from "../Components/Video";
 import Reviews from "../Components/Reviews";
@@ -24,7 +24,7 @@ import { Camera } from "../Components/Camera";
 const index = () => (
   <div className="App">
     <Header />
-    <Chat />
+    {/* <Chat /> */}
     <Slider />
     <Video />
     <Reviews />
