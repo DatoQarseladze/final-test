@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { searchingFor } from "./Table";
 import moment from 'moment'
-import {Link} from 'react-router-dom'
 
 export default class ShowUsers extends Component {
   // constructor (props) {

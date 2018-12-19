@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Swal from 'sweetalert2'
 import { Redirect } from 'react-router-dom'
-import Joi from 'joi'
 import axios from 'axios'
 
 class Login extends Component {
@@ -19,7 +18,6 @@ class Login extends Component {
     this.password = React.createRef()
   }
 
- 
   OnSubmitHandler = e => {
     e.preventDefault()
     this.login(this.username.current.value, this.password.current.value)
@@ -29,51 +27,49 @@ class Login extends Component {
     axios
       .post('http://localhost:5000/login', {
         username: username,
-        password: password 
-     
+        password: password
       })
       .then(result => {
         console.log(result)
         if (result.data.auth && result.data.level === 0) {
-                // localStorage.setItem('')
-                // localStorage.setItem('admin')
-                // console.log(result);
-                this.setState({ isLoggedAdmin: true, message: ""})
-                Swal({
-                  title: "Hello Admin!",
-                  imageUrl:
-                    "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg",
-                  imageWidth: 400,
-                  imageHeight: 200,
-                  imageAlt: "Custom image",
-                  animation: false
-                });
-
-              } else if (result.data.auth && result.data.level === 1) {
-                console.log("useris shemosvla");
-                localStorage.setItem("authorized", JSON.stringify(result));
-                this.setState({ isLoggedIn: true, message: "" });
-                Swal({
-                  position: "top-end",
-                  type: "success",
-                  title: `hello ${result.data.username} `,
-                  showConfirmButton: false,
-                  timer: 1500
-                });
-              } else {
-                this.setState(
-                  Swal({
-                    type: "error",
-                    title: "Oops...",
-                    text: "Wrong user !",
-                    showConfirmButton: false,
-                    footer: '<a href="http://localhost:3000/login">Try again</a>'
-                  })
-                );
-              }
+          // localStorage.setItem('')
+          // localStorage.setItem('admin')
+          // console.log(result);
+          this.setState({ isLoggedAdmin: true, message: '' })
+          Swal({
+            title: 'Hello Admin!',
+            imageUrl:
+              'https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+            animation: false
+          })
+        } else if (result.data.auth && result.data.level === 1) {
+          console.log('useris shemosvla')
+          localStorage.setItem('authorized', JSON.stringify(result))
+          this.setState({ isLoggedIn: true, message: '' })
+          Swal({
+            position: 'top-end',
+            type: 'success',
+            title: `hello ${result.data.username} `,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        } else {
+          this.setState(
+            Swal({
+              type: 'error',
+              title: 'Oops...',
+              text: 'Wrong user !',
+              showConfirmButton: false,
+              footer: '<a href="http://localhost:3000/login">Try again</a>'
+            })
+          )
+        }
       })
       .catch(error => {
-        this.setState({errorMessage: error.response.data.message})
+        this.setState({ errorMessage: error.response.data.message })
       })
   }
   // fetch(`http://localhost:5000/login`, {
@@ -130,8 +126,7 @@ class Login extends Component {
   render () {
     const { isLoggedIn, isLoggedAdmin } = this.state
     if (isLoggedIn) {
-      // console.log('shamovida');
-      return <Redirect to={'/profile'} />
+      return <Redirect to={'/'} />
     } else if (isLoggedAdmin) {
       return <Redirect to={'/search'} />
     } else {
@@ -148,7 +143,9 @@ class Login extends Component {
                   className='form--input'
                   ref={this.username}
                 />
-             {this.state.errorMessage && <p className='error--message'>{this.state.errorMessage}</p>}  
+                {this.state.errorMessage && (
+                  <p className='error--message'>{this.state.errorMessage}</p>
+                )}
               </label>
             </div>
             <div className='input--group'>

@@ -137,6 +137,8 @@ const admin = () => (
   </div>
 );
 
+
+
 const AppRouter = () => (
   <BrowserRouter>
     <div className="App">
@@ -154,6 +156,7 @@ const AppRouter = () => (
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
+
       </Switch>
     </div>
   </BrowserRouter>
