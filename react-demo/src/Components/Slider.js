@@ -42,7 +42,7 @@ export default class Slider extends Component {
 
   render() {
     return (
-      <div className="slider-parent">
+      // <div className="slider-parent">
         <div className="slider">
           <div
             className="slider-wrapper"
@@ -56,7 +56,7 @@ export default class Slider extends Component {
             ))}
           </div>
         </div>
-      </div>
+      // </div>
     );
   }
 }

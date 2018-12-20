@@ -69,7 +69,7 @@ class Footer extends React.Component {
 
           <p className="copyright">
             &copy; 2018 Decibullz LLC. All Rights Reserved. Designed & Developed
-            by DigitlHaus.
+            by Maryam Kits, Saba Mamasakhlisi, Dato Karseladze, Mariam Bokeria.
           </p>
         </div>
       </div>
