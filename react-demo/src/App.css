@@ -14,9 +14,13 @@ a {
   text-decoration: none;
   line-height: inherit;
 }
+button {
+  border: none;
+  transition: all 0.25s ease;
+}
 a:hover {
   text-decoration: none;
-  color: #f55e00;
+  color: black;
 }
 img {
   vertical-align: center;
@@ -116,10 +120,10 @@ h1 {
   white-space: nowrap;
 }
 
-.slider-parent {
+/* .slider-parent {
   position: relative;
   margin-top: 20px;
-}
+} */
 
 .slider-wrapper {
   height: 100%;
@@ -263,6 +267,10 @@ h1 {
   display: flex;
   justify-content: center;
   width: 100%;
+  border-bottom: 1px solid black;
+}
+.categories__wrapper:hover {
+  border-bottom: 1px solid #ef5501;
 }
 .categories {
   display: flex;
@@ -271,6 +279,7 @@ h1 {
   height: 340px;
   list-style-type: none;
   text-align: center;
+  text-transform: uppercase;
 }
 /* hover menu on explore */
 .dropdown__content {
@@ -281,7 +290,9 @@ h1 {
   z-index: 1;
   height: 300px;
 }
-
+.categories--item a:hover {
+  color: #ef5501;
+}
 .categories--item img {
   width: 250px;
   height: 250px;
@@ -318,10 +329,13 @@ h1 {
   background-image: url(https://www.apple.com/v/home/dz/images/heroes/iphone-xr/iphone_xr_5e40f_large.jpg);
 }
 .laptops__header {
-  background-image: url(https://ispace.ge/api/files/pages/MacBook-Cover.jpg);
+  /* background-image: url(https://ispace.ge/api/files/pages/MacBook-Cover.jpg); */
+  background-image: url(https://images.unsplash.com/photo-1509956072962-7ff0f36dd7ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+  background-position: center;
 }
 .cameras__header {
-  background-image: url(https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/vpt-lv-sol42321-181209-v2-57394.jpg);
+  background-image: url(https://images.unsplash.com/photo-1539895284193-9a389687ee95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80);
+  background-position: center;
 }
 .items__wrapper {
   display: flex;
@@ -386,18 +400,117 @@ h1 {
 }
 /* items */
 
+/* clicked item */
+.clicked__item--wrapper {
+  padding: 80px 100px;
+}
 .clicked__item {
   display: grid;
+  grid-template-columns: 450px 200px 400px;
+  grid-template-rows: repeat(8, 50px);
+  grid-row-gap: 20px;
+  justify-content: center;
 }
 .clicked__item--img {
-  /* width: 250px;
-  height: 350px; */
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-column-end: 3;
+  grid-column: 1;
+  grid-row: 1;
   border: 1px solid black;
   padding: 50px;
+}
+.clicked__item--brand {
+  font-size: 2.5em;
+  grid-column: 3/3;
+  grid-row: 1/1;
+}
+.clicked__item--model {
+  font-size: 1.5em;
+  grid-column: 3;
+  grid-row: 2/4;
+}
+.clicked__item--price {
+  grid-column: 3;
+  grid-row: 4;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+.clicked__item--quantity {
+  grid-column: 3;
+  grid-row: 5;
+}
+.clicked__item--desc {
+  grid-column: 3;
+  grid-row: 6/8;
+  font-family: "AvenirNext-Medium";
+  overflow: scroll;
+}
+.clicked__item--addto--cart {
+  grid-column: 3;
+  grid-row: 8;
+  height: 50px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  background: black;
+  color: white;
+  letter-spacing: 1.8px;
+  border: none;
+}
+.clicked__item--addto--cart:hover {
+  background-color: #f55e01;
+}
+.register {
+  text-align: center;
+  background-color: black;
+  width: 350px;
+}
+.register a {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.register:hover {
+  background-color: #ef5501;
+  transition: all ease 0.15s;
+}
+/* */
+form > div {
+  display: flex;
+  align-items: center;
+}
+.clicked__item--reviews {
+  margin-top: 100px;
+}
+.clicked__item--new--review {
+  width: 500px;
+  height: 100px;
+  outline: none;
+  resize: none;
+}
+.clicked__item--btn--post {
+  color: white;
+  background-color: black;
+  width: 250px;
+  height: 50px;
+  margin-left: 50px;
+  padding: 3px;
+  font-size: 1.4em;
+  font-weight: 400;
+}
+.clicked__item--btn--post:hover {
+  background-color: #ef5501;
+}
+.clicked__item--old-reviews {
+  margin-top: 80px;
+}
+.clicked__item--old-review {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.clicked__item--username {
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  text-transform: uppercase;
 }
 .footer__social {
   display: flex;
@@ -411,6 +524,7 @@ h1 {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  transition: 0.9s;
 }
 
 .fa-map-marker {
