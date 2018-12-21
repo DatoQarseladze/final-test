@@ -19,10 +19,9 @@ import { Cameras } from "../Components/Cameras";
 import { Headphone } from "../Components/Headphone";
 import { Phone } from "../Components/Phone.jsx";
 import { Laptop } from "../Components/Laptop";
-import Users from  '../db/users.json'
+import Users from "../db/users.json";
 import { Camera } from "../Components/Camera";
 import Products from "../db/products.json";
-
 
 const index = () => (
   <div className="App">
@@ -161,8 +160,6 @@ const admin = () => (
   </div>
 );
 
-
-
 const AppRouter = () => (
   <BrowserRouter>
     <div className="main">
@@ -176,7 +173,6 @@ const AppRouter = () => (
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
-
       </Switch>
     </div>
   </BrowserRouter>
