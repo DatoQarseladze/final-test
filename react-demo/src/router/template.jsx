@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-const url = "http://localhost:5000/";
-
 class Template extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +10,7 @@ class Template extends Component {
     };
   }
   componentDidMount() {
+    const url = "http://localhost:5000/";
     axios
       .get(`${url}${this.props.header}`)
       .then(res => {
@@ -30,7 +29,7 @@ class Template extends Component {
           return (
             <li key={item.id} className="item">
               <Link
-                to={`/${this.props.linkTo}/${item.id}`}
+                to={`/${this.props.header}/${item.id}`}
                 className={`item--div ${this.props.className}`}
               >
                 <img src={item.url} alt={`item.name`} className="item--img" />
