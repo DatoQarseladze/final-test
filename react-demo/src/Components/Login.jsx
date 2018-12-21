@@ -72,56 +72,7 @@ class Login extends Component {
         this.setState({ errorMessage: error.response.data.message })
       })
   }
-  // fetch(`http://localhost:5000/login`, {
-  //   method: "POST",
-  //   headers: {
-  //     Accept: "application/json",
-  //     "Content-Type": "application/json"
-  //   },
-  //   body: JSON.stringify({ username, password })
-  // })
-  //   .then(res => res.json())
-  //   .then(result => {
-  //     if (result.auth && result.level === 0) {
-  //       // localStorage.setItem('')
-  //       // localStorage.setItem('admin')
-  //       // console.log(result);
-  //       this.setState({ isLoggedAdmin: true, message: ""})
-  //       Swal({
-  //         title: "Hello Admin!",
-  //         imageUrl:
-  //           "https://visualpharm.com/assets/381/Admin-595b40b65ba036ed117d3b23.svg",
-  //         imageWidth: 400,
-  //         imageHeight: 200,
-  //         imageAlt: "Custom image",
-  //         animation: false
-  //       });
 
-  //     } else if (result.auth && result.level === 1) {
-  //       console.log("useris shemosvla");
-  //       localStorage.setItem("authorized", JSON.stringify(result));
-  //       this.setState({ isLoggedIn: true, message: "" });
-  //       Swal({
-  //         position: "top-end",
-  //         type: "success",
-  //         title: `hello ${result.username} `,
-  //         showConfirmButton: false,
-  //         timer: 1500
-  //       });
-  //     } else {
-  //       this.setState(
-  //         Swal({
-  //           type: "error",
-  //           title: "Oops...",
-  //           text: "Wrong user !",
-  //           showConfirmButton: false,
-  //           footer: '<a href="http://localhost:3000/login">Try again</a>'
-  //         })
-  //       );
-  //     }
-  //   })
-  //   .catch(err => console.log(err));
-  // }
 
   render () {
     const { isLoggedIn, isLoggedAdmin } = this.state

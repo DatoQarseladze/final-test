@@ -54,17 +54,6 @@ export default class SignUp extends Component {
 
     return errors
 
-    // console.log(result, 'joi')
-    // const errors = {}
-
-    // if(this.state.account.username.trim() === ''){
-    //   errors.username = 'Username is required'
-    // }
-    // if(this.state.account.password.trim() === ''){
-    //   errors.password = 'Password is required'
-    // }
-
-    // return Object.keys(errors).length === 0 ? null : errors;
   }
 
   validateProperty = ({ name, value }) => {
@@ -99,7 +88,6 @@ export default class SignUp extends Component {
       this.setState({ errorMessage: error.response.data.message })
     })
     }
-    
   }
 
   handleChange = ({ currentTarget: input }) => {
@@ -111,16 +99,12 @@ export default class SignUp extends Component {
     const account = { ...this.state.account }
     account[input.name] = input.value
     this.setState({ account, errors })
-    // console.log(this.state.account.username);
-    // console.log(this.state.account.password);
   }
   render () {
     const { errors } = this.state
     return (
       <div>
         <form
-          // action='http://localhost:5000/register'
-          // method='POST'
           onSubmit={this.handleSubmit}
         >
           <div className='form--registration'>

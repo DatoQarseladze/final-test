@@ -51,7 +51,6 @@ const UserDetails = props => {
             style={buttonStyle}
             name={id}
             className='btn btn-danger'
-            // onClick={editUser(user)}
           >
             Edit
           </button>
