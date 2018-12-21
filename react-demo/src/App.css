@@ -180,23 +180,35 @@ h6 {
   color: black;
 }
 
+.chat-container{
+  position: absolute;
+  height: 500px;
+  top: 50%;
+
+}
 .chat {
-  /* display: inline-block; */
-  position: sticky;
-  top: 0;
-  bottom: 0;
-  text-align: right;
-  /* right: 0; */
+  position: fixed;
+  top: 80%;
+  right: 0;
+  z-index: 2;
   cursor: pointer;
 }
 
+
 .chat img {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 2px solid lightgrey;
 }
-
+.chat--text{
+  position: fixed;
+  top: 60%;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+  
+}
 .reviews {
   background: linear-gradient(
     rgba(223, 218, 218, 0.5),
