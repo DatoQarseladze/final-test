@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import moment from 'moment'
 
 const buttonStyle = {
   width: '50%',
@@ -13,14 +12,11 @@ const UserDetails = props => {
   id = pth.substr(pth.lastIndexOf('/') + 1)
   let user = props.users[id]
   const editUser = user => {
-    // e.preventDefault();
-    // console.log(user.splice)
-    console.log(user);
-    // this.props.editUser(this.textInput.value);
   }
   return (
     <div>
-      <form action=''>
+      <form action='http://localhost:5000/edit'
+      method='POST'>
         <div className='user--details'>
           <label>
             Username:
@@ -28,6 +24,7 @@ const UserDetails = props => {
             <input
               type='text'
               defaultValue={user.username}
+              name='username'
             />
           </label>
         </div>
@@ -44,15 +41,16 @@ const UserDetails = props => {
           <label>
             Name:
             <br />
-            <input type='text' defaultValue={user.name} />
+            <input type='text' defaultValue={user.name}
+            />
           </label>
         </div>
 
         <div className='btn--container'>
           <button
             style={buttonStyle}
+            name={id}
             className='btn btn-danger'
-            onClick={editUser(user)}
           >
             Edit
           </button>
