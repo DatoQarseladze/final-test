@@ -1,4 +1,4 @@
-import Template from "../router/template";
+import Template from "../router/Template";
 import React from "react";
 
 export const Cameras = props => {
