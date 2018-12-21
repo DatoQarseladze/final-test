@@ -41,22 +41,20 @@ app.get("/headphones/:id", (req, res) => {
 });
 
 app.post("/headphones/:id", (req, res) => {
-  // fs.readFile("../react-demo/src/db/products.json", function(err, data) {
-  //   let json = JSON.parse(data);
-  //   const id = req.params.id;
-  //   const item = products.HEADPHONES.find(i => i.id == id);
-  //   const review = { user: req.body.user, text: req.body.text };
-  //   item.reviews.push(review);
-  //   // console.log(json.HEADPHONES);
-  //   // fs.writeFile(
-  //   //   "../react-demo/src/db/products.json",
-  //   //   // JSON.stringify(json),
-  //   //   function(err) {
-  //   //     if (err) res.json(err);
-  //   //     res.json(json);
-  //   //   }
-  //   // );
-  // });
+  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+    let json = JSON.parse(data);
+    const id = req.params.id;
+    const item = products.HEADPHONES.find(i => i.id == id);
+    const review = { user: req.body.user, text: req.body.text };
+    item.reviews.push(review);
+    fs.writeFile(
+      "../react-demo/src/db/products.json",
+      JSON.stringify(products),
+      function(err) {
+        if (err) throw err;
+      }
+    );
+  });
 });
 
 app.get("/phones/:id", (req, res) => {

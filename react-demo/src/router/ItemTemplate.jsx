@@ -23,8 +23,8 @@ class ItemTemplate extends Component {
 
     const url = "http://localhost:5000/";
     let pth = window.location.pathname;
-
     let id = pth.substr(pth.lastIndexOf("/") + 1);
+
     axios
       .post(`${url}${this.props.header}/${id}`, {
         user: this.state.user,
@@ -37,22 +37,6 @@ class ItemTemplate extends Component {
         console.log(error);
       });
   };
-
-  //   axios({
-  //     method: "post",
-  //     url: `${url}${this.props.header}/${id}`,
-  //     // headers: {
-  //     //   crossDomain: true, //For cors errors
-  //     //   "Content-Type": "application/x-www-form-urlencoded"
-  //     // },
-  //     data: { user: this.state.user, text: this.state.text }
-  //   })
-  //     .then(res => {
-  //       console.log(res);
-  //       console.log(res.data);
-  //     })
-  //     .then(err => console.log(err));
-  // };
   componentWillMount() {
     const url = "http://localhost:5000/";
     let pth = window.location.pathname;
