@@ -190,6 +190,7 @@ h1 {
 
 .review-title {
   font-size: 30px;
+  text-align: center;
 }
 
 .review-title i {
@@ -391,7 +392,9 @@ h1 {
 
 .footer__social {
   display: flex;
+  text-align: center;
 }
+
 .map {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/img/footer1.jpg") no-repeat;
@@ -509,7 +512,7 @@ h1 {
 
 .columns {
   display: flex;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
 }
 
@@ -551,6 +554,7 @@ h1 {
 .copyright {
   position: relative;
   left: 5%;
+  font-size: 13px;
 }
 
 /* Responsive Design */
@@ -566,7 +570,6 @@ h1 {
   .header__wrapper {
     width: 100%;
   }
- 
   .header__logo {
     width: 40%;
   }
