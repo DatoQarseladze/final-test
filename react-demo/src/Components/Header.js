@@ -44,7 +44,7 @@ export default class Header extends Component {
             </li>
 
             <li className="menu__item">
-              <Link to="support">SUPPORT</Link>
+              <Link to="/loginform">SUPPORT</Link>
             </li>
 
             <li className="menu__item">
