@@ -17,6 +17,8 @@ a {
 button {
   border: none;
   transition: all 0.25s ease;
+  background-color: black;
+  color: white;
 }
 a:hover {
   text-decoration: none;
@@ -108,7 +110,9 @@ h1 {
   color: #fff;
   font-weight: 900;
 }
-
+.btn--login a {
+  color: white;
+}
 .table th {
   max-width: 200px;
   text-align: center;
@@ -487,7 +491,9 @@ form > div {
   display: flex;
   text-align: center;
 }
-
+.footer__social--col {
+  transition: all 0.9s ease;
+}
 .map {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/img/footer1.jpg") no-repeat;
@@ -497,11 +503,10 @@ form > div {
   font-weight: bold;
   color: white;
   cursor: pointer;
-  transition: 0.9s;
 }
 
 .fa-map-marker {
-  margin-top: 239.225px;
+  margin-top: 210px;
   font-size: 50px;
 }
 
@@ -522,7 +527,7 @@ form > div {
 }
 
 .fa-instagram {
-  margin-top: 239.225px;
+  margin-top: 210px;
   font-size: 50px;
 }
 
@@ -543,7 +548,7 @@ form > div {
 }
 
 .fa-youtube {
-  margin-top: 239.225px;
+  margin-top: 210px;
   font-size: 50px;
 }
 
@@ -564,7 +569,7 @@ form > div {
 }
 
 .fa-twitter {
-  margin-top: 239.225px;
+  margin-top: 210px;
   font-size: 50px;
 }
 
@@ -585,7 +590,7 @@ form > div {
 }
 
 .fa-facebook-f {
-  margin-top: 239.225px;
+  margin-top: 210px;
   font-size: 50px;
 }
 
