@@ -23,10 +23,8 @@ import { Cameras } from "../Components/Cameras";
 import { Headphone } from "../Components/Headphone";
 import { Phone } from "../Components/Phone.jsx";
 import { Laptop } from "../Components/Laptop";
-import Users from "../db/users.json";
 import { Camera } from "../Components/Camera";
 import "../css/Aboutus.css";
-import Products from "../db/products.json";
 
 const index = () => (
   <div className="App">
@@ -155,13 +153,13 @@ const signup = () => (
   </div>
 );
 
-// const editUsers = () => (
-//   <div className="App">
-//     <Header />
-//     <hr />
-//     <UserDetails users={Users} />
-//   </div>
-// );
+const editUsers = () => (
+  <div className="App">
+    <Header />
+    <hr />
+    <UserDetails users={Users} />
+  </div>
+);
 
 const admin = () => (
   <div className="App">
@@ -186,7 +184,7 @@ const AppRouter = () => (
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
         <Route path="/user/:id" component={editUsers} />
-        <Route path="/blog" component={aboutus} />
+        <Route path="/company" component={aboutus} />
       </Switch>
     </div>
   </BrowserRouter>
