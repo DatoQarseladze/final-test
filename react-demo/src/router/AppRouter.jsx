@@ -26,7 +26,7 @@ import Products from "../db/products.json";
 const index = () => (
   <div className="App">
     <Header />
-    {/* <Chat /> */}
+    <Chat />
     <Slider />
     <Video />
     <Reviews />
