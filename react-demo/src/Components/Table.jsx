@@ -128,7 +128,6 @@ export default class Table extends Component {
     return (
       <div className='search'>
         <SearchInput searchHandler={this.searchHandler} />
-        <Link to='/login'>EXPLORE</Link>
 
         {/* <button className='btn btn-primary'></button> */}
         <table className='table table-hover table-info'>

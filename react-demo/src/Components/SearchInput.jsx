@@ -9,7 +9,8 @@ class SearchInput extends Component {
 
     render() { 
         const {searchHandler} = this.props
-        return ( 
+        return (
+            <div  className='searchInputUser'>
             <form action=''>
           <input
             type='text'
@@ -17,6 +18,7 @@ class SearchInput extends Component {
             onChange={searchHandler}
           />
         </form>
+        </div> 
          );
     }
 }

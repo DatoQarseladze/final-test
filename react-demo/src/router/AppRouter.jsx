@@ -7,7 +7,7 @@ import Table from "./../Components/Table";
 import Header from "../Components/Header";
 import { Categories } from "../Components/Categories";
 import { LinkToRegistration } from "../Components/LinkToRegistration";
-// import Chat from "../Components/Chat";
+import Chat from "../Components/Chat";
 import Slider from "../Components/Slider";
 import Video from "../Components/Video";
 import Reviews from "../Components/Reviews";
@@ -24,12 +24,13 @@ import { Headphone } from "../Components/Headphone";
 import { Phone } from "../Components/Phone.jsx";
 import { Laptop } from "../Components/Laptop";
 import { Camera } from "../Components/Camera";
+import  Support  from '../Components/Support'
 import "../css/Aboutus.css";
 
 const index = () => (
   <div className="App">
     <Header />
-    {/* <Chat /> */}
+    <Chat />
     <Slider />
     <Video />
     <Reviews />
@@ -170,6 +171,17 @@ const admin = () => (
   </div>
 );
 
+const support = () => (
+  <div className="App">
+  <Header />
+  <hr/>
+  <Support />
+
+  <Footer />
+
+  </div>
+)
+
 const AppRouter = () => (
   <BrowserRouter>
     <div className="main">
@@ -185,6 +197,7 @@ const AppRouter = () => (
         <Route path="/signup" component={signup} />
         <Route path="/user/:id" component={editUsers} />
         <Route path="/company" component={aboutus} />
+        <Route path='/support' component={support} />
       </Switch>
     </div>
   </BrowserRouter>
