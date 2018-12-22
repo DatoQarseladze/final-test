@@ -387,7 +387,9 @@ h1 {
 }
 .clicked__item--img {
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 1/8;
+  width: 100%;
+  text-align: center;
 }
 .clicked__item--brand {
   font-size: 2.5em;
