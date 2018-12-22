@@ -29,7 +29,6 @@ export default class Header extends Component {
               alt="header logo"
             />
           </Link>
-
           <ul className="menu">
             <li
               className="menu__item"

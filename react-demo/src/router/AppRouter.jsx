@@ -7,11 +7,15 @@ import Table from "./../Components/Table";
 import Header from "../Components/Header";
 import { Categories } from "../Components/Categories";
 import { LinkToRegistration } from "../Components/LinkToRegistration";
-import Chat from "../Components/Chat";
+// import Chat from "../Components/Chat";
 import Slider from "../Components/Slider";
 import Video from "../Components/Video";
 import Reviews from "../Components/Reviews";
 import Footer from "../Components/Footer";
+import About from "../Components/Aboutus";
+import Users from "../db/users.json";
+import ShowUsers from "../Components/ShowUsers";
+import UserDetails from "./../Components/UserDetails";
 import { Headphones } from "../Components/Headphones";
 import { Phones } from "../Components/Phones";
 import { Laptops } from "../Components/Laptops";
@@ -19,9 +23,8 @@ import { Cameras } from "../Components/Cameras";
 import { Headphone } from "../Components/Headphone";
 import { Phone } from "../Components/Phone.jsx";
 import { Laptop } from "../Components/Laptop";
-import Users from "../db/users.json";
 import { Camera } from "../Components/Camera";
-import Products from "../db/products.json";
+import "../css/Aboutus.css";
 
 const index = () => (
   <div className="App">
@@ -37,6 +40,13 @@ const explore = () => (
   <div className="explore">
     <Header />
     <Categories />
+    <Footer />
+  </div>
+);
+const aboutus = () => (
+  <div className="aboutus">
+    <Header />
+    <About />
     <Footer />
   </div>
 );
@@ -143,13 +153,13 @@ const signup = () => (
   </div>
 );
 
-// const editUsers = () => (
-//   <div className="App">
-//     <Header />
-//     <hr />
-//     <UserDetails users={Users} />
-//   </div>
-// );
+const editUsers = () => (
+  <div className="App">
+    <Header />
+    <hr />
+    <UserDetails users={Users} />
+  </div>
+);
 
 const admin = () => (
   <div className="App">
@@ -173,6 +183,8 @@ const AppRouter = () => (
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
+        <Route path="/user/:id" component={editUsers} />
+        <Route path="/company" component={aboutus} />
       </Switch>
     </div>
   </BrowserRouter>
