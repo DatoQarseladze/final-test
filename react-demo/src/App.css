@@ -247,6 +247,10 @@ h1 {
   text-align: center;
   text-transform: uppercase;
 }
+.review-text{
+  font-size: 20px;
+  color: orange;
+}
 /* hover menu on explore */
 .dropdown__content {
   position: absolute;
@@ -498,6 +502,8 @@ form > div {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  background-size: cover;
+
 }
 
 .fa-map-marker {
@@ -508,6 +514,8 @@ form > div {
 .map:hover {
   background: linear-gradient(rgba(232, 248, 5, 0.5), rgba(232, 248, 5, 0.5)),
     url("/img/footer1.jpg") no-repeat;
+    background-size: inherit;
+    background-position: center center;
 }
 
 .instagram {
@@ -519,6 +527,9 @@ form > div {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  background-size: cover;
+
+
 }
 
 .fa-instagram {
@@ -529,6 +540,8 @@ form > div {
 .instagram:hover {
   background: linear-gradient(rgba(245, 139, 18, 0.5), rgba(245, 139, 18, 0.5)),
     url("/img/footer2.jpg") no-repeat;
+    background-size: inherit;
+    background-position: center center;
 }
 
 .youtube {
@@ -540,6 +553,8 @@ form > div {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  background-size: cover;
+
 }
 
 .fa-youtube {
@@ -550,6 +565,11 @@ form > div {
 .youtube:hover {
   background: linear-gradient(rgba(245, 11, 11, 0.5), rgba(245, 11, 11, 0.5)),
     url("/img/footer3.jpg") no-repeat;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: inherit;
+
+  
 }
 
 .twitter {
@@ -561,6 +581,8 @@ form > div {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  background-size: cover;
+
 }
 
 .fa-twitter {
@@ -571,6 +593,8 @@ form > div {
 .twitter:hover {
   background: linear-gradient(rgba(24, 101, 245, 0.5), rgba(24, 101, 245, 0.5)),
     url("/img/footer4.jpg") no-repeat;
+    background-size: inherit;
+    background-position: center center;
 }
 
 .facebook {
@@ -582,6 +606,8 @@ form > div {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  background-size: cover;
+
 }
 
 .fa-facebook-f {
@@ -592,6 +618,8 @@ form > div {
 .facebook:hover {
   background: linear-gradient(rgba(49, 5, 172, 0.5), rgba(49, 5, 172, 0.5)),
     url("/img/footer5.jpg") no-repeat;
+    background-size: inherit;
+    background-position: center center;
 }
 
 /* Footer Bottom */
@@ -699,6 +727,9 @@ form > div {
     flex-direction: column;
     text-align: center;
   }
+ 
+
+  
 
   .header__wrapper {
     width: 100%;

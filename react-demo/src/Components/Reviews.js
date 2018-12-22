@@ -1,8 +1,28 @@
 import React from "react";
+import axios from 'axios'
 
 let user = process.env.PUBLIC_URL + "/img/user.jpg";
 
 class Reviews extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      reviews : []
+    }
+ 
+  }
+  componentDidMount (){
+    axios
+      .get('http://localhost:5000/getreviews')
+      .then(res =>{
+        console.log(res.data)
+        this.setState({ reviews: res.data })
+      })
+      .catch(err =>{
+        console.log(err);
+      })
+   
+  }
   render() {
     return (
       <div className="reviews">
@@ -25,8 +45,8 @@ class Reviews extends React.Component {
             </div>
             <div className="user-review">
               <p className="review-text">
-                My first experience of buying product from here.. very
-                comfortable, best quality...
+              {this.state.reviews[0]}
+
               </p>
               <i className="fa fa-star" />
               <i className="fa fa-star" />
@@ -45,8 +65,7 @@ class Reviews extends React.Component {
             </div>
             <div className="user-review">
               <p className="review-text">
-                My first experience of buying product from here.. very
-                comfortable, best quality...
+                {this.state.reviews[1]}
               </p>
               <i className="fa fa-star" />
               <i className="fa fa-star" />
