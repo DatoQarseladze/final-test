@@ -20,6 +20,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+// products
 app.get("/headphones", (req, res) => {
   res.json(products.HEADPHONES);
 });
@@ -33,20 +34,21 @@ app.get("/cameras", (req, res) => {
   res.json(products.CAMERAS);
 });
 
+// selected item
 app.get("/headphones/:id", (req, res) => {
   const id = req.params.id;
-  console.log(req.body);
   const item = products.HEADPHONES.find(i => i.id == id);
   res.json(item);
 });
 
+// writing a review
 app.post("/headphones/:id", (req, res) => {
   fs.readFile("../react-demo/src/db/products.json", function(err, data) {
     let json = JSON.parse(data);
     const id = req.params.id;
     const item = products.HEADPHONES.find(i => i.id == id);
     const review = { user: req.body.user, text: req.body.text };
-    item.reviews.push(review);
+    item.reviews.unshift(review);
     fs.writeFile(
       "../react-demo/src/db/products.json",
       JSON.stringify(products),

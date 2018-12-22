@@ -6,7 +6,8 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5577/5577872_rd.jpg;maxHeight=640;maxWidth=550",
       "model": "AirPods",
       "price": "$159.99",
-      "quantity": 100,
+      "quantity": 5,
+      "color": "white",
       "desc": "Introducing wireless AirPods. Just take them out and they're ready to use with all your Apple devices¹. Put them in your ears and they connect instantly. Speak into them and your voice sounds clear. Simplicity and technology, together like never before. The result is completely magical.",
       "reviews": [
         { "user": "user1", "text": "awesome headphones highly recomended" },
@@ -19,17 +20,21 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5577/5577816_sd.jpg;maxHeight=640;maxWidth=550",
       "model": "EarPods",
       "price": "$29.99",
-      "quantity": 100,
-      "desc": "Unlike traditional, circular earbuds, the design of the EarPods is defined by the geometry of the ear. Which makes them more comfortable for more people than any other earbud-style headphones. The speakers inside the EarPods have been engineered to maximize sound output and minimize sound loss, which means you get high-quality audio. The EarPods with Lightning Connector also include a built-in remote that lets you adjust the volume, control the playback of music and video, and answer or end calls with a pinch of the cord."
+      "color": "white",
+      "quantity": 10,
+      "desc": "Unlike traditional, circular earbuds, the design of the EarPods is defined by the geometry of the ear. Which makes them more comfortable for more people than any other earbud-style headphones. The speakers inside the EarPods have been engineered to maximize sound output and minimize sound loss, which means you get high-quality audio. The EarPods with Lightning Connector also include a built-in remote that lets you adjust the volume, control the playback of music and video, and answer or end calls with a pinch of the cord.",
+      "reviews": []
     },
     {
       "id": 2,
       "brand": "Sony",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6196/6196203cv12d.jpg;maxHeight=640;maxWidth=550",
       "model": "WH-CH700N",
+      "color": "black",
       "price": "$99.99",
-      "quantity": 100,
-      "desc": "Add music to your day with these Sony wireless headphones. Their noise canceling technology uses artificial intelligence to adapt to your environment and reduce background sounds for enjoyable listening. The Quick Charging battery on these over-ear Sony wireless headphones provides up to 35 hours of playback for convenience. "
+      "quantity": 10,
+      "desc": "Add music to your day with these Sony wireless headphones. Their noise canceling technology uses artificial intelligence to adapt to your environment and reduce background sounds for enjoyable listening. The Quick Charging battery on these over-ear Sony wireless headphones provides up to 35 hours of playback for convenience. ",
+      "reviews": []
     },
     {
       "id": 6,
@@ -37,8 +42,10 @@
       "url": "https://cdn11.bigcommerce.com/s-r69yc54oxa/images/stencil/1280x1280/products/93/286/1_up_1_down_wood_TWS_Image__97626.1539701370.jpg?c=2&imbypass=on",
       "model": "TRUE WIRELESS EARPHONES",
       "price": "$109.99",
-      "quantity": 100,
-      "desc": "The first DIY custom molded truly wireless earphones that easily form to the exact shape of your ears. Simply heat the Decibullz thermo-fit earpieces in water and press them into your ears for a perfect fitting earphone that will never fall out or become uncomfortable. Let's face it, earphones are worthless if they don’t stay in your ears. Not only will the Decibullz earphones stay in your ears no matter what, they also feature award-winning sound engineering, Bluetooth 5.0, IPX7 waterproofing, and one of the longest battery life on the market."
+      "color": "black",
+      "quantity": 10,
+      "desc": "The first DIY custom molded truly wireless earphones that easily form to the exact shape of your ears. Simply heat the Decibullz thermo-fit earpieces in water and press them into your ears for a perfect fitting earphone that will never fall out or become uncomfortable. Let's face it, earphones are worthless if they don’t stay in your ears. Not only will the Decibullz earphones stay in your ears no matter what, they also feature award-winning sound engineering, Bluetooth 5.0, IPX7 waterproofing, and one of the longest battery life on the market.",
+      "reviews": []
     },
     {
       "id": 7,
@@ -46,8 +53,10 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6044/6044102_rd.jpg;maxHeight=640;maxWidth=550",
       "model": "urBeats³ Earphones with Lightning Connector",
       "price": "$49.99",
+      "color": "pink",
       "quantity": 100,
-      "desc": "Designed for your life, urBeats³ wired earphones feature fine-tuned acoustic design to deliver an exceptional listening experience and an optimal ergonomic fit for all-day comfort. A variety of eartip options provides individualized fit for noise isolation while optional secure-fit wingtips provide confidence and added stability during activity. And when you’re not wearing them, the tangle-free flat cable and magnetic earbuds easily coil up for compact portability."
+      "desc": "Designed for your life, urBeats³ wired earphones feature fine-tuned acoustic design to deliver an exceptional listening experience and an optimal ergonomic fit for all-day comfort. A variety of eartip options provides individualized fit for noise isolation while optional secure-fit wingtips provide confidence and added stability during activity. And when you’re not wearing them, the tangle-free flat cable and magnetic earbuds easily coil up for compact portability.",
+      "reviews": []
     },
     {
       "id": 8,
@@ -55,8 +64,10 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5577/5577848_rd.jpg;maxHeight=640;maxWidth=550",
       "model": "Beats Solo3 Wireless Headphones",
       "price": "$239.99",
-      "quantity": 100,
-      "desc": "With up to 40 hours of battery life, Beats Solo3 Wireless is your perfect everyday headphone. With Fast Fuel, a 5-minute charge gives you 3 hours of playback. Enjoy award-winning Beats sound with Class 1 Bluetooth® wireless listening freedom. The on-ear, cushioned ear cups are adjustable so you can customize your fit for all-day comfort."
+      "color": "pink",
+      "quantity": 10,
+      "desc": "With up to 40 hours of battery life, Beats Solo3 Wireless is your perfect everyday headphone. With Fast Fuel, a 5-minute charge gives you 3 hours of playback. Enjoy award-winning Beats sound with Class 1 Bluetooth® wireless listening freedom. The on-ear, cushioned ear cups are adjustable so you can customize your fit for all-day comfort.",
+      "reviews": []
     },
     {
       "id": 9,
@@ -64,8 +75,10 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6296/6296207_sd.jpg;maxHeight=640;maxWidth=550",
       "model": "QuietComfort 35 Wireless Noise Cancelling Headphones II",
       "price": "$299.99",
-      "quantity": 100,
-      "desc": "QuietComfort 35 wireless noise cancelling headphones II are engineered with world-class noise cancellation. And now they're optimized for Amazon Alexa and the Google Assistant. Choose which is right for you for help on the go. Press the Action button to enjoy entertainment, get information, and manage your day - without looking at your phone. If you don't use the Google Assistant or Alexa, you can still use the Action button to adjust your level of noise cancellation. The multi-function button offers access to your phone's default virtual assistant, like Siri. Bluetooth® and NFC pairing free you from wires, while voice prompts make connecting easy. Volume-optimized EQ gives you balanced audio performance at any volume, and a noise-rejecting dual-microphone system provides clearer calls, even in noisy environments. The headphones feature up to 20 hours of wireless listening per charge and are designed with premium materials that make them lightweight and comfortable. Unlock more features and future updates with the Bose Connect app. With the included cable, you can keep listening even if you forget to charge. Limited Edition Triple Midnight (Navy)."
+      "color": "black",
+      "quantity": 20,
+      "desc": "QuietComfort 35 wireless noise cancelling headphones II are engineered with world-class noise cancellation. And now they're optimized for Amazon Alexa and the Google Assistant. Choose which is right for you for help on the go. Press the Action button to enjoy entertainment, get information, and manage your day - without looking at your phone. If you don't use the Google Assistant or Alexa, you can still use the Action button to adjust your level of noise cancellation. The multi-function button offers access to your phone's default virtual assistant, like Siri. Bluetooth® and NFC pairing free you from wires, while voice prompts make connecting easy. Volume-optimized EQ gives you balanced audio performance at any volume, and a noise-rejecting dual-microphone system provides clearer calls, even in noisy environments. The headphones feature up to 20 hours of wireless listening per charge and are designed with premium materials that make them lightweight and comfortable. Unlock more features and future updates with the Bose Connect app. With the included cable, you can keep listening even if you forget to charge. Limited Edition Triple Midnight (Navy).",
+      "reviews": []
     }
   ],
   "PHONES": [
@@ -75,8 +88,10 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6009/6009643_sd.jpg;maxHeight=640;maxWidth=550",
       "model": "iPhone XS",
       "price": "$999.99",
+      "color": "black",
       "quantity": 100,
-      "desc": "iPhone XS features a 5.8-inch Super Retina display with custom-built OLED panels for an HDR display that provides the industry’s best color accuracy, true blacks, and remarkable brightness.¹ Advanced Face ID lets you securely unlock your iPhone, log in to apps, and pay with just a glance. The A12 Bionic chip with next-generation Neural Engine uses real-time machine learning to transform the way you experience photos, gaming, augmented reality, and more. A breakthrough 12MP dual-camera system takes your portraits to the next level with Portrait mode, Portrait Lighting, enhanced bokeh, and all-new Depth Control. Water resistance.² And iOS 12—the most advanced mobile operating system—with powerful new tools that make iPhone more personal than ever."
+      "desc": "iPhone XS features a 5.8-inch Super Retina display with custom-built OLED panels for an HDR display that provides the industry’s best color accuracy, true blacks, and remarkable brightness.¹ Advanced Face ID lets you securely unlock your iPhone, log in to apps, and pay with just a glance. The A12 Bionic chip with next-generation Neural Engine uses real-time machine learning to transform the way you experience photos, gaming, augmented reality, and more. A breakthrough 12MP dual-camera system takes your portraits to the next level with Portrait mode, Portrait Lighting, enhanced bokeh, and all-new Depth Control. Water resistance.² And iOS 12—the most advanced mobile operating system—with powerful new tools that make iPhone more personal than ever.",
+      "reviews": []
     },
     {
       "id": 10,
@@ -84,8 +99,23 @@
       "model": "Pixel 3",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6303/6303045_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$799.99",
+      "color": "black",
       "quantity": 100,
-      "desc": "Stay connected all day with the fast wireless charge of this Google Pixel 3 smartphone. Its wide-angle front camera and 64GB of storage let you capture and preserve memorable selfies, while Google Lens harnesses image recognition to identify objects as you see them. This Google Pixel 3 screens your calls for spam, so you won't be interrupted by nuisance calls."
+      "desc": "Stay connected all day with the fast wireless charge of this Google Pixel 3 smartphone. Its wide-angle front camera and 64GB of storage let you capture and preserve memorable selfies, while Google Lens harnesses image recognition to identify objects as you see them. This Google Pixel 3 screens your calls for spam, so you won't be interrupted by nuisance calls.",
+      "reviews": [
+        {
+          "user": "Hughster",
+          "text": "I have had my pixel 3 for 10 days. Loved it at first, but then it turns out the battery life is disappointing. The camera is nice and takes great pictures. However, today, I dropped it from not very high up on hardwood floor (that isn't that hard) and the back panel (which is glass) completely shattered. Very disappointing, no aluminum casing, but just glass that breaks easily. I can now see the inner components. Google recommended a service that would charge me $400 to fix it (apparently both the back and front panel need to be replaced). $400 to fix for an $800 phone. Something is majorly wrong here. I'm going back to an iPhone, used to have them for many years, they were able to survive gentle drops without any damage. So disappointed in Google!!! Yes I shouldn't have dropped it, but no it shouldn't completely shatter so easily."
+        },
+        {
+          "user": "Chris",
+          "text": "Ive had an iPhone for about 3 years now and once the pixel 2 came out i knew i wanted to switch. But before my upgrade was completely ready the pixel 3 rumors were going around. I waited and I’ve got to say I’m happy did. This phone is great! Quick, light weight, feels good in your hands and very responsive. Just a slight learning curve going from IOS to android but i know i will get there. Plus i never liked Siri but i really enjoy the google assist."
+        },
+        {
+          "user": "Andrew",
+          "text": "First Google phone. Amazed out how buttery smooth this phone is compared to my previous Android phones. Camera is FANTASTIC. Gets a good shot in almost every condition. Haptic feedback is awesome. Phone is loud and clear. Battery life gets me through the day well. Really well designed and fits really well in your hand for one hand usage."
+        }
+      ]
     },
     {
       "id": 11,
@@ -93,8 +123,15 @@
       "model": "Galaxy S8",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5803/5803741_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$499.99",
+      "color": "black",
       "quantity": 100,
-      "desc": "Call, text and capture your world with this Samsung Galaxy S8 smartphone. Keep personal data secure with the phone's security features, which include facial recognition and a fingerprint sensor on the rear panel. Equipped with a Super AMOLED screen and Corning Gorilla Glass 5, this Samsung Galaxy S8 smartphone wraps elegance and durability into one chic electronic package."
+      "desc": "Call, text and capture your world with this Samsung Galaxy S8 smartphone. Keep personal data secure with the phone's security features, which include facial recognition and a fingerprint sensor on the rear panel. Equipped with a Super AMOLED screen and Corning Gorilla Glass 5, this Samsung Galaxy S8 smartphone wraps elegance and durability into one chic electronic package.",
+      "reviews": [
+        {
+          "user": "bob1007",
+          "text": "I decided the time and price were right to upgrade from my Galaxy S5, which I had for about three years, to the S8 and overall I am pleased with it."
+        }
+      ]
     },
     {
       "id": 12,
@@ -102,8 +139,10 @@
       "model": "6.1 with 32GB Memory Cell Phone",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6219/6219312_sa.jpg;maxHeight=640;maxWidth=550",
       "price": "$179.99",
+      "color": "black",
       "quantity": 100,
-      "desc": "It has 32GB of internal storage for apps, music, and photos, and its octa-core processor and 3GB of RAM ensure smooth operation of Android apps. Enjoy quality video streaming on the 5.5-inch IPS FHD touchscreen of this Nokia smartphone. "
+      "desc": "It has 32GB of internal storage for apps, music, and photos, and its octa-core processor and 3GB of RAM ensure smooth operation of Android apps. Enjoy quality video streaming on the 5.5-inch IPS FHD touchscreen of this Nokia smartphone.",
+      "reviews": []
     },
     {
       "id": 13,
@@ -111,8 +150,10 @@
       "model": "Galaxy S9",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6191/6191423_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$569.99",
-      "quantity": 100,
-      "desc": "Samsung Galaxy S9 in black. Pro Mode manual adjustments deliver professional photos frame by frame, while the dual aperture lens shoots clear in any lighting. Easy access from Iris Scanner and Facial Recognition opens your phone with a look. With included Augmented Reality that does everything from translating text to turning users into emojis, this unlocked Samsung Galaxy S9 brings imagination to life."
+      "color": "black",
+      "quantity": 10,
+      "desc": "Samsung Galaxy S9 in black. Pro Mode manual adjustments deliver professional photos frame by frame, while the dual aperture lens shoots clear in any lighting. Easy access from Iris Scanner and Facial Recognition opens your phone with a look. With included Augmented Reality that does everything from translating text to turning users into emojis, this unlocked Samsung Galaxy S9 brings imagination to life.",
+      "reviews": []
     },
     {
       "id": 14,
@@ -120,8 +161,10 @@
       "model": "Stylo 4 with 32GB Memory",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6261/6261400_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$159.99",
-      "quantity": 100,
-      "desc": "Stay mobile and productive with this unlocked LG Stylo 4 smartphone. It provides quick access to the memo pad and your favorite app shortcuts when the stylus is pulled out, and the 6.2-inch FHD+ FullVision display lets you view stunning images. This 32GB LG Stylo 4 smartphone runs Android 8.1 Oreo seamlessly via an octa-core processor and 3GB of RAM."
+      "color": "black",
+      "quantity": 4,
+      "desc": "Stay mobile and productive with this unlocked LG Stylo 4 smartphone. It provides quick access to the memo pad and your favorite app shortcuts when the stylus is pulled out, and the 6.2-inch FHD+ FullVision display lets you view stunning images. This 32GB LG Stylo 4 smartphone runs Android 8.1 Oreo seamlessly via an octa-core processor and 3GB of RAM.",
+      "reviews": []
     },
     {
       "id": 15,
@@ -129,8 +172,10 @@
       "model": "Vivo XI+ with 64GB Memory",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6288/6288555_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$249.99",
-      "quantity": 100,
-      "desc": "Run your favorite Android apps with this unlocked dual-SIM BLU Vivo XI+ smartphone. The 6.2-inch curved notch display provides a wide-screen view of Full HD+ content, and it has an octa-core MediaTek processor and 4GB of RAM for smooth mobile multitasking. Connect to high-speed Internet via the Wi-Fi and 4G LTE support of this 64GB BLU Vivo XI+ smartphone"
+      "color": "black",
+      "quantity": 10,
+      "desc": "Run your favorite Android apps with this unlocked dual-SIM BLU Vivo XI+ smartphone. The 6.2-inch curved notch display provides a wide-screen view of Full HD+ content, and it has an octa-core MediaTek processor and 4GB of RAM for smooth mobile multitasking. Connect to high-speed Internet via the Wi-Fi and 4G LTE support of this 64GB BLU Vivo XI+ smartphone",
+      "reviews": []
     },
     {
       "id": 16,
@@ -138,8 +183,19 @@
       "model": "K8 2018",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6213/6213513_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$129.99",
+      "color": "black",
       "quantity": 100,
-      "desc": "Seize every share-worthy moment with this unlocked LG K8 smartphone. Its 5-megapixel front camera with selfie light function has a gesture shot feature for automatic self-portrait capture, and its 5-inch HD display provides brilliant viewing quality. This 4G LTE LG K8 smartphone has 8GB of storage, and its quad-core processor and 2GB of RAM let you run multiple apps smoothly."
+      "desc": "Seize every share-worthy moment with this unlocked LG K8 smartphone. Its 5-megapixel front camera with selfie light function has a gesture shot feature for automatic self-portrait capture, and its 5-inch HD display provides brilliant viewing quality. This 4G LTE LG K8 smartphone has 8GB of storage, and its quad-core processor and 2GB of RAM let you run multiple apps smoothly.",
+      "reviews": [
+        {
+          "user": "technologicallyilliterate",
+          "text": "I’m 74. This is my first cell phone. My condolences, apologies and sincere thanks to the store personnel who, through agonizing hours, finally launched me. I returned to the store each day for five days and they were patient beyond belief. What I like about the phone: It is unlocked and has a battery. The power on/power off button is on the back. Contrast can be adjusted to sharp. Font is available in huge and bold. What I didn’t like about the phone: The calendar and the ringtones. However, the store personnel helped me get a calendar and a ringtone that I like. This is right starter phone for me, at the right price, and it may be all I will ever need."
+        },
+        {
+          "user": "AlanHouston",
+          "text": "The 2018 LG K8 is a basic version of the LG Aristo 2 at MetroPcs and the KG Aristo 2 Plus at T-Mobile. The Aristo 2 adds bands for stronger signals in rural areas, adds WiFi calling and better cameras."
+        }
+      ]
     },
     {
       "id": 17,
@@ -147,8 +203,10 @@
       "model": "Moto G6",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6221/6221371_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$149.99",
+      "color": "gold",
       "quantity": 100,
-      "desc": "Expand your mobile multimedia experience with this dual-camera Motorola Moto G6 smartphone. It has 32GB of expandable storage, and the 2160 x 1080 resolution of its 5.7-inch display lets you enjoy Full HD streaming. The quad-core processor and 3GB of RAM of this unlocked Motorola Moto G6 smartphone run Android 8.0 Oreo seamlessly."
+      "desc": "Expand your mobile multimedia experience with this dual-camera Motorola Moto G6 smartphone. It has 32GB of expandable storage, and the 2160 x 1080 resolution of its 5.7-inch display lets you enjoy Full HD streaming. The quad-core processor and 3GB of RAM of this unlocked Motorola Moto G6 smartphone run Android 8.0 Oreo seamlessly.",
+      "reviews": []
     },
     {
       "id": 18,
@@ -157,7 +215,8 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6219/6219325_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$299.99",
       "quantity": 100,
-      "desc": "Connect online with this Apple iPhone 6s smartphone for Simple Mobile. It provides high-speed mobile internet access via 4G LTE or Wi-Fi, and its 12-megapixel iSight camera lets you take stunning photos. This Apple iPhone 6s smartphone has 32GB of storage for apps and files, and its 4.7-inch Retina HD display provides brilliant content viewing."
+      "desc": "Connect online with this Apple iPhone 6s smartphone for Simple Mobile. It provides high-speed mobile internet access via 4G LTE or Wi-Fi, and its 12-megapixel iSight camera lets you take stunning photos. This Apple iPhone 6s smartphone has 32GB of storage for apps and files, and its 4.7-inch Retina HD display provides brilliant content viewing.",
+      "reviews": []
     },
     {
       "id": 19,
@@ -165,8 +224,10 @@
       "model": "Stylo 4",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6261/6261400ld.jpg;maxHeight=640;maxWidth=550",
       "price": "$159.99",
+      "color": "black",
       "quantity": 100,
-      "desc": "Stay mobile and productive with this unlocked LG Stylo 4 smartphone. It provides quick access to the memo pad and your favorite app shortcuts when the stylus is pulled out, and the 6.2-inch FHD+ FullVision display lets you view stunning images. This 32GB LG Stylo 4 smartphone runs Android 8.1 Oreo seamlessly via an octa-core processor and 3GB of RAM"
+      "desc": "Stay mobile and productive with this unlocked LG Stylo 4 smartphone. It provides quick access to the memo pad and your favorite app shortcuts when the stylus is pulled out, and the 6.2-inch FHD+ FullVision display lets you view stunning images. This 32GB LG Stylo 4 smartphone runs Android 8.1 Oreo seamlessly via an octa-core processor and 3GB of RAM",
+      "reviews": []
     }
   ],
   "LAPTOPS": [
@@ -176,8 +237,19 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5721/5721740_sd.jpg;maxHeight=640;maxWidth=550",
       "model": "Macbook Pro 13ich Display",
       "price": "$1500",
+      "color": "gray",
       "quantity": 100,
-      "desc": "The new MacBook Pro is razor-thin, featherlight, and now even faster and more powerful than before. It has the brightest, most colorful Mac notebook display. And it features up to 10 hours of battery life.* It’s a notebook built for the work you do every day. Ready to go anywhere a great idea takes you."
+      "desc": "The new MacBook Pro is razor-thin, featherlight, and now even faster and more powerful than before. It has the brightest, most colorful Mac notebook display. And it features up to 10 hours of battery life.* It’s a notebook built for the work you do every day. Ready to go anywhere a great idea takes you.",
+      "reviews": [
+        {
+          "user": "Regretful",
+          "text": "I have been a windows user all my life. My last windows laptop crashed. I decided to get a macbook as I was told they are better than windows based laptops. I hated some features in windows so I decided to give the macbook pro a try even though i hated their price relative to windows pc.I purchased this mac and then went on a vacation out of the country for 2 weeks so i didn't use it during that time. BY the time I started using it and realized its flaws i was already out of the 14 days return window."
+        },
+        {
+          "user": "Herby130",
+          "text": "If you like Apple products you will most likely love this laptop"
+        }
+      ]
     },
     {
       "id": 20,
@@ -185,8 +257,10 @@
       "model": "30-15AST 15.6' Laptop - AMD A6-Series ",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6266/6266400_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$279.99",
+      "color": "gray",
       "quantity": 100,
-      "desc": " If you're looking for a reliable laptop that doesn't overwhelm you with bells and whistles you'll never use, take a look at the Ideapad 130 15'. It's got the speed and power to handle both today's tasks — and tomorrow's. Its durable build means you can count on it for the long haul."
+      "desc": " If you're looking for a reliable laptop that doesn't overwhelm you with bells and whistles you'll never use, take a look at the Ideapad 130 15'. It's got the speed and power to handle both today's tasks — and tomorrow's. Its durable build means you can count on it for the long haul.",
+      "reviews": []
     },
     {
       "id": 21,
@@ -194,8 +268,10 @@
       "model": "Inspiron 2-in-1 13.3' Touch-Screen Laptop",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6295/6295914_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$849.99",
+      "color": "gray",
       "quantity": 100,
-      "desc": "Maximize productivity with this 13.3-inch Dell Inspiron notebook computer. The combination of its Intel Core i5 processor and 8GB of RAM runs multiple programs simultaneously at peak performance, and it's Bluetooth-enabled to connect wireless devices or transmit data. This Dell Inspiron notebook computer has a 256GB solid-state drive to safely store files."
+      "desc": "Maximize productivity with this 13.3-inch Dell Inspiron notebook computer. The combination of its Intel Core i5 processor and 8GB of RAM runs multiple programs simultaneously at peak performance, and it's Bluetooth-enabled to connect wireless devices or transmit data. This Dell Inspiron notebook computer has a 256GB solid-state drive to safely store files.",
+      "reviews": []
     },
     {
       "id": 22,
@@ -203,8 +279,10 @@
       "model": "11.6inch Chromebook",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6293/6293618_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$199.00",
+      "color": "black",
       "quantity": 100,
-      "desc": "Inspiron Chromebook. It has 4GB of RAM and a 2.48GHz Intel Celeron processor for efficient performance on Chrome OS, and its HD display lets you enjoy viewing YouTube videos. Connect peripherals to the two USB 3.0 ports of this 16GB Dell Inspiron Chromebook."
+      "desc": "Inspiron Chromebook. It has 4GB of RAM and a 2.48GHz Intel Celeron processor for efficient performance on Chrome OS, and its HD display lets you enjoy viewing YouTube videos. Connect peripherals to the two USB 3.0 ports of this 16GB Dell Inspiron Chromebook.",
+      "reviews": []
     },
     {
       "id": 23,
@@ -212,8 +290,10 @@
       "model": "MacBook Air® - 13.3inch",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5465/5465502_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$999.99",
+      "color": "gray",
       "quantity": 100,
-      "desc": "The 13-inch MacBook Air features 8GB of memory, a fifth-generation Intel Core processor, Thunderbolt 2, great built-in apps, and all-day battery life.* It’s thin, light, and durable enough to take everywhere you go—and powerful enough to do everything once you get there."
+      "desc": "The 13-inch MacBook Air features 8GB of memory, a fifth-generation Intel Core processor, Thunderbolt 2, great built-in apps, and all-day battery life.* It’s thin, light, and durable enough to take everywhere you go—and powerful enough to do everything once you get there.",
+      "reviews": []
     },
     {
       "id": 24,
@@ -221,8 +301,10 @@
       "model": "15.6inch Chromebook",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6170/6170703_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$199.00",
+      "color": "black",
       "quantity": 100,
-      "desc": "Acer Chromebook. Its Intel Celeron processor and 4GB of RAM load webpages quickly and provide lag-free streaming, and the 16GB of internal storage holds documents and photos. This Acer Chromebook has an HDMI port for connecting to a larger display."
+      "desc": "Acer Chromebook. Its Intel Celeron processor and 4GB of RAM load webpages quickly and provide lag-free streaming, and the 16GB of internal storage holds documents and photos. This Acer Chromebook has an HDMI port for connecting to a larger display.",
+      "reviews": []
     },
     {
       "id": 25,
@@ -230,8 +312,10 @@
       "model": "Pavilion x360 2-in-1 11.6inch Touch-Screen",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6237/6237353_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$399.99",
+      "color": "gray",
       "quantity": 100,
-      "desc": "Pavilion convertible laptop. The compact 11.6-inch screen flips over 360 degrees so that you can use it as a tablet. When opened 90 degrees, the generous keyboard functions just like a normal laptop. An Intel Pentium processor and 4GB of RAM make it easy to multitask on this HP Pavilion convertible laptop."
+      "desc": "Pavilion convertible laptop. The compact 11.6-inch screen flips over 360 degrees so that you can use it as a tablet. When opened 90 degrees, the generous keyboard functions just like a normal laptop. An Intel Pentium processor and 4GB of RAM make it easy to multitask on this HP Pavilion convertible laptop.",
+      "reviews": []
     },
     {
       "id": 26,
@@ -239,8 +323,10 @@
       "model": " Surface Go - 10inch Touch-Screen",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6261/6261393_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$399.00",
+      "color": "red",
       "quantity": 100,
-      "desc": "New 10” Surface Go is perfect for all your daily tasks, giving you laptop performance with tablet portability, a stunning touchscreen, and the Windows and Office* experience you know. From email, browsing, and home projects to unwinding with a favorite TV show, Surface Go is by your side wherever you are — with up to 9 hours¹ of battery life, built-in HD cameras, hassle-free connectivity, and all the ports you need, including multi-tasking USB-C"
+      "desc": "New 10” Surface Go is perfect for all your daily tasks, giving you laptop performance with tablet portability, a stunning touchscreen, and the Windows and Office* experience you know. From email, browsing, and home projects to unwinding with a favorite TV show, Surface Go is by your side wherever you are — with up to 9 hours¹ of battery life, built-in HD cameras, hassle-free connectivity, and all the ports you need, including multi-tasking USB-C",
+      "reviews": []
     },
     {
       "id": 27,
@@ -248,8 +334,10 @@
       "model": "Plus 2-in-1 12.2inch Touch-Screen Chromebook",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6239/6239914_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$399.00",
+      "color": "gray",
       "quantity": 100,
-      "desc": "Enjoy precision drawing on this Samsung Chromebook Plus. It starts with an Intel Celeron processor and 4GB of RAM to let you access programs and open tabs, while the included digitizer pen lets you precisely control elements on the screen. A 32GB internal storage ensures this Samsung Chromebook Plus has plenty of space to store files and folders."
+      "desc": "Enjoy precision drawing on this Samsung Chromebook Plus. It starts with an Intel Celeron processor and 4GB of RAM to let you access programs and open tabs, while the included digitizer pen lets you precisely control elements on the screen. A 32GB internal storage ensures this Samsung Chromebook Plus has plenty of space to store files and folders.",
+      "reviews": []
     },
     {
       "id": 28,
@@ -257,8 +345,10 @@
       "model": "ENVY x360 2-in-1 15.6inch Touch-Screen Laptop",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6237/6237354_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$849.99",
+      "color": "gray",
       "quantity": 100,
-      "desc": "Create from home or on the go with this HP convertible touch-screen laptop. It features a full-size keyboard and comes loaded with Windows 10 Home, while the Intel Core i5 processor delivers enhanced performance. With up to 12 hours of battery life, this HP convertible touch-screen laptop lets you tackle almost any project.Learn more."
+      "desc": "Create from home or on the go with this HP convertible touch-screen laptop. It features a full-size keyboard and comes loaded with Windows 10 Home, while the Intel Core i5 processor delivers enhanced performance. With up to 12 hours of battery life, this HP convertible touch-screen laptop lets you tackle almost any project.Learn more.",
+      "reviews": []
     },
     {
       "id": 29,
@@ -266,8 +356,10 @@
       "model": "2-in-1 15.6inch Touch-Screen Laptop",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6077/6077501_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$829.99",
-      "quantity": 100,
-      "desc": "Maximize your multitasking ability with this Asus notebook computer. The Intel Core i5 processor and 12GB of DDR4 RAM let you run multiple programs at once, and the integrated fingerprint reader replaces passwords as a login credential. This 15.6-inch Asus notebook computer includes a 1TB hard drive to store plenty of documents and photos"
+      "color": "gray",
+      "quantity": 10,
+      "desc": "Maximize your multitasking ability with this Asus notebook computer. The Intel Core i5 processor and 12GB of DDR4 RAM let you run multiple programs at once, and the integrated fingerprint reader replaces passwords as a login credential. This 15.6-inch Asus notebook computer includes a 1TB hard drive to store plenty of documents and photos",
+      "reviews": []
     },
     {
       "id": 30,
@@ -275,8 +367,10 @@
       "model": "Nitro 5 15.6inch",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6212/6212602_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$799.99",
-      "quantity": 100,
-      "desc": "Defeat the competition with this Acer Aspire Nitro 5 laptop. Its Intel Core i5 processor and 8GB of DDR4 RAM keep multiple programs running smoothly, and the NVIDIA GTX 1050Ti graphics card renders 3D images and video on the 15.6-inch Full HD display. This Acer Aspire Nitro 5 laptop has a 256GB solid-state drive for fast boot times."
+      "color": "black",
+      "quantity": 10,
+      "desc": "Defeat the competition with this Acer Aspire Nitro 5 laptop. Its Intel Core i5 processor and 8GB of DDR4 RAM keep multiple programs running smoothly, and the NVIDIA GTX 1050Ti graphics card renders 3D images and video on the 15.6-inch Full HD display. This Acer Aspire Nitro 5 laptop has a 256GB solid-state drive for fast boot times.",
+      "reviews": []
     }
   ],
   "CAMERAS": [
@@ -286,8 +380,9 @@
       "model": "D5300",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5581/5581129_sd.jpg;maxHeight=200;maxWidth=300",
       "price": "$500",
-      "quantity": 100,
-      "desc": "Take and share photos instantly with this Wi-Fi-enabled Nikon DSLR camera. It has a 24.2-megapixel CMOS image sensor in DX format, expandable ISO capability up to 25,600 and full 1080p HD video capability. This Nikon DSLR camera is capable of up to 1/4000 shutter speed and works best with Nikon AF-P and AF-I-CPU lenses."
+      "quantity": 20,
+      "desc": "Take and share photos instantly with this Wi-Fi-enabled Nikon DSLR camera. It has a 24.2-megapixel CMOS image sensor in DX format, expandable ISO capability up to 25,600 and full 1080p HD video capability. This Nikon DSLR camera is capable of up to 1/4000 shutter speed and works best with Nikon AF-P and AF-I-CPU lenses.",
+      "reviews": []
     },
     {
       "id": 31,
@@ -295,8 +390,10 @@
       "model": "EOS Rebel T7i",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6303/6303586_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$1,199.99",
-      "quantity": 100,
-      "desc": "Take your photography to the next level with this Canon DSLR camera. It has a 24.2-MP sensor and operates at 6 fps to produce professional-looking images during high-speed, continuous shooting. This Canon DSLR camera has a versatile 55-250mm zoom lens with advanced image stabilization for sharp photos with minimal blur."
+      "color": "black",
+      "quantity": 10,
+      "desc": "Take your photography to the next level with this Canon DSLR camera. It has a 24.2-MP sensor and operates at 6 fps to produce professional-looking images during high-speed, continuous shooting. This Canon DSLR camera has a versatile 55-250mm zoom lens with advanced image stabilization for sharp photos with minimal blur.",
+      "reviews": []
     },
     {
       "id": 32,
@@ -304,8 +401,10 @@
       "model": "DD5600",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5715/5715104_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$799.99",
-      "quantity": 100,
-      "desc": "Explore your creativity with this Nikon digital SLR camera. It lets you create regular or time-lapsed videos that can be synced to your smartphone via the SnapBridge function, and it includes customizable special effects options. This 24.2-megapixel Nikon digital SLR camera has an adjustable touch screen to help you get the best images."
+      "color": "black",
+      "quantity": 10,
+      "desc": "Explore your creativity with this Nikon digital SLR camera. It lets you create regular or time-lapsed videos that can be synced to your smartphone via the SnapBridge function, and it includes customizable special effects options. This 24.2-megapixel Nikon digital SLR camera has an adjustable touch screen to help you get the best images.",
+      "reviews": []
     },
     {
       "id": 33,
@@ -313,8 +412,10 @@
       "model": "EOS 80D",
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5005/5005633_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$1,799.99",
-      "quantity": 100,
-      "desc": "Get great performance with the Canon EOS 80D lens kit. It combines a 24.2-megapixel sensor with an 18-135mm lens to get you closer to the action than ever before, and image stabilization reduces the effects of hand shake. Enjoy ultra-precise focusing and high-definition video for maximum versatility from this Canon EOS 80D lens kit."
+      "color": "black",
+      "quantity": 10,
+      "desc": "Get great performance with the Canon EOS 80D lens kit. It combines a 24.2-megapixel sensor with an 18-135mm lens to get you closer to the action than ever before, and image stabilization reduces the effects of hand shake. Enjoy ultra-precise focusing and high-definition video for maximum versatility from this Canon EOS 80D lens kit.",
+      "reviews": []
     },
     {
       "id": 34,
@@ -323,7 +424,8 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5446/5446701_rd.jpg;maxHeight=640;maxWidth=550",
       "price": "$2,049.99",
       "quantity": 100,
-      "desc": "Show off your video creation skills with this Canon EOS 80D video creator kit. It includes an EOS 80D body with an 18-135mm lens as well as a powerful RODE microphone to pick up all the images and sound around you. Battery pack ensures the Canon EOS 80D video creator kit has plenty of power."
+      "desc": "Show off your video creation skills with this Canon EOS 80D video creator kit. It includes an EOS 80D body with an 18-135mm lens as well as a powerful RODE microphone to pick up all the images and sound around you. Battery pack ensures the Canon EOS 80D video creator kit has plenty of power.",
+      "reviews": []
     },
     {
       "id": 35,
@@ -332,7 +434,8 @@
       "url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5959/5959401_sd.jpg;maxHeight=640;maxWidth=550",
       "price": "$2,399.99",
       "quantity": 100,
-      "desc": "Head to your next location shoot with this Canon EOS 6D Mark II camera, and ensure you get the shot every time. The full-frame DSLR uses a 26.2-megapixel CMOS sensor and DIGIC 7 image processing to deliver outstanding clear photos with every click of the shutter. This Canon EOS 6D Mark II camera arrives with a EF 24-105 standard lens."
+      "desc": "Head to your next location shoot with this Canon EOS 6D Mark II camera, and ensure you get the shot every time. The full-frame DSLR uses a 26.2-megapixel CMOS sensor and DIGIC 7 image processing to deliver outstanding clear photos with every click of the shutter. This Canon EOS 6D Mark II camera arrives with a EF 24-105 standard lens.",
+      "reviews": []
     }
   ]
 }
