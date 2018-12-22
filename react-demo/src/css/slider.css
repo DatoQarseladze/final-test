@@ -1,44 +1,30 @@
-<<<<<<< HEAD
-.slider {
-    width:100%;
-    height:550px;
-}
-   
-   
 @media screen and (max-width: 900px) and (min-width: 600px) {
-    .slider{
-        margin-top: 200px;
-        width: 100%;
-        height: 250px;
-    }   
+  .slider {
+    margin-top: 200px;
+    width: 100%;
+    height: 250px;
+  }
 }
-=======
 /* start-slider */
 .slider {
-  width:100%;
-  height:550px;
-  }
+  width: 100%;
+  height: 550px;
+}
 
-  
-  .watch {
-  width:29%;
-	
-  }
+.watch {
+  width: 29%;
+}
 
-  .watch:hover {
-    border-radius:40px;
-    -webkit-transform: scale(1.06);
-    -webkit-transition-timing-function: ease-in-out;
-    -webkit-transition-duration: 600ms;
-    -moz-transform: scale(1.06);
-    -moz-transition-timing-function: ease-in-out;
-    -moz-transition-duration: 600ms;
-    transform: rotate(360deg);
-    cursor:pointer;
+.watch:hover {
+  border-radius: 40px;
+  -webkit-transform: scale(1.06);
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 600ms;
+  -moz-transform: scale(1.06);
+  -moz-transition-timing-function: ease-in-out;
+  -moz-transition-duration: 600ms;
+  transform: rotate(360deg);
+  cursor: pointer;
+}
 
-  }
-
-  
-  
-  /* end-slider */
->>>>>>> origin
+/* end-slider */

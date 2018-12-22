@@ -1,61 +1,40 @@
 .history img {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
 .history__heading {
-    text-align: center;
-    font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px;
+  padding-bottom: 20px;
+}
+
+.history__wrapper {
+  width: 90%;
+  border: 1px solid silver;
+  position: relative;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .history {
-    width: 90%;
-    border: 1px solid silver;
-    position: relative;
-    left: 5%;
-    padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  height: 200px;
+  width: 90%;
+  padding-bottom: 25%;
+  margin: 0 5%;
 }
 
-.history__saba {
-    display: flex;
+.text__about {
+  /* position: relative; */
+  /* left: 3%; */
+  font-size: 20px;
+  width: 70%;
 }
-
-.text__about1 {
-    position: relative;
-    left: 3%;
-    font-size: 20px;
-    padding: 20px;
-}
-
-.history__dato {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.text__about2 {
-    position: relative;
-    font-size: 20px;
-    padding: 20px;
-}
-
-.history__mariam {
-    display: flex;
-}
-
-.text__about3 {
-    position: relative;
-    left: 3%;
-    font-size: 20px;
-    padding: 20px;
-}
-
-.history__kits {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.text__about4 {
-    position: relative;
-    font-size: 20px;
-    padding: 20px;
+.history__photo {
+  width: 20%;
 }
