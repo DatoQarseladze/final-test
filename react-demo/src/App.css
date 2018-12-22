@@ -247,6 +247,10 @@ h1 {
   text-align: center;
   text-transform: uppercase;
 }
+.review-text{
+  font-size: 20px;
+  color: orange;
+}
 /* hover menu on explore */
 .dropdown__content {
   position: absolute;

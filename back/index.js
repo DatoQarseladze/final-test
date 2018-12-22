@@ -16,6 +16,8 @@ app.get("/", (req, res) => {
 });
 
 const usersfile = "../react-demo/src/db/users.json";
+const productfile = "../react-demo/src/db/products.json";
+
 let ID;
 
 app.post("/register", (req, res, err) => {
@@ -125,6 +127,23 @@ app.post("/login", (req, res) => {
   });
 });
 
+
+app.get('/getreviews', (req,res) =>{
+  fs.readFile(productfile, function(err,data) {
+    let json = JSON.parse(data);
+    let reviews = json.HEADPHONES[0].reviews
+    const array = []
+    for(let i = 0; i < reviews.length; i++){
+      // console.log(reviews[i].text)
+  
+      array.push(reviews[i].text)
+      
+    }
+    console.log(array)
+    res.json(array);
+
+  })
+})
 app.post("/edit", (req, res) => {
   console.log(req.body);
   let newusername = req.body.newUsername;
