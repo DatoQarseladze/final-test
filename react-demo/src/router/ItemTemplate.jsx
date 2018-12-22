@@ -9,7 +9,9 @@ class ItemTemplate extends Component {
     this.state = {
       data: [],
       user: "",
-      text: ""
+      text: "",
+      imgheight: "",
+      imgwidth: ""
     };
   }
   handleChange = e => {
@@ -37,7 +39,25 @@ class ItemTemplate extends Component {
         console.log(error);
       });
   };
+  updateDimensions = () => {
+    if (window.innerWidth < 1024 && window.innerWidth > 425) {
+      this.setState({ imgwidth: 370, imgheight: 270 });
+    } else if (window.innerWidth < 425) {
+      this.setState({ imgwidth: 320, imgheight: 200 });
+    } else {
+      this.setState({ imgwidth: 400, imgheight: 450 });
+    }
+
+    // console.log(window.innerWidth, this.state.imgwidth);
+  };
+
+  componentDidMount() {
+    // this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions);
+  }
   componentWillMount() {
+    this.updateDimensions();
+
     const url = "http://localhost:5000/";
     let pth = window.location.pathname;
     let id = pth.substr(pth.lastIndexOf("/") + 1);
@@ -64,14 +84,20 @@ class ItemTemplate extends Component {
       <div className="clicked__item--wrapper">
         <div className="clicked__item">
           {this.state.data.url && (
-            <Zoom
+            <div
               className="clicked__item--img"
-              img={this.state.data.url}
-              zoomScale={2}
-              height={400}
-              width={600}
-              transitionTime={0.5}
-            />
+              height={this.state.imgheight}
+              width={this.state.imgwidth}
+            >
+              <Zoom
+                // className="clicked__item--img"
+                img={this.state.data.url}
+                zoomScale={2}
+                height={this.state.imgheight}
+                width={this.state.imgwidth}
+                transitionTime={0.5}
+              />
+            </div>
           )}
           <h1 className="clicked__item--brand">{this.state.data.brand}</h1>
           <h2 className="clicked__item--model">{this.state.data.model}</h2>
@@ -126,6 +152,9 @@ class ItemTemplate extends Component {
         </div>
       </div>
     );
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
   }
 }
 

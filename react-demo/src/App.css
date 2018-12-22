@@ -167,11 +167,10 @@ h1 {
   color: black;
 }
 
-.chat-container{
+.chat-container {
   position: absolute;
   height: 500px;
   top: 50%;
-
 }
 .chat {
   position: fixed;
@@ -181,20 +180,18 @@ h1 {
   cursor: pointer;
 }
 
-
 .chat img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   border: 2px solid lightgrey;
 }
-.chat--text{
+.chat--text {
   position: fixed;
   top: 60%;
   right: 0;
   z-index: 2;
   text-align: center;
-  
 }
 .reviews {
   background: linear-gradient(
@@ -402,11 +399,13 @@ h1 {
 
 /* clicked item */
 .clicked__item--wrapper {
-  padding: 80px 100px;
+  padding: 5% 8%;
+  width: 100%;
 }
 .clicked__item {
   display: grid;
-  grid-template-columns: 450px 200px 400px;
+  /* grid-template-columns: 450px 200px 400px; */
+  grid-template-columns: 55% 1% 40%;
   grid-template-rows: repeat(8, 50px);
   grid-row-gap: 20px;
   justify-content: center;
@@ -414,8 +413,6 @@ h1 {
 .clicked__item--img {
   grid-column: 1;
   grid-row: 1;
-  border: 1px solid black;
-  padding: 50px;
 }
 .clicked__item--brand {
   font-size: 2.5em;
@@ -662,4 +659,73 @@ form > div {
   color: black;
   font-size: 18px;
   padding: 5px;
+}
+
+/* for tablets */
+@media (max-width: 900px) {
+}
+
+/* for mobile */
+@media (max-width: 569px) {
+  .items__wrapper {
+    margin: 5%;
+  }
+  .item {
+    display: block;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .item--img {
+    padding: 10% 13%;
+  }
+
+  .clicked__item--wrapper {
+    padding: 0;
+    width: 100%;
+  }
+  .clicked__item {
+    width: 100%;
+    grid-template-rows: repeat(12, 40px);
+    grid-gap: 5px;
+  }
+  .clicked__item--brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .clicked__item--model {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .clicked__item--price {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .clicked__item--img {
+    grid-column: 1/4;
+    grid-row: 4/7;
+    /* overflow: hidden; */
+    /* width: 400px; */
+  }
+  .clicked__item--desc {
+    grid-column: 1/4;
+    grid-row: 9/11;
+  }
+  .clicked__item--quantity {
+    grid-column: 1;
+    grid-row: 11;
+  }
+  .clicked__item--addto--cart {
+    grid-column: 1/4;
+    grid-row: 12;
+  }
+  form > div {
+    display: block;
+  }
+  .clicked__item--new--review {
+    width: 100%;
+  }
+  .clicked__item--btn--post {
+    margin: 0;
+    width: 100%;
+  }
 }
