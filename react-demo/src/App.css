@@ -656,3 +656,150 @@ form > div {
   font-size: 18px;
   padding: 5px;
 }
+
+/*  responsive  */
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+
+  .header {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header__wrapper {
+    width: 100%;
+  }
+  .header__logo {
+    width: 40%;
+  }
+
+  .menu {
+    width: 80%;
+    position: absolute;
+    top: 20%;
+  }
+
+  .menu__item dropdown,
+  .menu__item {
+    width: 100%;
+  }
+
+  .nav {
+    width: 60%;
+    position: absolute;
+    top: 30%;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .slider-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .slide {
+    width: 100%;
+  }
+  
+  .reviews {
+    width: 100%;
+  }
+  
+  /* .review-title {} */
+  
+  .user-wrapper {
+    width: 100%;
+  }
+  
+  .user {
+    width: 100%;
+    grid-column: 1;
+    flex-direction: column;
+  }
+  
+  .user2 {
+    width: 100%;
+    grid-column: 1;
+    flex-direction: column;
+  }
+  
+  .user3 {
+    width: 100%;
+    grid-column: 1;
+    flex-direction: column;
+  }
+  
+  .user4 {
+    width: 100%;
+    grid-column: 1;
+    flex-direction: column;
+  }
+  
+  .user-info {
+    width: 100%;
+  }
+
+  .footer__social {
+    flex-direction: column;
+  }
+
+  .map {
+    width: 100%;
+  }
+  
+  .instagram {
+    width: 100%;
+  }
+  
+  .youtube {
+    width: 100%;
+  }
+  
+  .twitter {
+    width: 100%;
+  }
+  
+  .facebook {
+    width: 100%;
+  }
+
+  .footer__bottom {
+    width: 100%;
+  }
+  
+  .columns {
+    width: 100%;
+    grid-column: 1;
+    flex-direction: column;
+  }
+  
+  .column1,
+  .column2,
+  .column3 {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .column4 {
+    grid-column: 1;
+  }
+  
+  .copyright {
+    width: 100%;
+    grid-column: 1;
+    position: relative;
+    left: 0;
+  }
+  
+  .slider {
+    width:100%;
+    height:250px;
+    }
+  
+    
+    
+  
+}

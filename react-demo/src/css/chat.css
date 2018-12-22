@@ -14,13 +14,17 @@
 	background: #F7F7F7;
 }
 .form-style-6 h1{
-	background: #43D1AF;
+	background: rgba(0, 0, 0, 0.911);
 	padding: 20px 0;
 	font-size: 140%;
 	font-weight: 300;
 	text-align: center;
 	color: #fff;
 	margin: -16px -16px 16px -16px;
+}
+.form-style-6 h1:hover{
+    background: #f55e00;
+    transition: all ease 0.55s;    
 }
 .form-style-6 input[type="text"],
 .form-style-6 input[type="date"],
@@ -57,13 +61,14 @@
 .form-style-6 input[type="search"]:focus,
 .form-style-6 input[type="time"]:focus,
 .form-style-6 input[type="url"]:focus,
-.form-style-6 textarea:focus,
-.form-style-6 select:focus
+/* .form-style-6 textarea:focus, */
+/* .form-style-6 select:focus
 {
 	box-shadow: 0 0 5px #43D1AF;
 	padding: 3%;
 	border: 1px solid #43D1AF;
-}
+} */
+
 
 .form-style-6 input[type="submit"],
 .form-style-6 input[type="button"]{
@@ -72,14 +77,15 @@
 	-moz-box-sizing: border-box;
 	width: 100%;
 	padding: 3%;
-	background: #43D1AF;
-	border-bottom: 2px solid #30C29E;
+	background: rgba(0, 0, 0, 0.911);
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;	
 	color: #fff;
 }
 .form-style-6 input[type="submit"]:hover,
+
 .form-style-6 input[type="button"]:hover{
-	background: #2EBC99;
+    background: #f55e00;
+    transition: all ease 0.55s;    
 }
