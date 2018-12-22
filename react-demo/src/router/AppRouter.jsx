@@ -23,8 +23,10 @@ import { Cameras } from "../Components/Cameras";
 import { Headphone } from "../Components/Headphone";
 import { Phone } from "../Components/Phone.jsx";
 import { Laptop } from "../Components/Laptop";
+import Users from "../db/users.json";
 import { Camera } from "../Components/Camera";
 import "../css/Aboutus.css";
+import Products from "../db/products.json";
 
 const index = () => (
   <div className="App">
@@ -51,6 +53,12 @@ const aboutus = () => (
   </div>
 );
 const headphones = () => (
+  <Switch>
+    <Route exact path="/headphones" component={headphonesList} />
+    <Route path="/headphones/:id" component={headphone} />
+  </Switch>
+);
+const headphonesList = () => (
   <div className="headphones">
     <Header />
     <Headphones />
@@ -60,11 +68,17 @@ const headphones = () => (
 const headphone = () => (
   <div>
     <Header />
-    <Headphone header={"headphone"} />
+    <Headphone />
     <Footer />
   </div>
 );
 const phones = () => (
+  <Switch>
+    <Route exact path="/phones" component={phonesList} />
+    <Route path="/phones/:id" component={phone} />
+  </Switch>
+);
+const phonesList = () => (
   <div>
     <Header />
     <Phones />
@@ -74,12 +88,18 @@ const phones = () => (
 const phone = () => (
   <div>
     <Header />
-    <Phone header={"phone"} />
+    <Phone />
     <Footer />
   </div>
 );
 
 const laptops = () => (
+  <Switch>
+    <Route exact path="/laptops" component={laptopsList} />
+    <Route path="/laptops/:id" component={laptop} />
+  </Switch>
+);
+const laptopsList = () => (
   <div>
     <Header />
     <Laptops />
@@ -94,6 +114,12 @@ const laptop = () => (
   </div>
 );
 const cameras = () => (
+  <Switch>
+    <Route exact path="/cameras" component={camerasList} />
+    <Route path="/cameras/:id" component={camera} />
+  </Switch>
+);
+const camerasList = () => (
   <div>
     <Header />
     <Cameras />
@@ -103,7 +129,7 @@ const cameras = () => (
 const camera = () => (
   <div>
     <Header />
-    <Camera header={"camera"} />
+    <Camera />
     <Footer />
   </div>
 );
@@ -129,13 +155,13 @@ const signup = () => (
   </div>
 );
 
-const editUsers = () => (
-  <div className="App">
-    <Header />
-    <hr />
-    <UserDetails users={Users} />
-  </div>
-);
+// const editUsers = () => (
+//   <div className="App">
+//     <Header />
+//     <hr />
+//     <UserDetails users={Users} />
+//   </div>
+// );
 
 const admin = () => (
   <div className="App">
@@ -148,7 +174,7 @@ const admin = () => (
 
 const AppRouter = () => (
   <BrowserRouter>
-    <div className="App">
+    <div className="main">
       <Switch>
         <Route path="/" render={index} exact />
         <Route path="/categories" render={explore} />
@@ -156,10 +182,6 @@ const AppRouter = () => (
         <Route path="/phones" render={phones} />
         <Route path="/laptops" render={laptops} />
         <Route path="/cameras" render={cameras} />
-        <Route path="/headphone/:id" render={headphone} />
-        <Route path="/phone/:id" render={phone} />
-        <Route path="/laptop/:id" render={laptop} />
-        <Route path="/camera/:id" render={camera} />
         <Route path="/login" component={login} />
         <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />

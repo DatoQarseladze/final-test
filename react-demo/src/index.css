@@ -9,6 +9,8 @@ body {
   overflow-x: hidden;
 }
 
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -117,4 +119,34 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 3rem;
+}
+
+.edit--input input{
+  width: 100%;
+  text-align: center;
+  /* display: flex; */
+}
+
+.edit--buttons{
+display: flex;
+justify-content: space-between;
+}
+.error--message{
+  width: 100%;
+  color: red;
+  font-size: 20px;
+}
+
+.alert-danger{
+width: 60%;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
