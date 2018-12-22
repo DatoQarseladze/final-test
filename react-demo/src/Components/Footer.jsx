@@ -31,8 +31,8 @@ class Footer extends React.Component {
             FACEBOOK
           </div>
         </div>
+        
         <div className="footer__bottom">
-          <div className="footer-wrapper">
             <div className="columns">
               <div className="column1">
                 <p>HEADPHONES</p>
@@ -66,11 +66,10 @@ class Footer extends React.Component {
               <i className="fab fa-pinterest" />
               <i className="fab fa-google-plus-g" />
             </div>
-          </div>
 
           <p className="copyright">
             &copy; 2018 Decibullz LLC. All Rights Reserved. Designed & Developed
-            by DigitlHaus.
+            by Maryam Kits, Saba Mamasakhlisi, Dato Karseladze, Mariam Bokeria.
           </p>
         </div>
       </div>
