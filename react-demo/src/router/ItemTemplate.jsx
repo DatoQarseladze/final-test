@@ -45,7 +45,7 @@ class ItemTemplate extends Component {
     } else if (window.innerWidth < 425) {
       this.setState({ imgwidth: 320, imgheight: 200 });
     } else {
-      this.setState({ imgwidth: 400, imgheight: 450 });
+      this.setState({ imgwidth: 600, imgheight: 450 });
     }
 
     // console.log(window.innerWidth, this.state.imgwidth);
@@ -86,8 +86,8 @@ class ItemTemplate extends Component {
           {this.state.data.url && (
             <div
               className="clicked__item--img"
-              height={this.state.imgheight}
-              width={this.state.imgwidth}
+              // height={this.state.imgheight}
+              // width={this.state.imgwidth}
             >
               <Zoom
                 // className="clicked__item--img"
