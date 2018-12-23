@@ -25,6 +25,11 @@ import { Phone } from "../Components/Phone.jsx";
 import { Laptop } from "../Components/Laptop";
 import { Camera } from "../Components/Camera";
 import  Support  from '../Components/Support'
+import Cart from "../Components/Cart";
+import Search from "../Components/Search";
+import Filter from "../Components/ProFilter"
+import Profile from "../Components/ProfilePage"
+import AddProduct from "../Components/AddProduct"
 import "../css/Aboutus.css";
 
 const index = () => (
@@ -153,6 +158,11 @@ const signup = () => (
     <SignUp />
   </div>
 );
+const cart = () => (
+  <div> 
+    <Cart></Cart>
+  </div>
+);
 
 const editUsers = () => (
   <div className="App">
@@ -182,6 +192,15 @@ const support = () => (
   </div>
 )
 
+const product = () =>(
+  <div> 
+    <Header></Header>
+    <hr/>
+    <AddProduct/>
+    <Footer/>
+  </div>
+)
+
 const AppRouter = () => (
   <BrowserRouter>
     <div className="main">
@@ -193,11 +212,16 @@ const AppRouter = () => (
         <Route path="/laptops" render={laptops} />
         <Route path="/cameras" render={cameras} />
         <Route path="/login" component={login} />
-        <Route path="/search" component={admin} />
         <Route path="/signup" component={signup} />
         <Route path="/user/:id" component={editUsers} />
         <Route path="/company" component={aboutus} />
         <Route path='/support' component={support} />
+        <Route path ="/cart" component={cart}/>
+        <Route path = "/search" component={Search}/>
+        <Route path = "/filter" component={Filter}/>
+        <Route path="/profile" component={Profile}/>
+        <Route path="/product" component={product}/>
+        <Route path = '/data' component={admin}/>
       </Switch>
     </div>
   </BrowserRouter>

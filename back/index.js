@@ -6,6 +6,10 @@ const app = express();
 const secret = "demo__system";
 const PORT = process.env.PORT || 3000;
 const Joi = require("joi");
+let products = require("../react-demo/src/db/products");
+const path = require("path");
+const bodyParser = require("body-parser");
+const altPro = "../react-demo/src/db/products.json";
 
 app.use(cors("*"));
 app.use(express.urlencoded({ extended: true }));
@@ -162,6 +166,12 @@ app.post("/edit", (req, res) => {
   });
 });
 
+app.get('/user',(req,res)=>{
+  fs.readFile(usersfile,function(err,data){
+    let json = JSON.parse(data);
+    res.json(json);
+})
+})
 app.post("/delete", (req, res) => {
   let todeleteusername = req.body;
   fs.readFile(usersfile, function(err, data) {
@@ -176,6 +186,141 @@ app.post("/delete", (req, res) => {
       res.json(json);
     });
   });
+});
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
+// products
+app.get("/headphones", (req, res) => {
+  res.json(products.HEADPHONES);
+});
+app.get("/phones", (req, res) => {
+  res.json(products.PHONES);
+});
+app.get("/laptops", (req, res) => {
+  res.json(products.LAPTOPS);
+});
+app.get("/cameras", (req, res) => {
+  res.json(products.CAMERAS);
+});
+
+// selected item
+app.get("/headphones/:id", (req, res) => {
+  const id = req.params.id;
+  const item = products.HEADPHONES.find(i => i.id == id);
+  res.json(item);
+});
+
+// writing a review
+app.post("/headphones/:id", (req, res) => {
+  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+    let json = JSON.parse(data);
+    const id = req.params.id;
+    const item = products.HEADPHONES.find(i => i.id == id);
+    const review = { user: req.body.user, text: req.body.text };
+    item.reviews.unshift(review);
+    fs.writeFile(
+      "../react-demo/src/db/products.json",
+      JSON.stringify(products),
+      function(err) {
+        if (err) throw err;
+      }
+    );
+  });
+});
+app.get("/get",(req,res)=>{
+  fs.readFile(altPro,function(err,data){
+    let json = JSON.parse(data);
+    res.json(json);
+  })
+})
+
+app.post('/addToCart',(req,res)=>{
+  const{x,y,z} = req.body;
+  // console.log(x,y);
+  fs.readFile(altPro, function(err,data){
+    let json = JSON.parse(data);
+    console.log(x)
+    // console.log(json[z])
+    // console.log(json[z])
+    let findProduct = json[z].find(product => product.id == x)
+  fs.readFile(usersfile, function(err,data){
+    let json = JSON.parse(data);
+    let index = json.findIndex(user => user.id === ''+y);
+   json[index].onCart.push(findProduct)
+    fs.writeFile(usersfile,JSON.stringify(json),function(err){
+      if(err) res.json(json);
+      res.json({message : 'Product has been Added'})
+    })
+  }) })
+})
+
+app.post("/products", (req, res) => {
+  let {
+    id,
+    brand,
+    url,
+    model,
+    price,
+    desc,
+    color,
+    cat
+  } = req.body;
+
+  const product =  {
+    id,
+    brand,
+    url,
+    model,
+    price,
+    desc,
+    color,
+    quantity : "" ,
+    reviews : []
+  };
+  category  = cat;
+  fs.readFile(altPro, function(err, data) {
+    console.log(cat);
+    // console.log(altPro)
+    let json = JSON.parse(data);
+    console.log(json[cat]);
+    json[cat].push(product);
+    // console.log(json)
+    
+    // json.push(product)
+    fs.writeFile(altPro, JSON.stringify(json), function(err) {
+      if (err) res.redirect(`http://localhost:${PORT}`);
+      res.redirect(`http://localhost:${PORT}/`);
+    });
+  });
+
+})
+
+app.get("/phones/:id", (req, res) => {
+  const id = req.params.id;
+  const item = products.PHONES.find(i => i.id == id);
+  res.json(item);
+});
+app.get("/laptops/:id", (req, res) => {
+  const id = req.params.id;
+  const item = products.LAPTOPS.find(i => i.id == id);
+  res.json(item);
+});
+app.get("/cameras/:id", (req, res) => {
+  const id = req.params.id;
+  const item = products.CAMERAS.find(i => i.id == id);
+  res.json(item);
 });
 
 app.listen(5000, () => {
