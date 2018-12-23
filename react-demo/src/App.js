@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App ragaca">
+        <div className="App">
           <AppRouter />
         </div>
       </Router>
