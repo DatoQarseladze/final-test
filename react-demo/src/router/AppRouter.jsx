@@ -14,7 +14,6 @@ import Reviews from "../Components/Reviews";
 import Footer from "../Components/Footer";
 import About from "../Components/Aboutus";
 import Users from "../db/users.json";
-import ShowUsers from "../Components/ShowUsers";
 import UserDetails from "./../Components/UserDetails";
 import { Headphones } from "../Components/Headphones";
 import { Phones } from "../Components/Phones";
@@ -212,7 +211,7 @@ const AppRouter = () => (
         <Route path="/laptops" render={laptops} />
         <Route path="/cameras" render={cameras} />
         <Route path="/login" component={login} />
-        <Route path="/data" component={admin} />
+        <ProtectedRoute  path="/data" component={admin} />
         <Route path="/signup" component={signup} />
         <Route path="/user/:id" component={editUsers} />
         <Route path="/company" component={aboutus} />

@@ -6,7 +6,7 @@ export const ProtectedRoute = ({ component: Component, ...restProps }) => {
     return (
         <Route {...restProps}
             render={
-                props => localStorage.getItem('authorized') ?
+                props => localStorage.getItem('admin') ?
                     (<Component {...props} />) :
                     (<Redirect to={'/login'} />)
             } 

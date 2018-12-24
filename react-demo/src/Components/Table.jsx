@@ -8,7 +8,7 @@ import { confirmAlert } from 'react-confirm-alert'
 import ReactPaginate from 'react-paginate'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import { paginate } from './paginate'
-import Pagination from './pagination'
+import Pagination from './Pagination'
 
 
 export function searchingFor (term) {
@@ -32,7 +32,7 @@ export default class Table extends Component {
       input: '',
       pageSize: 0,
       currentPage: 1,
-      gamosacheni: 3,
+      perPage: 3,
       selected: 1
     }
   }
@@ -55,14 +55,12 @@ export default class Table extends Component {
   getPagedData = () =>{
     const {
       currentPage,
-      pageSize,
       people,
-      gamosacheni
+      perPage
     } = this.state
     console.log(people);
-    // console.log(currentPage);
 
-    const xalxi = paginate(people, currentPage, gamosacheni)
+    const xalxi = paginate(people, currentPage, perPage)
     console.log(xalxi);
     return { people: xalxi}
   }
@@ -161,7 +159,7 @@ export default class Table extends Component {
 
   render () {
     const { people } = this.getPagedData();
-    const { term, gamosachenixalxi } = this.state
+    const { term } = this.state
     return (
       <div className='search'>
         <SearchInput searchHandler={this.searchHandler} />
@@ -179,7 +177,7 @@ export default class Table extends Component {
         <Pagination
             itemsCount={this.state.pageSizePeople.length}
             currentPage={this.state.currentPage}
-            pageSize={this.state.gamosacheni}
+            pageSize={this.state.perPage}
             onPageChange={this.handlePageClick}
           />
       </div>
