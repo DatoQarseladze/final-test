@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Zoom from "react-img-zoom";
-
+const dir = "http://localhost:5000/user"
 class ItemTemplate extends Component {
   constructor(props) {
     super(props);
@@ -11,9 +11,11 @@ class ItemTemplate extends Component {
       user: "",
       text: "",
       imgheight: "",
-      imgwidth: ""
+      imgwidth: "",
+      user1 : []
     };
   }
+
   handleChange = e => {
     const username = localStorage.getItem("username");
     const review = e.target.value;
@@ -50,10 +52,14 @@ class ItemTemplate extends Component {
 
     // console.log(window.innerWidth, this.state.imgwidth);
   };
+  getId(x){
+    return Number(x.substr(7,x.indexOf(',')-8));
+  }
 
   componentDidMount() {
     // this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions);
+    this.getUsers();
   }
   componentWillMount() {
     this.updateDimensions();
@@ -73,6 +79,27 @@ class ItemTemplate extends Component {
       })
       .catch(err => console.log(err));
   }
+
+  getUsers() {
+    fetch(dir)
+        .then(user1 => user1.json())
+        .then(user1 => {
+            this.setState({ user1 });
+        })
+        .catch(err => console.log(err))
+}
+  sendToUser(x,y,z){
+        fetch("http://localhost:5000/addToCart",{
+          method : "POST",
+          headers : {
+            Accept : "application/json",
+            "Content-Type" : "application/json"
+          },
+          body : JSON.stringify({x,y,z})
+          })
+      
+    }
+  
   render() {
     const greenColor = {
       color: "green"
@@ -112,7 +139,7 @@ class ItemTemplate extends Component {
             </span>
           )}
           <span className="clicked__item--desc">{this.state.data.desc}</span>
-          <button className="clicked__item--addto--cart">add to cart</button>
+          <button className="clicked__item--addto--cart" onClick={()=>this.sendToUser(this.state.data.id,this.getId(localStorage.getItem("authorized")),this.props.header.toUpperCase())}>add to cart</button>
         </div>
 
         <div className="clicked__item--reviews">
