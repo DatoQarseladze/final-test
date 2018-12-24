@@ -24,7 +24,7 @@ import { Headphone } from "../Components/Headphone";
 import { Phone } from "../Components/Phone.jsx";
 import { Laptop } from "../Components/Laptop";
 import { Camera } from "../Components/Camera";
-import  Support  from '../Components/Support'
+import Support from "../Components/Support";
 import "../css/Aboutus.css";
 
 const index = () => (
@@ -151,6 +151,7 @@ const signup = () => (
     <Header />
     <hr />
     <SignUp />
+    <Footer />
   </div>
 );
 
@@ -173,14 +174,13 @@ const admin = () => (
 
 const support = () => (
   <div className="App">
-  <Header />
-  <hr/>
-  <Support />
+    <Header />
+    <hr />
+    <Support />
 
-  <Footer />
-
+    <Footer />
   </div>
-)
+);
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -197,7 +197,7 @@ const AppRouter = () => (
         <Route path="/signup" component={signup} />
         <Route path="/user/:id" component={editUsers} />
         <Route path="/company" component={aboutus} />
-        <Route path='/support' component={support} />
+        <Route path="/support" component={support} />
       </Switch>
     </div>
   </BrowserRouter>
