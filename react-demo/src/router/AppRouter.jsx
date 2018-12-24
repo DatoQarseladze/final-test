@@ -212,6 +212,7 @@ const AppRouter = () => (
         <Route path="/laptops" render={laptops} />
         <Route path="/cameras" render={cameras} />
         <Route path="/login" component={login} />
+        <Route path="/data" component={admin} />
         <Route path="/signup" component={signup} />
         <Route path="/user/:id" component={editUsers} />
         <Route path="/company" component={aboutus} />

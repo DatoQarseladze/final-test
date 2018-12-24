@@ -71,7 +71,7 @@ export default class Header extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/data">
                 <i className="fa fa-shopping-cart" />
               </Link>
             </li>
