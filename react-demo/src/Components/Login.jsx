@@ -79,7 +79,7 @@ class Login extends Component {
     if (isLoggedIn) {
       return <Redirect to={'/'} />
     } else if (isLoggedAdmin) {
-      return <Redirect to={'/search'} />
+      return <Redirect to={'/data'} />
     } else {
       return (
         <div>
