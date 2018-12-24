@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import {Redirect,Link} from 'react-router-dom';
+import "../user.css"
 
 class LogOut extends Component {
-    Logout = () => {
-        localStorage.removeItem('authorized');
-    }
+    
     render() { 
+      
         return (
-            <button 
+            
+          <Link to="/"><button onClick={ function(){ window.location.reload(); localStorage.removeItem('authorized')}}
             className="danger"
-            onClick={this.Logout}
-            >LogOut</button>
+            >LogOut </button>
+            </Link> 
+            
           );
     }
 }
- 
+
 export default LogOut;
