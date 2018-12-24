@@ -156,6 +156,7 @@ const signup = () => (
     <Header />
     <hr />
     <SignUp />
+    <Footer />
   </div>
 );
 const cart = () => (
@@ -183,14 +184,13 @@ const admin = () => (
 
 const support = () => (
   <div className="App">
-  <Header />
-  <hr/>
-  <Support />
+    <Header />
+    <hr />
+    <Support />
 
-  <Footer />
-
+    <Footer />
   </div>
-)
+);
 
 const product = () =>(
   <div> 
