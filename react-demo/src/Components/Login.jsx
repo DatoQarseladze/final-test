@@ -29,12 +29,14 @@ class Login extends Component {
         username: username,
         password: password
       })
+      
       .then(result => {
-        console.log(result)
+        console.log(result.data)
         if (result.data.auth && result.data.level === 0) {
           // localStorage.setItem('')
           // localStorage.setItem('admin')
           // console.log(result);
+          localStorage.setItem('authorized',JSON.stringify(result.data))
           this.setState({ isLoggedAdmin: true, message: '' })
           Swal({
             title: 'Hello Admin!',
@@ -47,7 +49,7 @@ class Login extends Component {
           })
         } else if (result.data.auth && result.data.level === 1) {
           console.log('useris shemosvla')
-          localStorage.setItem('authorized', JSON.stringify(result))
+          localStorage.setItem('authorized', JSON.stringify(result.data))
           this.setState({ isLoggedIn: true, message: '' })
           Swal({
             position: 'top-end',
