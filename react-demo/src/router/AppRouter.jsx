@@ -30,7 +30,6 @@ import Filter from "../Components/ProFilter"
 import Profile from "../Components/ProfilePage"
 import AddProduct from "../Components/AddProduct"
 import "../css/Aboutus.css";
-import { ProtectedLogin } from './../routes/ProtectedLogin';
 
 const index = () => (
   <div className="App">
@@ -211,9 +210,7 @@ const AppRouter = () => (
         <Route path="/phones" render={phones} />
         <Route path="/laptops" render={laptops} />
         <Route path="/cameras" render={cameras} />
-        <ProtectedLogin  path="/login" component={login} />
-
-        {/* <Route path="/login" component={login} /> */}
+        <Route path="/login" component={login} />
         <ProtectedRoute  path="/data" component={admin} />
         <Route path="/signup" component={signup} />
         <Route path="/user/:id" component={editUsers} />
