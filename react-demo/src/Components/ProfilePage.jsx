@@ -37,9 +37,10 @@ function find () {
 }
 
     function bought(){
+      console.log(people.data[find()].boughtProducts[0])
       if(people.data[find()].boughtProducts === undefined ||people.data[find()].boughtProducts.length == 0 ) {
           return "-"
-      } else return people.data[find()].boughtProducts
+      } else return (people.data[find()].boughtProducts.map((product)=>"/"+product.model+"/"))
     }
     function onCart(){
       if(people.data[find()].onCart===undefined||people.data[find()].onCart.length ===0){
