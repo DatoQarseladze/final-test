@@ -186,22 +186,70 @@ app.post("/login", (req, res) => {
 });
 
 
+app.get('/getreviewsusers', (req,res) =>{
+  console.log('ahaha')
+  fs.readFile(productfile, function(err,data) {
+    let json = JSON.parse(data);
+    const users = []
+    for(let i = 0; i < json.HEADPHONES.length; i++){
+      if(json.HEADPHONES[i].reviews.length >= 1){
+        for(let z = 0; z < json.HEADPHONES[i].reviews.length; z++){
+            users.push(json.HEADPHONES[i].reviews[z].user)
+          }
+      }
+      if(users.length < 4){
+        for(let k = 0; k < json.PHONES.length; k++){
+          if(json.PHONES[k].reviews.length >=1){
+            for(let y = 0; y < json.PHONES[k].reviews.length; y++){
+              if(users.length < 4){
+                users.push(json.PHONES[k].reviews[y].user)
+              }
+            }
+          }
+        }
+      
+      }
+    }
+
+    res.send(users);
+  })
+})
+
 app.get('/getreviews', (req,res) =>{
   fs.readFile(productfile, function(err,data) {
     let json = JSON.parse(data);
-    let reviews = json.HEADPHONES[0].reviews
-    const array = []
-    for(let i = 0; i < reviews.length; i++){
-      // console.log(reviews[i].text)
-  
-      array.push(reviews[i].text)
-      
-    }
-    console.log(array)
-    res.json(array);
+    const users = []
+    const array = [];
+    for(let i = 0; i < json.HEADPHONES.length; i++){
+      if(json.HEADPHONES[i].reviews.length >= 1){
+        for(let z = 0; z < json.HEADPHONES[i].reviews.length; z++){
+            array.push(json.HEADPHONES[i].reviews[z].text)
+            // users.push(json.HEADPHONES[i].reviews[z].user)
+          }
+      }
+      if(array.length < 4){
+        for(let k = 0; k < json.PHONES.length; k++){
+          if(json.PHONES[k].reviews.length >=1){
+            for(let y = 0; y < json.PHONES[k].reviews.length; y++){
+              // console.log('shamovida')
+              if(array.length < 4){
+                array.push(json.PHONES[k].reviews[y].text)
+                // users.push(json.HEADPHONES[k].reviews[y].user)
 
+              }
+            }
+          }
+        }
+      
+      }
+    }
+
+
+    // console.log(array)
+    res.send(array);
   })
 })
+
 app.post("/edit", (req, res) => {
   console.log(req.body);
   let newusername = req.body.newUsername;
