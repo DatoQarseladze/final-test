@@ -1,39 +1,41 @@
 import React from "react";
-import axios from 'axios'
+import axios from "axios";
 
 let user = process.env.PUBLIC_URL + "/img/user.jpg";
 
 class Reviews extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      reviews : [],
-      users: []
-    }
- 
+      reviews: [],
+      users: [],
+      current: "3"
+    };
   }
-  componentDidMount (){
+  handleHover = e => {
+    let index = this.state.users.indexOf(e.target.innerHTML);
+    this.setState({ current: index });
+  };
+  componentDidMount() {
     axios
-      .get('http://localhost:5000/getreviews')
-      .then(res =>{
+      .get("http://localhost:5000/getreviews")
+      .then(res => {
         console.log(res.data);
-        this.setState({ reviews: res.data })
+        this.setState({ reviews: res.data });
       })
-      .catch(err =>{
+      .catch(err => {
         console.log(err);
-      })
+      });
 
-
-      axios
-      .get('http://localhost:5000/getreviewsusers')
-      .then(res =>{
+    axios
+      .get("http://localhost:5000/getreviewsusers")
+      .then(res => {
         console.log(res.data);
-        this.setState({ users: res.data })
+        this.setState({ users: res.data });
       })
-      .catch(err =>{
+      .catch(err => {
         console.log(err);
-      })
-
+      });
   }
   render() {
     return (
@@ -47,85 +49,22 @@ class Reviews extends React.Component {
           <i className="fa fa-star" />
         </div>
 
-        <div className="user-wrapper">
-          <div className="user">
-            <div className="user-photo">
-              <img src={user} alt="" />
-              <p className="user-info">
-              {this.state.users[0]}
-              </p>
-            </div>
-            <div className="user-review">
-              <p className="review-text">
-              {/* {this.state.reviews[0].text} */}
-              {this.state.reviews[0]}
-
-              </p>
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-            </div>
+        <div className="user__reviews--wrapper">
+          <div className="user__review">
+            <img src="https://cdn11.bigcommerce.com/s-r69yc54oxa/stencil/02b78300-c933-0136-1be6-571cceb148e7/e/9271ac60-e60f-0136-0124-77eb745dfa48/img/testimonial.png" />
+            <p className="user__review-text">
+              {this.state.reviews[this.state.current]}
+            </p>
           </div>
 
-          <div className="user2">
-            <div className="user-photo">
-              <img src={user} alt="" />
-              <p className="user-info">
-              {this.state.users[1]}
-              </p>
-            </div>
-            <div className="user-review">
-              <p className="review-text">
-                {this.state.reviews[1]}
-              </p>
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-            </div>
-          </div>
-
-          <div className="user3">
-            <div className="user-photo">
-              <img src={user} alt="" />
-              <p className="user-info">
-              {this.state.users[2]}
-              </p>
-            </div>
-            <div className="user-review">
-              <p className="review-text">
-              {this.state.reviews[2]}
-
-              </p>
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-            </div>
-          </div>
-
-          <div className="user4">
-            <div className="user-photo">
-              <img src={user} alt="" />
-              <p className="user-info">
-              {this.state.users[3]}
-              </p>
-            </div>
-            <div className="user-review">
-              <p className="review-text">
-              {this.state.reviews[3]}
-
-              </p>
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-              <i className="fa fa-star" />
-            </div>
+          <div
+            className="user__reviews--hoverable"
+            onMouseOver={this.handleHover}
+          >
+            <div className="user__review--user">{this.state.users[3]}</div>
+            <div className="user__review--user">{this.state.users[2]}</div>
+            <div className="user__review--user">{this.state.users[1]}</div>
+            <div className="user__review--user">{this.state.users[0]}</div>
           </div>
         </div>
       </div>
