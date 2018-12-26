@@ -200,7 +200,7 @@ app.post("/login", (req, res) => {
   };
   const result = Joi.validate(req.body, schema);
 
-  console.log(result);
+  // console.log(result);
 
   if (result.error) {
     return res.status(400).json({ message: result.error.details[0].message });
