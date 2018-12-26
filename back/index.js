@@ -275,10 +275,11 @@ app.post('/bought',(req,res)=>{
     console.log(k);
   //  json[index].onCart.push(arr);
    json[index].boughtProducts.push(arrU)
-  //  json[index].balance == k;
-  //  console.log( json[index].balance )
+   json[index].balance = ''+k;
+   json[index].onCart = arr;
+   console.log( json[index].balance )
   //  console.log(json[index].onCart.length)
-   console.log(json[index].boughtProducts)
+  //  console.log(json[index].boughtProducts)
     fs.writeFile(usersfile,JSON.stringify(json),function(err){
       if(err) res.json(json);
       res.json({message : 'Changed'})

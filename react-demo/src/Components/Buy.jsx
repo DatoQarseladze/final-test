@@ -1,5 +1,6 @@
 import React , {Component} from "react"
 import Zoom from "react-img-zoom";
+import {Redirect} from 'react-router-dom'
 
 class Buy extends Component{
     constructor(props) {
@@ -35,6 +36,8 @@ class Buy extends Component{
                 },
                 body : JSON.stringify({k,arr,arrU,qua,user})
   })
+} else {
+    
 }
     }
         

@@ -37,7 +37,7 @@ function find () {
 }
 
     function bought(){
-      console.log(people.data[find()].boughtProducts[0])
+      console.log(people.data[find()].boughtProducts)
       if(people.data[find()].boughtProducts === undefined ||people.data[find()].boughtProducts.length == 0 ) {
           return "-"
       } else return (people.data[find()].boughtProducts.map((product)=>"/"+product.model+"/"))
