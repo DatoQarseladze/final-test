@@ -36,7 +36,7 @@ class Login extends Component {
           // localStorage.setItem('')
           // localStorage.setItem('admin')
           // console.log(result);
-          localStorage.setItem('authorized',JSON.stringify(result.data))
+          localStorage.setItem('admin',JSON.stringify(result.data))
           this.setState({ isLoggedAdmin: true, message: '' })
           Swal({
             title: 'Hello Admin!',
@@ -81,7 +81,7 @@ class Login extends Component {
     if (isLoggedIn) {
       return <Redirect to={'/'} />
     } else if (isLoggedAdmin) {
-      return <Redirect to={'/search'} />
+      return <Redirect to={'/data'} />
     } else {
       return (
         <div>

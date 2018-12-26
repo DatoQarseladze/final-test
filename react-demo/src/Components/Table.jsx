@@ -5,7 +5,11 @@ import SearchInput from './SearchInput'
 import { Link } from 'react-router-dom'
 import UserData from '../db/users.json'
 import { confirmAlert } from 'react-confirm-alert'
+import ReactPaginate from 'react-paginate'
 import 'react-confirm-alert/src/react-confirm-alert.css'
+import { paginate } from './paginate'
+import Pagination from './Pagination'
+
 
 export function searchingFor (term) {
   return function (x) {
@@ -22,17 +26,46 @@ export default class Table extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      pageSizePeople: UserData,
       people: UserData,
       term: '',
-      input: ''
+      input: '',
+      pageSize: 0,
+      currentPage: 1,
+      perPage: 3,
+      selected: 1
     }
   }
 
   componentDidMount () {
+
+    // const { pageSizePeople, gamosacheni } = this.state
+    // console.log(gamosachenixalxi.length, 'vax to');
+    // let pageSize = Math.ceil(pageSizePeople.length / gamosacheni)
+    // this.setState({ pageSize })
+    // this.loadCommentsFromServer()
   }
   componentDidUpdate () {
-    console.log(this.state.input)
   }
+
+  handlePageClick = data => {
+    this.setState({ currentPage: data});
+  }
+
+  getPagedData = () =>{
+    const {
+      currentPage,
+      people,
+      perPage
+    } = this.state
+    console.log(people);
+
+    const xalxi = paginate(people, currentPage, perPage)
+    console.log(xalxi);
+    return { people: xalxi}
+  }
+
+  
   searchHandler = e => {
     let variable = e.target.value
     this.setState({ term: variable })
@@ -122,9 +155,11 @@ export default class Table extends Component {
       }
     })
   }
+ 
 
   render () {
-    const { people, term } = this.state
+    const { people } = this.getPagedData();
+    const { term } = this.state
     return (
       <div className='search'>
         <SearchInput searchHandler={this.searchHandler} />
@@ -139,6 +174,12 @@ export default class Table extends Component {
             onDelete={this.onDelete}
           />
         </table>
+        <Pagination
+            itemsCount={this.state.pageSizePeople.length}
+            currentPage={this.state.currentPage}
+            pageSize={this.state.perPage}
+            onPageChange={this.handlePageClick}
+          />
       </div>
     )
   }

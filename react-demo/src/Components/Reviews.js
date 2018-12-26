@@ -7,7 +7,8 @@ class Reviews extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      reviews : []
+      reviews : [],
+      users: []
     }
  
   }
@@ -15,13 +16,24 @@ class Reviews extends React.Component {
     axios
       .get('http://localhost:5000/getreviews')
       .then(res =>{
-        console.log(res.data)
+        console.log(res.data);
         this.setState({ reviews: res.data })
       })
       .catch(err =>{
         console.log(err);
       })
-   
+
+
+      axios
+      .get('http://localhost:5000/getreviewsusers')
+      .then(res =>{
+        console.log(res.data);
+        this.setState({ users: res.data })
+      })
+      .catch(err =>{
+        console.log(err);
+      })
+
   }
   render() {
     return (
@@ -40,11 +52,12 @@ class Reviews extends React.Component {
             <div className="user-photo">
               <img src={user} alt="" />
               <p className="user-info">
-                userName userSurname, Ecommerce Consultant, userMail
+              {this.state.users[0]}
               </p>
             </div>
             <div className="user-review">
               <p className="review-text">
+              {/* {this.state.reviews[0].text} */}
               {this.state.reviews[0]}
 
               </p>
@@ -60,7 +73,7 @@ class Reviews extends React.Component {
             <div className="user-photo">
               <img src={user} alt="" />
               <p className="user-info">
-                userName userSurname, Ecommerce Consultant, userMail
+              {this.state.users[1]}
               </p>
             </div>
             <div className="user-review">
@@ -79,13 +92,13 @@ class Reviews extends React.Component {
             <div className="user-photo">
               <img src={user} alt="" />
               <p className="user-info">
-                userName userSurname, Ecommerce Consultant, userMail
+              {this.state.users[2]}
               </p>
             </div>
             <div className="user-review">
               <p className="review-text">
-                My first experience of buying product from here.. very
-                comfortable, best quality...
+              {this.state.reviews[2]}
+
               </p>
               <i className="fa fa-star" />
               <i className="fa fa-star" />
@@ -99,13 +112,13 @@ class Reviews extends React.Component {
             <div className="user-photo">
               <img src={user} alt="" />
               <p className="user-info">
-                userName userSurname, Ecommerce Consultant, userMail
+              {this.state.users[3]}
               </p>
             </div>
             <div className="user-review">
               <p className="review-text">
-                My first experience of buying product from here.. very
-                comfortable, best quality...
+              {this.state.reviews[3]}
+
               </p>
               <i className="fa fa-star" />
               <i className="fa fa-star" />

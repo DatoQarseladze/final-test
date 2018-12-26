@@ -79,6 +79,60 @@ app.post("/register", (req, res, err) => {
   });
 });
 
+app.get("/headphones", (req, res) => {
+  res.json(products.HEADPHONES);
+});
+app.get("/phones", (req, res) => {
+  res.json(products.PHONES);
+});
+app.get("/laptops", (req, res) => {
+  res.json(products.LAPTOPS);
+});
+app.get("/cameras", (req, res) => {
+  res.json(products.CAMERAS);
+});
+
+// selected item
+app.get("/headphones/:id", (req, res) => {
+  const id = req.params.id;
+  const item = products.HEADPHONES.find(i => i.id == id);
+  res.json(item);
+});
+
+// writing a review
+app.post("/headphones/:id", (req, res) => {
+  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+    let json = JSON.parse(data);
+    const id = req.params.id;
+    const item = products.HEADPHONES.find(i => i.id == id);
+    const review = { user: req.body.user, text: req.body.text };
+    item.reviews.unshift(review);
+    fs.writeFile(
+      "../react-demo/src/db/products.json",
+      JSON.stringify(products),
+      function(err) {
+        if (err) throw err;
+      }
+    );
+  });
+});
+
+app.get("/phones/:id", (req, res) => {
+  const id = req.params.id;
+  const item = products.PHONES.find(i => i.id == id);
+  res.json(item);
+});
+app.get("/laptops/:id", (req, res) => {
+  const id = req.params.id;
+  const item = products.LAPTOPS.find(i => i.id == id);
+  res.json(item);
+});
+app.get("/cameras/:id", (req, res) => {
+  const id = req.params.id;
+  const item = products.CAMERAS.find(i => i.id == id);
+  res.json(item);
+});
+
 const encrypt = data => {
   const hash = crypto
     .createHmac("sha256", secret)
@@ -132,22 +186,70 @@ app.post("/login", (req, res) => {
 });
 
 
+app.get('/getreviewsusers', (req,res) =>{
+  console.log('ahaha')
+  fs.readFile(productfile, function(err,data) {
+    let json = JSON.parse(data);
+    const users = []
+    for(let i = 0; i < json.HEADPHONES.length; i++){
+      if(json.HEADPHONES[i].reviews.length >= 1){
+        for(let z = 0; z < json.HEADPHONES[i].reviews.length; z++){
+            users.push(json.HEADPHONES[i].reviews[z].user)
+          }
+      }
+      if(users.length < 4){
+        for(let k = 0; k < json.PHONES.length; k++){
+          if(json.PHONES[k].reviews.length >=1){
+            for(let y = 0; y < json.PHONES[k].reviews.length; y++){
+              if(users.length < 4){
+                users.push(json.PHONES[k].reviews[y].user)
+              }
+            }
+          }
+        }
+      
+      }
+    }
+
+    res.send(users);
+  })
+})
+
 app.get('/getreviews', (req,res) =>{
   fs.readFile(productfile, function(err,data) {
     let json = JSON.parse(data);
-    let reviews = json.HEADPHONES[0].reviews
-    const array = []
-    for(let i = 0; i < reviews.length; i++){
-      // console.log(reviews[i].text)
-  
-      array.push(reviews[i].text)
-      
-    }
-    console.log(array)
-    res.json(array);
+    const users = []
+    const array = [];
+    for(let i = 0; i < json.HEADPHONES.length; i++){
+      if(json.HEADPHONES[i].reviews.length >= 1){
+        for(let z = 0; z < json.HEADPHONES[i].reviews.length; z++){
+            array.push(json.HEADPHONES[i].reviews[z].text)
+            // users.push(json.HEADPHONES[i].reviews[z].user)
+          }
+      }
+      if(array.length < 4){
+        for(let k = 0; k < json.PHONES.length; k++){
+          if(json.PHONES[k].reviews.length >=1){
+            for(let y = 0; y < json.PHONES[k].reviews.length; y++){
+              // console.log('shamovida')
+              if(array.length < 4){
+                array.push(json.PHONES[k].reviews[y].text)
+                // users.push(json.HEADPHONES[k].reviews[y].user)
 
+              }
+            }
+          }
+        }
+      
+      }
+    }
+
+
+    // console.log(array)
+    res.send(array);
   })
 })
+
 app.post("/edit", (req, res) => {
   console.log(req.body);
   let newusername = req.body.newUsername;
