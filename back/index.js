@@ -122,17 +122,64 @@ app.get("/phones/:id", (req, res) => {
   const item = products.PHONES.find(i => i.id == id);
   res.json(item);
 });
+app.post("/phones/:id", (req, res) => {
+  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+    let json = JSON.parse(data);
+    const id = req.params.id;
+    const item = products.PHONES.find(i => i.id == id);
+    const review = { user: req.body.user, text: req.body.text };
+    item.reviews.unshift(review);
+    fs.writeFile(
+      "../react-demo/src/db/products.json",
+      JSON.stringify(products),
+      function(err) {
+        if (err) throw err;
+      }
+    );
+  });
+});
 app.get("/laptops/:id", (req, res) => {
   const id = req.params.id;
   const item = products.LAPTOPS.find(i => i.id == id);
   res.json(item);
+});
+app.post("/laptops/:id", (req, res) => {
+  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+    let json = JSON.parse(data);
+    const id = req.params.id;
+    const item = products.LAPTOPS.find(i => i.id == id);
+    const review = { user: req.body.user, text: req.body.text };
+    item.reviews.unshift(review);
+    fs.writeFile(
+      "../react-demo/src/db/products.json",
+      JSON.stringify(products),
+      function(err) {
+        if (err) throw err;
+      }
+    );
+  });
 });
 app.get("/cameras/:id", (req, res) => {
   const id = req.params.id;
   const item = products.CAMERAS.find(i => i.id == id);
   res.json(item);
 });
-
+app.post("/cameras/:id", (req, res) => {
+  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+    let json = JSON.parse(data);
+    const id = req.params.id;
+    const item = products.CAMERAS.find(i => i.id == id);
+    const review = { user: req.body.user, text: req.body.text };
+    item.reviews.unshift(review);
+    fs.writeFile(
+      "../react-demo/src/db/products.json",
+      JSON.stringify(products),
+      function(err) {
+        if (err) throw err;
+      }
+    );
+  });
+});
 const encrypt = data => {
   const hash = crypto
     .createHmac("sha256", secret)
@@ -185,70 +232,65 @@ app.post("/login", (req, res) => {
   });
 });
 
-
-app.get('/getreviewsusers', (req,res) =>{
-  console.log('ahaha')
-  fs.readFile(productfile, function(err,data) {
+app.get("/getreviewsusers", (req, res) => {
+  console.log("ahaha");
+  fs.readFile(productfile, function(err, data) {
     let json = JSON.parse(data);
-    const users = []
-    for(let i = 0; i < json.HEADPHONES.length; i++){
-      if(json.HEADPHONES[i].reviews.length >= 1){
-        for(let z = 0; z < json.HEADPHONES[i].reviews.length; z++){
-            users.push(json.HEADPHONES[i].reviews[z].user)
-          }
+    const users = [];
+    for (let i = 0; i < json.HEADPHONES.length; i++) {
+      if (json.HEADPHONES[i].reviews.length >= 1) {
+        for (let z = 0; z < json.HEADPHONES[i].reviews.length; z++) {
+          users.push(json.HEADPHONES[i].reviews[z].user);
+        }
       }
-      if(users.length < 4){
-        for(let k = 0; k < json.PHONES.length; k++){
-          if(json.PHONES[k].reviews.length >=1){
-            for(let y = 0; y < json.PHONES[k].reviews.length; y++){
-              if(users.length < 4){
-                users.push(json.PHONES[k].reviews[y].user)
+      if (users.length < 4) {
+        for (let k = 0; k < json.PHONES.length; k++) {
+          if (json.PHONES[k].reviews.length >= 1) {
+            for (let y = 0; y < json.PHONES[k].reviews.length; y++) {
+              if (users.length < 4) {
+                users.push(json.PHONES[k].reviews[y].user);
               }
             }
           }
         }
-      
       }
     }
 
     res.send(users);
-  })
-})
+  });
+});
 
-app.get('/getreviews', (req,res) =>{
-  fs.readFile(productfile, function(err,data) {
+app.get("/getreviews", (req, res) => {
+  fs.readFile(productfile, function(err, data) {
     let json = JSON.parse(data);
-    const users = []
+    const users = [];
     const array = [];
-    for(let i = 0; i < json.HEADPHONES.length; i++){
-      if(json.HEADPHONES[i].reviews.length >= 1){
-        for(let z = 0; z < json.HEADPHONES[i].reviews.length; z++){
-            array.push(json.HEADPHONES[i].reviews[z].text)
-            // users.push(json.HEADPHONES[i].reviews[z].user)
-          }
+    for (let i = 0; i < json.HEADPHONES.length; i++) {
+      if (json.HEADPHONES[i].reviews.length >= 1) {
+        for (let z = 0; z < json.HEADPHONES[i].reviews.length; z++) {
+          array.push(json.HEADPHONES[i].reviews[z].text);
+          // users.push(json.HEADPHONES[i].reviews[z].user)
+        }
       }
-      if(array.length < 4){
-        for(let k = 0; k < json.PHONES.length; k++){
-          if(json.PHONES[k].reviews.length >=1){
-            for(let y = 0; y < json.PHONES[k].reviews.length; y++){
+      if (array.length < 4) {
+        for (let k = 0; k < json.PHONES.length; k++) {
+          if (json.PHONES[k].reviews.length >= 1) {
+            for (let y = 0; y < json.PHONES[k].reviews.length; y++) {
               // console.log('shamovida')
-              if(array.length < 4){
-                array.push(json.PHONES[k].reviews[y].text)
+              if (array.length < 4) {
+                array.push(json.PHONES[k].reviews[y].text);
                 // users.push(json.HEADPHONES[k].reviews[y].user)
-
               }
             }
           }
         }
-      
       }
     }
 
-
     // console.log(array)
     res.send(array);
-  })
-})
+  });
+});
 
 app.post("/edit", (req, res) => {
   console.log(req.body);
@@ -268,12 +310,12 @@ app.post("/edit", (req, res) => {
   });
 });
 
-app.get('/user',(req,res)=>{
-  fs.readFile(usersfile,function(err,data){
+app.get("/user", (req, res) => {
+  fs.readFile(usersfile, function(err, data) {
     let json = JSON.parse(data);
     res.json(json);
-})
-})
+  });
+});
 app.post("/delete", (req, res) => {
   let todeleteusername = req.body;
   fs.readFile(usersfile, function(err, data) {
@@ -341,46 +383,38 @@ app.post("/headphones/:id", (req, res) => {
     );
   });
 });
-app.get("/get",(req,res)=>{
-  fs.readFile(altPro,function(err,data){
+app.get("/get", (req, res) => {
+  fs.readFile(altPro, function(err, data) {
     let json = JSON.parse(data);
     res.json(json);
-  })
-})
+  });
+});
 
-app.post('/addToCart',(req,res)=>{
-  const{x,y,z} = req.body;
+app.post("/addToCart", (req, res) => {
+  const { x, y, z } = req.body;
   // console.log(x,y);
-  fs.readFile(altPro, function(err,data){
+  fs.readFile(altPro, function(err, data) {
     let json = JSON.parse(data);
-    console.log(x)
+    console.log(x);
     // console.log(json[z])
     // console.log(json[z])
-    let findProduct = json[z].find(product => product.id == x)
-  fs.readFile(usersfile, function(err,data){
-    let json = JSON.parse(data);
-    let index = json.findIndex(user => user.id === ''+y);
-   json[index].onCart.push(findProduct)
-    fs.writeFile(usersfile,JSON.stringify(json),function(err){
-      if(err) res.json(json);
-      res.json({message : 'Product has been Added'})
-    })
-  }) })
-})
+    let findProduct = json[z].find(product => product.id == x);
+    fs.readFile(usersfile, function(err, data) {
+      let json = JSON.parse(data);
+      let index = json.findIndex(user => user.id === "" + y);
+      json[index].onCart.push(findProduct);
+      fs.writeFile(usersfile, JSON.stringify(json), function(err) {
+        if (err) res.json(json);
+        res.json({ message: "Product has been Added" });
+      });
+    });
+  });
+});
 
 app.post("/products", (req, res) => {
-  let {
-    id,
-    brand,
-    url,
-    model,
-    price,
-    desc,
-    color,
-    cat
-  } = req.body;
+  let { id, brand, url, model, price, desc, color, cat } = req.body;
 
-  const product =  {
+  const product = {
     id,
     brand,
     url,
@@ -388,10 +422,10 @@ app.post("/products", (req, res) => {
     price,
     desc,
     color,
-    quantity : "" ,
-    reviews : []
+    quantity: "",
+    reviews: []
   };
-  category  = cat;
+  category = cat;
   fs.readFile(altPro, function(err, data) {
     console.log(cat);
     // console.log(altPro)
@@ -399,15 +433,14 @@ app.post("/products", (req, res) => {
     console.log(json[cat]);
     json[cat].push(product);
     // console.log(json)
-    
+
     // json.push(product)
     fs.writeFile(altPro, JSON.stringify(json), function(err) {
       if (err) res.redirect(`http://localhost:${PORT}`);
       res.redirect(`http://localhost:${PORT}/`);
     });
   });
-
-})
+});
 
 app.get("/phones/:id", (req, res) => {
   const id = req.params.id;
