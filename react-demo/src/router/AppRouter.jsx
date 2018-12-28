@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ProtectedRoute } from "../routes/ProtectedRoute";
+import { ProtectedLogin } from '../routes/ProtectedLogin'
 import SignUp from "../Components/SignUp";
 import Login from "./../Components/Login";
 import Table from "./../Components/Table";
@@ -210,7 +211,7 @@ const AppRouter = () => (
         <Route path="/phones" render={phones} />
         <Route path="/laptops" render={laptops} />
         <Route path="/cameras" render={cameras} />
-        <Route path="/login" component={login} />
+        <ProtectedLogin path="/login" component={login} />
         <ProtectedRoute  path="/data" component={admin} />
         <Route path="/signup" component={signup} />
         <Route path="/user/:id" component={editUsers} />
@@ -221,7 +222,7 @@ const AppRouter = () => (
         <Route path = "/filter" component={Filter}/>
         <Route path="/profile" component={Profile}/>
         <Route path="/product" component={product}/>
-        <Route path = '/data' component={admin}/>
+        {/* <Route path = '/data' component={admin}/> */}
       </Switch>
     </div>
   </BrowserRouter>

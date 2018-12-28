@@ -1,11 +1,13 @@
 import React from 'react'
 import "../css/chat.css";
-
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
 class Chat extends React.Component {
   state = {
     showResult : false,
   }
+  
   showChat = () => {
     const {showResult} = this.state;
     if(showResult === true){
@@ -31,16 +33,55 @@ class Chat extends React.Component {
 
 
 class ChatResult extends React.Component {
+  chatForm = e => {
+    e.preventDefault();
+
+    console.log(e.currentTarget.field3.value, 'vaxto');
+    let message = e.currentTarget.field3.value;
+
+    axios
+    .post('http://localhost:5000/chat', {message: message})
+    .then(res =>{
+      
+      if(res.data.toString().length > 0){
+       Swal({
+          title: 'We will contact you soon',
+          width: 600,
+          padding: '3em',
+          backdrop: `
+            rgba(0,0,123,0.4)
+            center left
+            no-repeat
+          `
+        })
+        setTimeout(function () {
+          window.location.href = "support"; //will redirect to your blog page (an ex: blog.html)
+       }, 3000);
+      }
+    })
+    .catch(err =>{
+      console.log(err);
+    }) 
+    // const {
+      // username,
+      // password,
+      // email,
+      // birthdate,
+      // balance,
+      // name,
+      // lastname
+    // }
+  }
   render () {
     return (
       <div className='chat--text'>
-       <div class="form-style-6">
+       <div className="form-style-6">
 <h1>Contact Us</h1>
-<form>
-<input type="text" name="field1" placeholder="Your Name" />
+<form onSubmit={this.chatForm}>
+<input  type="text" name="field1" placeholder="Your Name" />
 <input type="email" name="field2" placeholder="Email Address" />
-<textarea name="field3" placeholder="Type your Message"></textarea>
-<input type="submit" value="Send" />
+<textarea ref={this.text} name="field3" placeholder="Type your Message"></textarea>
+<button  >Send Data </button>
 </form>
 </div>
       </div>
