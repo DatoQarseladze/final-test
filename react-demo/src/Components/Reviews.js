@@ -14,13 +14,13 @@ class Reviews extends React.Component {
   }
   handleHover = e => {
     let index = this.state.users.indexOf(e.target.innerHTML);
+    console.log(index);
     this.setState({ current: index });
   };
   componentDidMount() {
     axios
       .get("http://localhost:5000/getreviews")
       .then(res => {
-        console.log(res.data);
         this.setState({ reviews: res.data });
       })
       .catch(err => {
@@ -38,6 +38,7 @@ class Reviews extends React.Component {
       });
   }
   render() {
+    const {reviews, current, users}  = this.state;
     return (
       <div className="reviews">
         <div className="review-title">
@@ -53,7 +54,7 @@ class Reviews extends React.Component {
           <div className="user__review">
             <img src="https://cdn11.bigcommerce.com/s-r69yc54oxa/stencil/02b78300-c933-0136-1be6-571cceb148e7/e/9271ac60-e60f-0136-0124-77eb745dfa48/img/testimonial.png" />
             <p className="user__review-text">
-              {this.state.reviews[this.state.current]}
+              {reviews[current]}
             </p>
           </div>
 
@@ -61,10 +62,10 @@ class Reviews extends React.Component {
             className="user__reviews--hoverable"
             onMouseOver={this.handleHover}
           >
-            <div className="user__review--user">{this.state.users[3]}</div>
-            <div className="user__review--user">{this.state.users[2]}</div>
-            <div className="user__review--user">{this.state.users[1]}</div>
-            <div className="user__review--user">{this.state.users[0]}</div>
+            <div className="user__review--user">{users[3]}</div>
+            <div className="user__review--user">{users[2]}</div>
+            <div className="user__review--user">{users[1]}</div>
+            <div className="user__review--user">{users[0]}</div>
           </div>
         </div>
       </div>
