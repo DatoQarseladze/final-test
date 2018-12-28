@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 
 const usersfile = "../react-demo/src/db/users.json";
 const productfile = "../react-demo/src/db/products.json";
+const chatBase = '../react-demo/src/db/messages.json'
 
 let ID;
 
@@ -138,6 +139,47 @@ app.post("/phones/:id", (req, res) => {
     );
   });
 });
+
+// pushing chat problems
+app.post('/chat', (req,res) =>{
+  console.log(req.body, 'raxdeba to');
+  let message = req.body.message;
+
+
+  fs.readFile(chatBase, (err, data) => {
+    let messages = JSON.parse(data);
+    // console.log(users);
+    // console.log(message);
+  
+    // }
+    let last = messages.pop()
+    // if (last === undefined){
+    //   let ID = 0;
+    //   return ID
+    // }
+    let ID = "" + (Number(last.id)+ 1);
+    const messageDetails = {
+      id: '' + ID,
+      message: message
+    }
+
+
+    fs.readFile(chatBase, (err,data)=>{
+      let mess = JSON.parse(data);
+      mess.push(messageDetails);
+
+      console.log(mess, 'raundato');
+      fs.writeFile(chatBase, JSON.stringify(mess), function(err, data) {
+        if (err) res.send(`http://localhost:${PORT}/`);
+        res.send(message);
+      });
+    })
+
+   
+  
+  });
+
+})
 app.get("/laptops/:id", (req, res) => {
   const id = req.params.id;
   const item = products.LAPTOPS.find(i => i.id == id);

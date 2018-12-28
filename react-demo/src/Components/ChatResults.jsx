@@ -1,13 +1,12 @@
 import React from 'react'
 
 class ChatResults extends React.Component {
-  toggleClass = () =>{
+  
 
-  }
   render () {
     return (
       <div className='chat-container'>
-        <div className='chat' onClick={this.toggleClass}>
+        <div className='chat' onClick={this.chatForm}>
           <img src={process.env.PUBLIC_URL + '/img/chat.png'} alt='' />
         </div>
         <div className='chat--text'>
