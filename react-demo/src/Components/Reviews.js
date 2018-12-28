@@ -14,7 +14,6 @@ class Reviews extends React.Component {
   }
   handleHover = e => {
     let index = this.state.users.indexOf(e.target.innerHTML);
-    console.log(index);
     this.setState({ current: index });
   };
   componentDidMount() {
@@ -30,7 +29,6 @@ class Reviews extends React.Component {
     axios
       .get("http://localhost:5000/getreviewsusers")
       .then(res => {
-        console.log(res.data);
         this.setState({ users: res.data });
       })
       .catch(err => {

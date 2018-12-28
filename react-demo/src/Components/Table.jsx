@@ -8,7 +8,7 @@ import { confirmAlert } from "react-confirm-alert";
 import ReactPaginate from "react-paginate";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { paginate } from "./paginate";
-import Pagination from "./pagination";
+import Pagination from "./Pagination";
 
 export function searchingFor(term) {
   return function(x) {
