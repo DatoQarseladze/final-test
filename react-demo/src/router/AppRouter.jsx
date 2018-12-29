@@ -30,6 +30,7 @@ import Search from "../Components/Search";
 import Filter from "../Components/ProFilter"
 import Profile from "../Components/ProfilePage"
 import AddProduct from "../Components/AddProduct"
+import Orderd from "../Components/Orderd"
 import "../css/Aboutus.css";
 
 const index = () => (
@@ -222,6 +223,7 @@ const AppRouter = () => (
         <Route path="/profile" component={Profile}/>
         <Route path="/product" component={product}/>
         <Route path = '/data' component={admin}/>
+        <Route path = '/ordered' component={Orderd}/>
       </Switch>
     </div>
   </BrowserRouter>
