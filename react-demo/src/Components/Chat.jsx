@@ -35,14 +35,12 @@ class Chat extends React.Component {
 class ChatResult extends React.Component {
   chatForm = e => {
     e.preventDefault();
-
-    console.log(e.currentTarget.field3.value, 'vaxto');
     let message = e.currentTarget.field3.value;
 
     axios
     .post('http://localhost:5000/chat', {message: message})
     .then(res =>{
-      
+      // will alert about succesfully action
       if(res.data.toString().length > 0){
        Swal({
           title: 'We will contact you soon',
@@ -55,22 +53,13 @@ class ChatResult extends React.Component {
           `
         })
         setTimeout(function () {
-          window.location.href = "support"; //will redirect to your blog page (an ex: blog.html)
+          window.location.href = "support"; //will redirect to your support page 
        }, 3000);
       }
     })
     .catch(err =>{
       console.log(err);
     }) 
-    // const {
-      // username,
-      // password,
-      // email,
-      // birthdate,
-      // balance,
-      // name,
-      // lastname
-    // }
   }
   render () {
     return (

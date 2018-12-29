@@ -38,12 +38,13 @@ app.post("/register", (req, res, err) => {
     balance
   } = req.body;
   fs.readFile(usersfile, function(err, data) {
+    // const errorMessage = 'same username'
     let json = JSON.parse(data);
     function findUsername(user) {
       return user.username === username;
     }
     if (json.find(findUsername)) {
-      console.log("daemtxva");
+      res.send('same');
     } else {
       fs.readFile(usersfile, function(err, data) {
         if (err) {
