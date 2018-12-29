@@ -31,7 +31,7 @@ export default class Table extends Component {
       input: "",
       pageSize: 0,
       currentPage: 1,
-      perPage: 3,
+      perPage: 6,
       selected: 1
     };
   }

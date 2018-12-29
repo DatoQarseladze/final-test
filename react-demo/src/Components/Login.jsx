@@ -33,9 +33,6 @@ class Login extends Component {
       .then(result => {
         console.log(result.data)
         if (result.data.auth && result.data.level === 0) {
-          // localStorage.setItem('')
-          // localStorage.setItem('admin')
-          // console.log(result);
           localStorage.setItem('admin',JSON.stringify(result.data))
           this.setState({ isLoggedAdmin: true, message: '' })
           Swal({
