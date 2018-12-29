@@ -454,6 +454,28 @@ app.post("/addToCart", (req, res) => {
   });
 });
 
+app.post('/bought',(req,res)=>{
+  const{k,arr,arrU,qua,user} = req.body;
+  fs.readFile(usersfile, function(err,data){
+    let json = JSON.parse(data);
+    console.log(json);
+    let index = json.findIndex(user1 => user1.id === user.id);
+    console.log(k);
+  //  json[index].onCart.push(arr);
+   json[index].boughtProducts.push(arrU)
+   json[index].balance = ''+k;
+   json[index].onCart = arr;
+   console.log( json[index].balance )
+  //  console.log(json[index].onCart.length)
+  //  console.log(json[index].boughtProducts)
+    fs.writeFile(usersfile,JSON.stringify(json),function(err){
+      if(err) res.json(json);
+      res.json({message : 'Changed'})
+    })
+  }) 
+})
+
+
 app.post("/products", (req, res) => {
   let { id, brand, url, model, price, desc, color, cat } = req.body;
 
