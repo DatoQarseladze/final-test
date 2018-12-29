@@ -349,6 +349,7 @@ h1 {
   background-color: black;
   text-transform: uppercase;
   font-size: 13px;
+  cursor: pointer;
 }
 .item--btn:hover {
   background-color: #ef5501;
@@ -1402,6 +1403,8 @@ transform: rotateY(180deg)
 	.content11 {
     max-width: 90%;
     /* max-height: 80%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 		margin: auto;
 	}
 }
