@@ -73,8 +73,10 @@ a {
   font-weight: bold;
 }
 .get-back{
-  width: 100%;
-  margin: 0 auto;
+width: 180px;
+margin: 0 auto;
+display: flex;
+justify-content: center;
 }
 .registration--link {
   width: 500px;

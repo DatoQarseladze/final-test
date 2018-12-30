@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import ShowUsers from "./ShowUsers";
 import TableHeader from "./TableHeader";
 import SearchInput from "./SearchInput";
-import { Link } from "react-router-dom";
 import UserData from "../db/users.json";
+import Messages from '../db/messages.json'
 import { confirmAlert } from "react-confirm-alert";
-import ReactPaginate from "react-paginate";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { paginate } from "./paginate";
 import Pagination from "./Pagination";
@@ -53,9 +52,8 @@ export default class Table extends Component {
     const { currentPage, people, perPage } = this.state;
     console.log(people);
 
-    const xalxi = paginate(people, currentPage, perPage);
-    console.log(xalxi);
-    return { people: xalxi };
+    const peopleToDivide = paginate(people, currentPage, perPage);
+    return { people: peopleToDivide };
   };
 
   searchHandler = e => {
@@ -115,7 +113,10 @@ export default class Table extends Component {
       })
       .catch(err => console.log(err));
   };
-
+  logOut = () =>{
+  window.location.reload(); localStorage.removeItem('admin')
+          
+  }
   onEdit = e => {
     confirmAlert({
       customUI: ({ onClose }) => {
@@ -171,6 +172,7 @@ export default class Table extends Component {
           pageSize={this.state.perPage}
           onPageChange={this.handlePageClick}
         />
+        <button onClick={this.logOut} className='logout-admin btn btn-dark'>Logout</button>
       </div>
     );
   }

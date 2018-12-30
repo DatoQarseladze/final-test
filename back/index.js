@@ -27,7 +27,6 @@ let ID;
 
 app.post("/register", (req, res, err) => {
   console.log(req.body, "araferia");
-  console.log("movedit");
   let {
     name,
     lastname,
@@ -65,7 +64,8 @@ app.post("/register", (req, res, err) => {
           birthdate,
           balance,
           level: 1,
-          boughtProducts: []
+          boughtProducts: [],
+          onCart: []
         };
 
         fs.readFile(usersfile, function(err, data) {
@@ -73,7 +73,7 @@ app.post("/register", (req, res, err) => {
           json.push(user);
           fs.writeFile(usersfile, JSON.stringify(json), function(err, data) {
             if (err) res.send(`http://localhost:${PORT}/`);
-            res.send(`http://localhost:${PORT}/`);
+            res.send(`http://localhost:${PORT}/support`);
           });
         });
       });
@@ -442,6 +442,7 @@ app.post("/addToCart", (req, res) => {
     // console.log(json[z])
     // console.log(json[z])
     let findProduct = json[z].find(product => product.id == x);
+    // console.log(findProduct);
     fs.readFile(usersfile, function(err, data) {
       let json = JSON.parse(data);
       let index = json.findIndex(user => user.id === "" + y);
@@ -453,6 +454,28 @@ app.post("/addToCart", (req, res) => {
     });
   });
 });
+
+app.post('/bought',(req,res)=>{
+  const{k,arr,arrU,qua,user} = req.body;
+  fs.readFile(usersfile, function(err,data){
+    let json = JSON.parse(data);
+    console.log(json);
+    let index = json.findIndex(user1 => user1.id === user.id);
+    console.log(k);
+  //  json[index].onCart.push(arr);
+   json[index].boughtProducts.push(arrU)
+   json[index].balance = ''+k;
+   json[index].onCart = arr;
+   console.log( json[index].balance )
+  //  console.log(json[index].onCart.length)
+  //  console.log(json[index].boughtProducts)
+    fs.writeFile(usersfile,JSON.stringify(json),function(err){
+      if(err) res.json(json);
+      res.json({message : 'Changed'})
+    })
+  }) 
+})
+
 
 app.post("/products", (req, res) => {
   let { id, brand, url, model, price, desc, color, cat } = req.body;
