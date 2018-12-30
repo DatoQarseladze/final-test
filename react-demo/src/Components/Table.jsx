@@ -7,7 +7,8 @@ import Messages from '../db/messages.json'
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { paginate } from "./paginate";
-import Pagination from "./Pagination";
+import Pagination from "./pagination";
+import LogOutA from "./LogOutA"
 
 export function searchingFor(term) {
   return function(x) {
@@ -172,8 +173,13 @@ export default class Table extends Component {
           pageSize={this.state.perPage}
           onPageChange={this.handlePageClick}
         />
+
         <button onClick={this.logOut} className='logout-admin btn btn-dark'>Logout</button>
+
+<!--         <LogOutA/> -->
+
       </div>
+      
     );
   }
 }

@@ -7,6 +7,7 @@ const secret = "demo__system";
 const PORT = process.env.PORT || 3000;
 const Joi = require("joi");
 let products = require("../react-demo/src/db/products");
+
 const path = require("path");
 const bodyParser = require("body-parser");
 const altPro = "../react-demo/src/db/products.json";
@@ -64,8 +65,8 @@ app.post("/register", (req, res, err) => {
           birthdate,
           balance,
           level: 1,
-          boughtProducts: [],
-          onCart: []
+          onCart : [],
+          boughtProducts: []
         };
 
         fs.readFile(usersfile, function(err, data) {

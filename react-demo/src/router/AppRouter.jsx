@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ProtectedRoute } from "../routes/ProtectedRoute";
-import { ProtectedLogin } from '../routes/ProtectedLogin'
 import SignUp from "../Components/SignUp";
 import Login from "./../Components/Login";
 import Table from "./../Components/Table";
@@ -15,6 +14,7 @@ import Reviews from "../Components/Reviews";
 import Footer from "../Components/Footer";
 import About from "../Components/Aboutus";
 import Users from "../db/users.json";
+import ShowUsers from "../Components/ShowUsers";
 import UserDetails from "./../Components/UserDetails";
 import { Headphones } from "../Components/Headphones";
 import { Phones } from "../Components/Phones";
@@ -286,7 +286,6 @@ const signup = () => (
     </Popup>
     <hr />
     <SignUp />
-    <Footer />
   </div>
 );
 const cart = () => (
@@ -323,6 +322,7 @@ const admin = () => (
 
 const support = () => (
   <div className="App">
+
     <Header />
     <Popup
       modal
@@ -335,10 +335,11 @@ const support = () => (
     </Popup>
     <hr />
     <Support />
+  <Footer />
 
-    <Footer />
+
   </div>
-);
+)
 
 const product = () =>(
   <div> 
@@ -368,8 +369,7 @@ const AppRouter = () => (
         <Route path="/phones" render={phones} />
         <Route path="/laptops" render={laptops} />
         <Route path="/cameras" render={cameras} />
-        <ProtectedLogin path="/login" component={login} />
-        <ProtectedRoute  path="/data" component={admin} />
+        <Route path="/login" component={login} />
         <Route path="/signup" component={signup} />
         <Route path="/user/:id" component={editUsers} />
         <Route path="/company" component={aboutus} />
@@ -381,7 +381,6 @@ const AppRouter = () => (
         <Route path="/product" component={product}/>
         <Route path = '/data' component={admin}/>
         <Route path = '/ordered' component={Orderd}/>
-
       </Switch>
     </div>
   </BrowserRouter>
