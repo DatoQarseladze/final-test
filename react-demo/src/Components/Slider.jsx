@@ -6,11 +6,10 @@ class Slider extends Component {
   render() {
     return (
       <div>
-        <Carousel effect="scrollx" autoplay arrows={true}>
+        <Carousel effect="scrollx" autoplay={true} arrows={true}>
           <div>
             <img src={"/img/slider1.jpg"} className="slider" />
           </div>
-
           <div>
             <img src={"/img/slider2.jpg"} className="slider" />
           </div>

@@ -7,6 +7,7 @@ const secret = "demo__system";
 const PORT = process.env.PORT || 3000;
 const Joi = require("joi");
 let products = require("../react-demo/src/db/products");
+
 const path = require("path");
 const bodyParser = require("body-parser");
 const altPro = "../react-demo/src/db/products.json";
@@ -27,7 +28,6 @@ let ID;
 
 app.post("/register", (req, res, err) => {
   console.log(req.body, "araferia");
-  console.log("movedit");
   let {
     name,
     lastname,
@@ -74,7 +74,7 @@ app.post("/register", (req, res, err) => {
           json.push(user);
           fs.writeFile(usersfile, JSON.stringify(json), function(err, data) {
             if (err) res.send(`http://localhost:${PORT}/`);
-            res.send(`http://localhost:${PORT}/`);
+            res.send(`http://localhost:${PORT}/support`);
           });
         });
       });
@@ -443,6 +443,7 @@ app.post("/addToCart", (req, res) => {
     // console.log(json[z])
     // console.log(json[z])
     let findProduct = json[z].find(product => product.id == x);
+    // console.log(findProduct);
     fs.readFile(usersfile, function(err, data) {
       let json = JSON.parse(data);
       let index = json.findIndex(user => user.id === "" + y);
