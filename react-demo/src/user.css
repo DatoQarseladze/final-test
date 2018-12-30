@@ -239,6 +239,9 @@ label>input +img{
   border-radius: 30px;
   transition: all 200ms ease;
   cursor: text;
+  text-align: center;
+  font-size : 24px;
+  position: relative;
 }
 .search1:after {
   content: "";
@@ -259,23 +262,24 @@ label>input +img{
 .search1:hover {
   width: 400px;
   margin-right: 0px;
-  background-color: #000
+  background-color: #000;
+  justify-content: flex-start;
+  
 }
 .search1.active:after,
 .search1:hover:after {
   height: 0px;
 }
 .search1 #inpt_search {
-  width: 100%;
+  /* width: 100%; */
   border: none;
   box-sizing: border-box;
   font-family: Helvetica;
-  font-size: 15px;
+  font-size: 24px;
   color: inherit;
   background: transparent;
-  outline-width: 0px;
-  justify-content: center;
   color: white;
-  font-size: 25px;
+  height: 10px;
+  display: flex;
 } 
   

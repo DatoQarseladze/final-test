@@ -53,7 +53,7 @@ class Login extends Component {
             type: 'success',
             title: `hello ${result.data.username} `,
             showConfirmButton: false,
-            timer: 1500
+            timer: 10
           })
         } else {
           this.setState(
@@ -76,7 +76,8 @@ class Login extends Component {
   render () {
     const { isLoggedIn, isLoggedAdmin } = this.state
     if (isLoggedIn) {
-      return <Redirect to={'/'} />
+      window.location.reload();
+      return <Redirect to={'/profile'} />
     } else if (isLoggedAdmin) {
       return <Redirect to={'/data'} />
     } else {

@@ -65,6 +65,7 @@ app.post("/register", (req, res, err) => {
           birthdate,
           balance,
           level: 1,
+          onCart : [],
           boughtProducts: []
         };
 

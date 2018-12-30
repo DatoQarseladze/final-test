@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { Component } from "react";
+
 import { Link } from "react-router-dom";
 import Zoom from "react-img-zoom";
+import {user} from "../Components/Header"
 const dir = "http://localhost:5000/user"
 class ItemTemplate extends Component {
   constructor(props) {
@@ -139,14 +141,14 @@ class ItemTemplate extends Component {
             </span>
           )}
           <span className="clicked__item--desc">{this.state.data.desc}</span>
-          <button className="clicked__item--addto--cart" onClick={()=>this.sendToUser(this.state.data.id,this.getId(localStorage.getItem("authorized")),this.props.header.toUpperCase())}>add to cart</button>
+          <button className="clicked__item--addto--cart" onClick={()=>{if(user!="User Not Found"){this.sendToUser(this.state.data.id,this.getId(localStorage.getItem("authorized")),this.props.header.toUpperCase())}}}>add to cart</button>
         </div>
 
         <div className="clicked__item--reviews">
-          {(localStorage.getItem("username") && (
+          {(user !="User Not Found" && (
             <form onSubmit={this.handleSubmit}>
               <h2 name="user" className="clicked__item--username">
-                User: {localStorage.getItem("username")}
+                User: {user}
               </h2>
               <div>
                 <textarea
