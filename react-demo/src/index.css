@@ -72,7 +72,10 @@ a {
   margin-bottom: 20px;
   font-weight: bold;
 }
-
+.get-back{
+  width: 100%;
+  margin: 0 auto;
+}
 .registration--link {
   width: 500px;
   height: 350px;
