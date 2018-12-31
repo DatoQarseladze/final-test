@@ -8,7 +8,7 @@
 
 .form-style-6 {
   font: 95% Arial, Helvetica, sans-serif;
-  min-width: 400px;
+  max-width: 400px;
   margin: 10px auto;
   padding: 16px;
   background: #f7f7f7;

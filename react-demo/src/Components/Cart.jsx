@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
-import {Link} from 'react-router-dom'
 // import { l } from '../router/ItemTemplate';
 import Buy from '../Components/Buy'
 const dir = "http://localhost:5000/user"
@@ -63,11 +62,7 @@ class Cart extends Component {
                 </div>
                 
 
-                )}  
-                </div>
-                <div><Buy element={this.state.pro} cart={arr} user={user}className="BuyP" ></Buy></div>
-                <Link to='/'><button type="button" className="get-back btn btn-dark">Get Back</button></Link>
-                </div>
+                )}  </div><div><Buy element={this.state.pro} cart={arr} user={user}className="BuyP" ></Buy></div></div>
                 
             )
             
