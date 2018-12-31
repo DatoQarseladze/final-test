@@ -70,7 +70,7 @@ class ChatResult extends React.Component {
 <input  type="text" name="field1" placeholder="Your Name" />
 <input type="email" name="field2" placeholder="Email Address" />
 <textarea ref={this.text} name="field3" placeholder="Type your Message"></textarea>
-<button className='btn btn-dark'>Send Data</button>
+<button  >Send Data </button>
 </form>
 </div>
       </div>
