@@ -196,6 +196,7 @@ export default class Table extends Component {
           pageSize={this.state.perPage}
           onPageChange={this.handlePageClick}
         />
+
         <LogOutA/>
       </div>
       

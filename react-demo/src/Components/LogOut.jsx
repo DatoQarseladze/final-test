@@ -12,7 +12,6 @@ class LogOut extends Component {
             className="danger"
             >LogOut </button>
             </Link> 
-            
           );
     }
 }
