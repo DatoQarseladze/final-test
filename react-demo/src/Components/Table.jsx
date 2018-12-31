@@ -174,8 +174,6 @@ export default class Table extends Component {
           onPageChange={this.handlePageClick}
         />
 
-        <button onClick={this.logOut} className='logout-admin btn btn-dark'>Logout</button>
-
         <LogOutA/>
 
       </div>
