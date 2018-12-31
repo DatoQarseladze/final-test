@@ -176,7 +176,7 @@ export default class Table extends Component {
 
         <button onClick={this.logOut} className='logout-admin btn btn-dark'>Logout</button>
 
-<!--         <LogOutA/> -->
+        <LogOutA/>
 
       </div>
       
