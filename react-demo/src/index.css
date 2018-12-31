@@ -21,6 +21,26 @@ ul > li {
   justify-content: center;
 
 }
+.searchInputUser{
+
+padding-bottom: 20px;
+width: 100%;
+}
+
+
+.searchInput{
+margin: 0 auto;
+width: 200px;
+height: 20px;
+
+}
+.admin-logout{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 200px;
+
+}
 .form {
   width: 50%;
   border-radius: 10px;
@@ -108,9 +128,7 @@ a {
   max-width: 200px;
   text-align: center;
 }
-.searchInputUser{
-  margin: 0 0 2% 45%;
-}
+
 .registration--btn {
   width: 100%;
   transform: translate(-55%, 20%);

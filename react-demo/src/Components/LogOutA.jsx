@@ -9,7 +9,7 @@ class LogOutA extends Component {
         return (
             
           <Link to="/"><button onClick={ function(){ window.location.reload(); localStorage.removeItem('admin')}}
-            className="danger"
+            className="admin-logout btn btn-danger"
             >LogOut </button>
             </Link> 
             

@@ -25,6 +25,18 @@ const chatBase = '../react-demo/src/db/messages.json'
 
 let ID;
 
+app.get('/getmessages', (req,res) =>{
+  fs.readFile(chatBase, function(err,data){
+    let json = JSON.parse(data);
+    let arr = [];
+    // console.log(json[0].text);
+    for(let i = 0; i < json.length; i++){
+      arr.push(json[i].message)
+    }
+    console.log(arr);
+    res.json(arr);
+  })
+})
 app.post("/register", (req, res, err) => {
   console.log(req.body, "araferia");
   console.log("movedit");

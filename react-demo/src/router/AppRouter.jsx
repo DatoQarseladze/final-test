@@ -31,6 +31,7 @@ import Filter from "../Components/ProFilter"
 import Profile from "../Components/ProfilePage"
 import AddProduct from "../Components/AddProduct"
 import Orderd from "../Components/Orderd"
+import Icon from '../Components/Icon';
 import "../css/Aboutus.css";
 
 const index = () => (
@@ -192,6 +193,13 @@ const support = () => (
 
   </div>
 )
+const messages = () =>(
+  <div>
+    <Header></Header>
+    <hr/>
+    <Icon></Icon>
+  </div>
+)
 
 const product = () =>(
   <div> 
@@ -224,6 +232,7 @@ const AppRouter = () => (
         <Route path="/product" component={product}/>
         <Route path = '/data' component={admin}/>
         <Route path = '/ordered' component={Orderd}/>
+        <Route path= '/messages' component={messages} />
       </Switch>
     </div>
   </BrowserRouter>

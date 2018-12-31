@@ -8,11 +8,11 @@ class Slider extends Component {
      <div>
        <Carousel effect="scrollx" autoplay arrows={true}>
          <div>
-           <img src={"/img/slider1.jpg"} className="slider" />
+           <img src={"/img/slider1.jpg"} alt={"First"} className="slider" />
          </div>
 
          <div>
-           <img src={"/img/slider2.jpg"} className="slider" />
+           <img src={"/img/slider2.jpg"} alt={"Second"} className="slider" />
          </div>
        </Carousel>
      </div>

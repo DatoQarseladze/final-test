@@ -174,7 +174,7 @@ export default class Header extends Component {
               </li>
               <li>
                 <Link to="/data">
-                  <i class="fas fa-table" />
+                  <i className="fas fa-table" />
                 </Link>
               </li>
               <li>

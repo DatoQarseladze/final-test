@@ -11,8 +11,10 @@ class SearchInput extends Component {
         const {searchHandler} = this.props
         return (
             <div  className='searchInputUser'>
+            
             <form action=''>
           <input
+            className='searchInput'
             type='text'
             name='searchUsername'
             onChange={searchHandler}

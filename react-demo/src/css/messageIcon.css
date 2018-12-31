@@ -1,0 +1,30 @@
+*.fa-comments {color: #0088cc}
+*.fa-comments {color: grey}
+.messageicon{
+    position: relative;
+
+}
+.fa-comments {   
+    cursor: pointer;
+    width:100px;
+    text-align:center;
+    vertical-align:middle;
+}
+.messagesNumber{
+    position: absolute;
+    background: rgba(0,0,255,1);
+    height:1.5rem;
+    top: 2%;
+    right: 47%;
+    width:1.5rem;
+    text-align: center;
+    line-height: 1rem;;
+    font-size: 15px;
+    border-radius: 50%;
+    color:white;
+    border:1px solid blue;
+}
+.messageicon{
+    display:flex;
+    justify-content: center;
+}

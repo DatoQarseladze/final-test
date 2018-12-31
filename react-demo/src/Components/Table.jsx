@@ -2,20 +2,25 @@ import React, { Component } from "react";
 import ShowUsers from "./ShowUsers";
 import TableHeader from "./TableHeader";
 import SearchInput from "./SearchInput";
-import { Link } from "react-router-dom";
 import UserData from "../db/users.json";
 import { confirmAlert } from "react-confirm-alert";
-import ReactPaginate from "react-paginate";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { paginate } from "./paginate";
+import {Link} from 'react-router-dom';
 import Pagination from "./pagination";
 import LogOutA from "./LogOutA"
+import '../css/messageIcon.css'
+import axios from 'axios'
 
 export function searchingFor(term) {
   return function(x) {
     return x.username.toLowerCase().includes(term.toLowerCase()) || !term;
   };
 }
+
+
+
+
 const hStyle = {
   fontSize: "25px",
   textAlign: "center",
@@ -33,18 +38,30 @@ export default class Table extends Component {
       pageSize: 0,
       currentPage: 1,
       perPage: 6,
-      selected: 1
+      selected: 1,
+      messages: ''
     };
   }
 
   componentDidMount() {
-    // const { pageSizePeople, gamosacheni } = this.state
-    // console.log(gamosachenixalxi.length, 'vax to');
-    // let pageSize = Math.ceil(pageSizePeople.length / gamosacheni)
-    // this.setState({ pageSize })
-    // this.loadCommentsFromServer()
+    axios
+    .get('http://localhost:5000/getmessages')
+    .then(res =>{
+      // console.log(res.data)
+      let newMessages = res.data
+      // console.log('gasagzavni', messages);
+      this.setState({messages: newMessages})
+ 
+    })
+    .catch(err =>{
+      console.log(err);
+    })
+    console.log(this.state.messages, 'abaa');
+  
   }
-  componentDidUpdate() {}
+  componentDidUpdate() {
+    console.log('updatedan', this.state.messages.length);
+  }
 
   handlePageClick = data => {
     this.setState({ currentPage: data });
@@ -117,6 +134,10 @@ export default class Table extends Component {
       .catch(err => console.log(err));
   };
 
+  handleIcon = () =>{
+    console.log('hello"');
+  }
+
   onEdit = e => {
     confirmAlert({
       customUI: ({ onClose }) => {
@@ -151,11 +172,14 @@ export default class Table extends Component {
 
   render() {
     const { people } = this.getPagedData();
-    const { term } = this.state;
+    const { term , messages} = this.state;
     return (
       <div className="search">
         <SearchInput searchHandler={this.searchHandler} />
-
+        <div className="messageicon">
+        <Link to='/messages'><i  class="fas fa-3x fa-comments "></i></Link>
+        <span className='messagesNumber'>{messages.length}</span>
+        </div>
         {/* <button className='btn btn-primary'></button> */}
         <table className="table table-hover table-info">
           <TableHeader />
