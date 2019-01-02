@@ -31,7 +31,7 @@ import Filter from "../Components/ProFilter"
 import Profile from "../Components/ProfilePage"
 import AddProduct from "../Components/AddProduct"
 import Orderd from "../Components/Orderd"
-import Icon from '../Components/Icon';
+import ChatMessages from '../Components/ChatMessages';
 import "../css/Aboutus.css";
 
 const index = () => (
@@ -197,7 +197,7 @@ const messages = () =>(
   <div>
     <Header></Header>
     <hr/>
-    <Icon></Icon>
+    <ChatMessages></ChatMessages>
   </div>
 )
 

@@ -25,13 +25,13 @@ const chatBase = '../react-demo/src/db/messages.json'
 
 let ID;
 
-app.get('/getmessages', (req,res) =>{
-  fs.readFile(chatBase, function(err,data){
+app.get('/getmessages', (req, res) => {
+  fs.readFile(chatBase, function (err, data) {
     let json = JSON.parse(data);
     let arr = [];
     // console.log(json[0].text);
-    for(let i = 0; i < json.length; i++){
-      arr.push(json[i].message)
+    for (let i = 0; i < json.length; i++) {
+      arr.push(json[i])
     }
     console.log(arr);
     res.json(arr);
@@ -49,7 +49,7 @@ app.post("/register", (req, res, err) => {
     birthdate,
     balance
   } = req.body;
-  fs.readFile(usersfile, function(err, data) {
+  fs.readFile(usersfile, function (err, data) {
     // const errorMessage = 'same username'
     let json = JSON.parse(data);
     function findUsername(user) {
@@ -58,7 +58,7 @@ app.post("/register", (req, res, err) => {
     if (json.find(findUsername)) {
       res.send('same');
     } else {
-      fs.readFile(usersfile, function(err, data) {
+      fs.readFile(usersfile, function (err, data) {
         if (err) {
           console.log(err);
         }
@@ -77,14 +77,14 @@ app.post("/register", (req, res, err) => {
           birthdate,
           balance,
           level: 1,
-          onCart : [],
+          onCart: [],
           boughtProducts: []
         };
 
-        fs.readFile(usersfile, function(err, data) {
+        fs.readFile(usersfile, function (err, data) {
           let json = JSON.parse(data);
           json.push(user);
-          fs.writeFile(usersfile, JSON.stringify(json), function(err, data) {
+          fs.writeFile(usersfile, JSON.stringify(json), function (err, data) {
             if (err) res.send(`http://localhost:${PORT}/`);
             res.send(`http://localhost:${PORT}/`);
           });
@@ -116,7 +116,7 @@ app.get("/headphones/:id", (req, res) => {
 
 // writing a review
 app.post("/headphones/:id", (req, res) => {
-  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+  fs.readFile("../react-demo/src/db/products.json", function (err, data) {
     let json = JSON.parse(data);
     const id = req.params.id;
     const item = products.HEADPHONES.find(i => i.id == id);
@@ -125,7 +125,7 @@ app.post("/headphones/:id", (req, res) => {
     fs.writeFile(
       "../react-demo/src/db/products.json",
       JSON.stringify(products),
-      function(err) {
+      function (err) {
         if (err) throw err;
       }
     );
@@ -138,7 +138,7 @@ app.get("/phones/:id", (req, res) => {
   res.json(item);
 });
 app.post("/phones/:id", (req, res) => {
-  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+  fs.readFile("../react-demo/src/db/products.json", function (err, data) {
     let json = JSON.parse(data);
     const id = req.params.id;
     const item = products.PHONES.find(i => i.id == id);
@@ -147,7 +147,7 @@ app.post("/phones/:id", (req, res) => {
     fs.writeFile(
       "../react-demo/src/db/products.json",
       JSON.stringify(products),
-      function(err) {
+      function (err) {
         if (err) throw err;
       }
     );
@@ -155,52 +155,41 @@ app.post("/phones/:id", (req, res) => {
 });
 
 // pushing chat problems
-app.post('/chat', (req,res) =>{
+app.post('/chat', (req, res) => {
   console.log(req.body, 'raxdeba to');
   let message = req.body.message;
-
+  let email = req.body.email;
 
   fs.readFile(chatBase, (err, data) => {
     let messages = JSON.parse(data);
-    // console.log(users);
-    // console.log(message);
-  
-    // }
     let last = messages.pop()
-    // if (last === undefined){
-    //   let ID = 0;
-    //   return ID
-    // }
-    let ID = "" + (Number(last.id)+ 1);
+    let ID = "" + (Number(last.id) + 1);
     const messageDetails = {
       id: '' + ID,
+      email: email,
       message: message
     }
 
-
-    fs.readFile(chatBase, (err,data)=>{
+    fs.readFile(chatBase, (err, data) => {
       let mess = JSON.parse(data);
       mess.push(messageDetails);
-
-      console.log(mess, 'raundato');
-      fs.writeFile(chatBase, JSON.stringify(mess), function(err, data) {
+      console.log(mess,'aba aq')
+      fs.writeFile(chatBase, JSON.stringify(mess), function (err, data) {
         if (err) res.send(`http://localhost:${PORT}/`);
-        res.send(message);
+        res.send(mess);
       });
     })
-
-   
-  
   });
-
 })
+
+
 app.get("/laptops/:id", (req, res) => {
   const id = req.params.id;
   const item = products.LAPTOPS.find(i => i.id == id);
   res.json(item);
 });
 app.post("/laptops/:id", (req, res) => {
-  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+  fs.readFile("../react-demo/src/db/products.json", function (err, data) {
     let json = JSON.parse(data);
     const id = req.params.id;
     const item = products.LAPTOPS.find(i => i.id == id);
@@ -209,7 +198,7 @@ app.post("/laptops/:id", (req, res) => {
     fs.writeFile(
       "../react-demo/src/db/products.json",
       JSON.stringify(products),
-      function(err) {
+      function (err) {
         if (err) throw err;
       }
     );
@@ -221,7 +210,7 @@ app.get("/cameras/:id", (req, res) => {
   res.json(item);
 });
 app.post("/cameras/:id", (req, res) => {
-  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+  fs.readFile("../react-demo/src/db/products.json", function (err, data) {
     let json = JSON.parse(data);
     const id = req.params.id;
     const item = products.CAMERAS.find(i => i.id == id);
@@ -230,7 +219,7 @@ app.post("/cameras/:id", (req, res) => {
     fs.writeFile(
       "../react-demo/src/db/products.json",
       JSON.stringify(products),
-      function(err) {
+      function (err) {
         if (err) throw err;
       }
     );
@@ -244,6 +233,7 @@ const encrypt = data => {
   return hash;
 };
 
+// login input 
 app.post("/login", (req, res) => {
   let { username, password } = req.body;
   const schema = {
@@ -255,9 +245,6 @@ app.post("/login", (req, res) => {
       .required()
   };
   const result = Joi.validate(req.body, schema);
-
-  // console.log(result);
-
   if (result.error) {
     return res.status(400).json({ message: result.error.details[0].message });
   }
@@ -287,10 +274,12 @@ app.post("/login", (req, res) => {
     res.send(foundUser);
   });
 });
+// End of login
 
+// Getting reviews
 app.get("/getreviewsusers", (req, res) => {
   console.log("ahaha");
-  fs.readFile(productfile, function(err, data) {
+  fs.readFile(productfile, function (err, data) {
     let json = JSON.parse(data);
     const users = [];
     for (let i = 0; i < json.HEADPHONES.length; i++) {
@@ -311,13 +300,12 @@ app.get("/getreviewsusers", (req, res) => {
         }
       }
     }
-
     res.send(users);
   });
 });
 
 app.get("/getreviews", (req, res) => {
-  fs.readFile(productfile, function(err, data) {
+  fs.readFile(productfile, function (err, data) {
     let json = JSON.parse(data);
     const users = [];
     const array = [];
@@ -325,17 +313,14 @@ app.get("/getreviews", (req, res) => {
       if (json.HEADPHONES[i].reviews.length >= 1) {
         for (let z = 0; z < json.HEADPHONES[i].reviews.length; z++) {
           array.push(json.HEADPHONES[i].reviews[z].text);
-          // users.push(json.HEADPHONES[i].reviews[z].user)
         }
       }
       if (array.length < 4) {
         for (let k = 0; k < json.PHONES.length; k++) {
           if (json.PHONES[k].reviews.length >= 1) {
             for (let y = 0; y < json.PHONES[k].reviews.length; y++) {
-              // console.log('shamovida')
               if (array.length < 4) {
                 array.push(json.PHONES[k].reviews[y].text);
-                // users.push(json.HEADPHONES[k].reviews[y].user)
               }
             }
           }
@@ -343,63 +328,70 @@ app.get("/getreviews", (req, res) => {
       }
     }
 
-    // console.log(array)
     res.send(array);
   });
 });
 
+
+// usernames edit start
 app.post("/edit", (req, res) => {
   console.log(req.body);
   let newusername = req.body.newUsername;
   console.log(newusername);
-  fs.readFile(usersfile, function(err, data) {
+  fs.readFile(usersfile, function (err, data) {
     let json = JSON.parse(data);
     function findUser(item) {
       return item.id == req.body.id;
     }
     let idx = json.findIndex(findUser);
     json[idx].username = newusername;
-    fs.writeFile(usersfile, JSON.stringify(json), function(err) {
+    fs.writeFile(usersfile, JSON.stringify(json), function (err) {
       if (err) res.json(err);
       res.json(json);
     });
   });
 });
 
+// usernames edit end
+
 app.get("/user", (req, res) => {
-  fs.readFile(usersfile, function(err, data) {
+  fs.readFile(usersfile, function (err, data) {
     let json = JSON.parse(data);
     res.json(json);
   });
 });
+
+// users delete start
 app.post("/delete", (req, res) => {
   let todeleteusername = req.body;
-  fs.readFile(usersfile, function(err, data) {
+  fs.readFile(usersfile, function (err, data) {
     let json = JSON.parse(data);
     function findUser(item) {
       return item.username == todeleteusername.e;
     }
     let idx = json.findIndex(findUser);
     json.splice(idx, 1);
-    fs.writeFile(usersfile, JSON.stringify(json), function(err) {
+    fs.writeFile(usersfile, JSON.stringify(json), function (err) {
       if (err) res.json(err);
       res.json(json);
     });
   });
 });
+// users delete end
 
-app.use(express.static(path.join(__dirname, "public")));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+// app.use(express.static(path.join(__dirname, "public")));
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
 
 // products
 app.get("/headphones", (req, res) => {
@@ -424,7 +416,7 @@ app.get("/headphones/:id", (req, res) => {
 
 // writing a review
 app.post("/headphones/:id", (req, res) => {
-  fs.readFile("../react-demo/src/db/products.json", function(err, data) {
+  fs.readFile("../react-demo/src/db/products.json", function (err, data) {
     let json = JSON.parse(data);
     const id = req.params.id;
     const item = products.HEADPHONES.find(i => i.id == id);
@@ -433,14 +425,14 @@ app.post("/headphones/:id", (req, res) => {
     fs.writeFile(
       "../react-demo/src/db/products.json",
       JSON.stringify(products),
-      function(err) {
+      function (err) {
         if (err) throw err;
       }
     );
   });
 });
 app.get("/get", (req, res) => {
-  fs.readFile(altPro, function(err, data) {
+  fs.readFile(altPro, function (err, data) {
     let json = JSON.parse(data);
     res.json(json);
   });
@@ -449,17 +441,17 @@ app.get("/get", (req, res) => {
 app.post("/addToCart", (req, res) => {
   const { x, y, z } = req.body;
   // console.log(x,y);
-  fs.readFile(altPro, function(err, data) {
+  fs.readFile(altPro, function (err, data) {
     let json = JSON.parse(data);
     console.log(x);
     // console.log(json[z])
     // console.log(json[z])
     let findProduct = json[z].find(product => product.id == x);
-    fs.readFile(usersfile, function(err, data) {
+    fs.readFile(usersfile, function (err, data) {
       let json = JSON.parse(data);
       let index = json.findIndex(user => user.id === "" + y);
       json[index].onCart.push(findProduct);
-      fs.writeFile(usersfile, JSON.stringify(json), function(err) {
+      fs.writeFile(usersfile, JSON.stringify(json), function (err) {
         if (err) res.json(json);
         res.json({ message: "Product has been Added" });
       });
@@ -467,25 +459,25 @@ app.post("/addToCart", (req, res) => {
   });
 });
 
-app.post('/bought',(req,res)=>{
-  const{k,arr,arrU,qua,user} = req.body;
-  fs.readFile(usersfile, function(err,data){
+app.post('/bought', (req, res) => {
+  const { k, arr, arrU, qua, user } = req.body;
+  fs.readFile(usersfile, function (err, data) {
     let json = JSON.parse(data);
     console.log(json);
     let index = json.findIndex(user1 => user1.id === user.id);
     console.log(k);
-  //  json[index].onCart.push(arr);
-   json[index].boughtProducts.push(arrU)
-   json[index].balance = ''+k;
-   json[index].onCart = arr;
-   console.log( json[index].balance )
-  //  console.log(json[index].onCart.length)
-  //  console.log(json[index].boughtProducts)
-    fs.writeFile(usersfile,JSON.stringify(json),function(err){
-      if(err) res.json(json);
-      res.json({message : 'Changed'})
+    //  json[index].onCart.push(arr);
+    json[index].boughtProducts.push(arrU)
+    json[index].balance = '' + k;
+    json[index].onCart = arr;
+    console.log(json[index].balance)
+    //  console.log(json[index].onCart.length)
+    //  console.log(json[index].boughtProducts)
+    fs.writeFile(usersfile, JSON.stringify(json), function (err) {
+      if (err) res.json(json);
+      res.json({ message: 'Changed' })
     })
-  }) 
+  })
 })
 
 
@@ -504,7 +496,7 @@ app.post("/products", (req, res) => {
     reviews: []
   };
   category = cat;
-  fs.readFile(altPro, function(err, data) {
+  fs.readFile(altPro, function (err, data) {
     console.log(cat);
     // console.log(altPro)
     let json = JSON.parse(data);
@@ -513,7 +505,7 @@ app.post("/products", (req, res) => {
     // console.log(json)
 
     // json.push(product)
-    fs.writeFile(altPro, JSON.stringify(json), function(err) {
+    fs.writeFile(altPro, JSON.stringify(json), function (err) {
       if (err) res.redirect(`http://localhost:${PORT}`);
       res.redirect(`http://localhost:${PORT}/`);
     });
