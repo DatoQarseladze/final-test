@@ -36,9 +36,10 @@ class ChatResult extends React.Component {
   chatForm = e => {
     e.preventDefault();
     let message = e.currentTarget.field3.value;
+    let email = e.currentTarget.field2.value
 
     axios
-    .post('http://localhost:5000/chat', {message: message})
+    .post('http://localhost:5000/chat', {message: message, email: email })
     .then(res =>{
       // will alert about succesfully action
       if(res.data.toString().length > 0){
@@ -63,17 +64,17 @@ class ChatResult extends React.Component {
   }
   render () {
     return (
-      <div className='chat--text'>
-       <div className="form-style-6">
-<h1>Contact Us</h1>
-<form onSubmit={this.chatForm}>
-<input  type="text" name="field1" placeholder="Your Name" />
-<input type="email" name="field2" placeholder="Email Address" />
-<textarea ref={this.text} name="field3" placeholder="Type your Message"></textarea>
-<button  >Send Data </button>
-</form>
+<div className='chat--text'>
+  <div className="form-style-6">
+      <h1>Contact Us</h1>
+  <form onSubmit={this.chatForm}>
+      <input  type="text" name="field1" placeholder="Your Name" />
+      <input type="email" name="field2" placeholder="Email Address" />
+      <textarea ref={this.text} name="field3" placeholder="Type your Message"></textarea>
+      <button  >Send Data </button>
+  </form>
+  </div>
 </div>
-      </div>
     )
   }
 }

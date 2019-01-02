@@ -177,7 +177,7 @@ export default class Table extends Component {
       <div className="search">
         <SearchInput searchHandler={this.searchHandler} />
         <div className="messageicon">
-        <Link to='/messages'><i  class="fas fa-3x fa-comments "></i></Link>
+        <Link to='/messages'><i  className="fas fa-3x fa-comments "></i></Link>
         <span className='messagesNumber'>{messages.length}</span>
         </div>
         {/* <button className='btn btn-primary'></button> */}
