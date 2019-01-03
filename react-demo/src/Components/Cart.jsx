@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import ReactDom from 'react-dom'
 // import { l } from '../router/ItemTemplate';
+import Header from './Header'
+import EmptyCarts from './EmptyCarts'
+import Footer from './Footer'
 import Buy from '../Components/Buy'
 const dir = "http://localhost:5000/user"
 
 if (localStorage.getItem('authorized') != null || localStorage.getItem('authorized') != undefined) {
     var l = localStorage.getItem("authorized").substr(7, localStorage.getItem("authorized").indexOf(',') - 8);
 }
-console.log(l)
 class Cart extends Component {
     constructor(props) {
         super(props);
@@ -32,6 +33,7 @@ class Cart extends Component {
             })
             .catch(err => console.log(err))
     }
+ 
     // getCart() {
     //     let user = this.state.user.find(user => user.id === '' + l);
     //     console.log(user);
@@ -41,6 +43,17 @@ class Cart extends Component {
     //     return this.state.cart
     // }
     render() {
+        if (this.state.user.length != 0){
+            let user = this.state.user.find(user => user.id === '' + l);
+            if(user.onCart.length === 0){
+             return (
+            <div className="App">
+                <Header />
+                <EmptyCarts />
+            </div>
+             )
+            }
+        }
         if (this.state.user.length != 0) {
             let user = this.state.user.find(user => user.id === '' + l);
             console.log(user);
@@ -65,8 +78,8 @@ class Cart extends Component {
                 )}  </div><div><Buy element={this.state.pro} cart={arr} user={user}className="BuyP" ></Buy></div></div>
                 
             )
-            
-        } else return (<div className="mm"></div>)
+        }
+         else return (<div className="mm"></div>)
     }
 }
 

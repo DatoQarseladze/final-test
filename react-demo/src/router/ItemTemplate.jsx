@@ -141,11 +141,11 @@ class ItemTemplate extends Component {
             </span>
           )}
           <span className="clicked__item--desc">{this.state.data.desc}</span>
-          <button className="clicked__item--addto--cart" onClick={()=>{if(user!="User Not Found"){this.sendToUser(this.state.data.id,this.getId(localStorage.getItem("authorized")),this.props.header.toUpperCase())}}}>add to cart</button>
+          <button className="clicked__item--addto--cart" onClick={()=>{if(user!=="User Not Found"){this.sendToUser(this.state.data.id,this.getId(localStorage.getItem("authorized")),this.props.header.toUpperCase())}}}>add to cart</button>
         </div>
 
         <div className="clicked__item--reviews">
-          {(user !="User Not Found" && (
+          {(user !=="User Not Found" && (
             <form onSubmit={this.handleSubmit}>
               <h2 name="user" className="clicked__item--username">
                 User: {user}

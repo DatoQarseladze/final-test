@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Carousel } from "antd";
 import { user } from "./Header"
+import '../css/bought.css'
 import UserData from "../db/users.json";
 
 export default class Orderd extends Component {

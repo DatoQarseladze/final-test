@@ -34,12 +34,20 @@ width: 200px;
 height: 20px;
 
 }
+.empty--carts{
+  margin-top: 50px;
+}
+.empty--carts > h3{
+  text-align: center;
+}
+
+
+.empty-cart,
 .admin-logout{
   display: flex;
   justify-content: center;
   margin: 0 auto;
   width: 200px;
-
 }
 .form {
   width: 50%;
