@@ -27,8 +27,7 @@ export default class Header extends Component {
     this.setState({ isOpen: false, isHovered: "" });
   }
   render() {
-    console.log(auth,localStorage.getItem("admin"))
-    if (user=="User Not Found" && localStorage.getItem('admin')==null) {
+    if (user==="User Not Found" && localStorage.getItem('admin')===null) {
       return (
         <div className="header__wrapper">
         <nav className="header" role="banner">

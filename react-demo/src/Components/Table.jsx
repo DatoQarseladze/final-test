@@ -134,10 +134,6 @@ export default class Table extends Component {
       .catch(err => console.log(err));
   };
 
-  handleIcon = () =>{
-    console.log('hello"');
-  }
-
   onEdit = e => {
     confirmAlert({
       customUI: ({ onClose }) => {

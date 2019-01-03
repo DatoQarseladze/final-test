@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React  from 'react'
 
 const buttonStyle = {
   width: '50%',
@@ -11,8 +11,7 @@ const UserDetails = props => {
   pth = window.location.pathname
   id = pth.substr(pth.lastIndexOf('/') + 1)
   let user = props.users[id]
-  const editUser = user => {
-  }
+
   return (
     <div>
       <form action='http://localhost:5000/edit'
