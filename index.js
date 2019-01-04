@@ -6,24 +6,27 @@ const app = express();
 const secret = "demo__system";
 const PORT = process.env.PORT || 3000;
 const Joi = require("joi");
-let products = require("../react-demo/src/db/products");
+let products = require("./react-demo/src/db/products");
 const path = require("path");
 const bodyParser = require("body-parser");
-const altPro = "../react-demo/src/db/products.json";
+const altPro = "./react-demo/src/db/products.json";
+
 
 app.use(cors("*"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("hello");
-  console.log(processFile());
+  // console.log(processFile());
 });
 
-const usersfile = "../react-demo/src/db/users.json";
-const productfile = "../react-demo/src/db/products.json";
-const chatBase = '../react-demo/src/db/messages.json'
+const usersfile = "./react-demo/src/db/users.json";
+const productfile = "./react-demo/src/db/products.json";
+const chatBase = './react-demo/src/db/messages.json'
 
 let ID;
+
+
 
 app.get('/getmessages', (req, res) => {
   fs.readFile(chatBase, function (err, data) {
@@ -95,6 +98,7 @@ app.post("/register", (req, res, err) => {
 });
 
 app.get("/headphones", (req, res) => {
+  console.log('es aqaa', )
   res.json(products.HEADPHONES);
 });
 app.get("/phones", (req, res) => {
