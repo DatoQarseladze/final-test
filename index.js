@@ -6,10 +6,10 @@ const app = express();
 const secret = "demo__system";
 const PORT = process.env.PORT || 3000;
 const Joi = require("joi");
-let products = require("./react-demo/src/db/products");
+let products = require("./site/src/db/products");
 const path = require("path");
 const bodyParser = require("body-parser");
-const altPro = "./react-demo/src/db/products.json";
+const altPro = "./site/src/db/products.json";
 
 
 app.use(cors("*"));
@@ -20,9 +20,9 @@ app.get("/", (req, res) => {
   // console.log(processFile());
 });
 
-const usersfile = "./react-demo/src/db/users.json";
-const productfile = "./react-demo/src/db/products.json";
-const chatBase = './react-demo/src/db/messages.json'
+const usersfile = "./site/src/db/users.json";
+const productfile = "./site/src/db/products.json";
+const chatBase = './site/src/db/messages.json'
 
 let ID;
 
