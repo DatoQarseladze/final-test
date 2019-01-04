@@ -1,13 +1,15 @@
 {
   "name": "back",
   "version": "1.0.0",
-  "description": "",
+  "description": "back",
   "main": "index.js",
   "scripts": {
+    "react-demo-install": "npm install --prefix react-demo",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd react-demo && npm && npm run build"
-
+    "server": "nodemon index.js",
+    "react-demo": "npm start --prefix react-demo",
+    "dev": "concurrently \"npm run server\" \"npm run react-demo\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-demo && npm run build --prefix react-demo"
   },
   "author": "",
   "license": "ISC",
@@ -21,5 +23,11 @@
     "joi-date-extensions": "^1.2.0",
     "nodemon": "^1.18.9",
     "sweetalert2": "^7.32.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }, "engines": {
+    "node": "10.15.0",
+    "npm": "6.4.1"
   }
 }

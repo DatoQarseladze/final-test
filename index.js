@@ -438,6 +438,7 @@ app.post("/headphones/:id", (req, res) => {
 app.get("/get", (req, res) => {
   fs.readFile(altPro, function (err, data) {
     let json = JSON.parse(data);
+    console.log(json);
     res.json(json);
   });
 });
